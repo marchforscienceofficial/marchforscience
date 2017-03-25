@@ -10,11 +10,28 @@
 *.swp
 *.tgz
 *.xml
-.DS_Store
 .idea
 .project
 .strong-pm
 coverage
 node_modules
-npm-debug.log
 rethinkdb_data
+
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+

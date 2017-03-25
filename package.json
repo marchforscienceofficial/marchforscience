@@ -2,10 +2,15 @@
   "name": "marchforscience",
   "version": "1.0.0",
   "main": "server/server.js",
+  "private": true,
   "scripts": {
     "lint": "eslint .",
-    "start": "node .",
-    "posttest": "npm run lint && nsp check"
+    "server": "node .",
+    "test": "react-scripts test --env=jsdom",
+    "posttest": "npm run lint && nsp check",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject"
   },
   "dependencies": {
     "compression": "^1.0.3",
@@ -18,12 +23,17 @@
     "loopback-connector-rethinkdb": "^1.0.2",
     "rethinkdb": "^2.3.3",
     "serve-favicon": "^2.0.1",
-    "strong-error-handler": "^1.0.1"
+    "strong-error-handler": "^1.0.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
   },
   "devDependencies": {
     "eslint": "^2.13.1",
     "eslint-config-loopback": "^4.0.0",
-    "nsp": "^2.1.0"
+    "nsp": "^2.1.0",
+    "react-router": "^4.0.0",
+    "react-router-dom": "^4.0.0",
+    "react-scripts": "0.9.5"
   },
   "repository": {
     "type": "",
