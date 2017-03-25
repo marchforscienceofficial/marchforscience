@@ -1,0 +1,65 @@
+{
+  "name": "satellite",
+  "plural": "satellites",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "banner": {
+      "type": "string"
+    },
+    "logo": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string",
+      "required": true
+    },
+    "state": {
+      "type": "string",
+      "required": true
+    },
+    "zip": {
+      "type": "string",
+      "required": true
+    },
+    "country": {
+      "type": "string",
+      "required": true
+    },
+    "social_media": {
+      "type": "object"
+    },
+    "team": {
+      "type": [
+        "string"
+      ]
+    },
+    "mission": {
+      "type": "string"
+    },
+    "goals": {
+      "type": "string"
+    },
+    "shop": {
+      "type": "string"
+    },
+    "blog": {
+      "type": "string"
+    },
+    "partners": {
+      "type": [
+        "object"
+      ]
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

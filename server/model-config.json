@@ -1,0 +1,43 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "AccessToken": {
+    "dataSource": "rethinkdb",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "rethinkdb",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "rethinkdb",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "rethinkdb",
+    "public": false
+  },
+  "satellite": {
+    "dataSource": "rethinkdb",
+    "public": true
+  },
+  "user": {
+    "dataSource": "rethinkdb",
+    "public": true
+  }
+}

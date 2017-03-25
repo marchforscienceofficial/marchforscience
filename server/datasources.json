@@ -1,0 +1,11 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "rethinkdb": {
+    "url": "http://localhost:28015/marchforscience",
+    "name": "rethinkdb",
+    "connector": "rethinkdb"
+  }
+}
