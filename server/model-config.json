@@ -1,6 +1,7 @@
 {
   "_meta": {
     "sources": [
+      "./node_modules/loopback-component-passport/lib/models",
       "loopback/common/models",
       "loopback/server/models",
       "../common/models",
@@ -12,6 +13,15 @@
       "../common/mixins",
       "./mixins"
     ]
+  },
+
+  "UserCredential": {
+    "dataSource": "rethinkdb",
+    "public": false
+  },
+  "UserIdentity": {
+    "dataSource": "rethinkdb",
+    "public": false
   },
   "AccessToken": {
     "dataSource": "rethinkdb",
