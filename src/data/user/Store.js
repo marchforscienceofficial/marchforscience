@@ -18,6 +18,22 @@ class UserStore extends ReduceStore {
     switch(action.type) {
 
       case Types.LOGIN:
+        window.fetch('/api/users/login', {
+          method: 'POST',
+          body: JSON.stringify({
+        		username: action.username,
+        		password: action.password
+        	}),
+          headers: new Headers({
+            'Content-Type': 'application/json'
+          })
+        })
+        .then((resp) => {
+          return resp.json();
+        })
+        .then(() => {
+          debugger;
+        });
         return state;
 
       case Types.LOGOUT:
@@ -32,10 +48,10 @@ class UserStore extends ReduceStore {
     }
   }
 
-  login(email, password){
+  login(username, password){
     dispatcher.dispatch({
       type: Types.LOGIN,
-      email,
+      username,
       password
     });
   }

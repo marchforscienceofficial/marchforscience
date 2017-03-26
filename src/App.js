@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import logo from './logo.svg';
+import logo from './logo.png';
 import './App.css';
 
 import Index from './Index/Index.js';
@@ -15,11 +15,14 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <nav>
-            <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/satellites">Satellites</Link></li>
-              <li><Link to="/profile">Profile</Link></li>
+          <nav className="app--nav">
+            <ul className="app--nav__list">
+              <li className="app--nav__logo">
+                <img src="{logo}"/><span>March for Science</span>
+              </li>
+              <li><Link className="app--nav__item" to="/profile">Profile</Link></li>
+              <li><Link className="app--nav__item" to="/satellites">Satellites</Link></li>
+              <li><Link className="app--nav__item" to="/">Home</Link></li>
             </ul>
           </nav>
 

@@ -76,9 +76,13 @@ app.post('/signup', function(req, res, next) {
   newUser.email = req.body.email.toLowerCase();
   newUser.username = req.body.username.trim();
   newUser.password = req.body.password;
+  newUser.firstName = req.body.firstName;
+  newUser.lastName = req.body.lastName;
+  newUser.phone = req.body.phone;
 
   User.create(newUser, function(err, user) {
     if (err) {
+      console.log(err.message);
       req.flash('error', err.message);
       return res.redirect('back');
     } else {
@@ -88,10 +92,11 @@ app.post('/signup', function(req, res, next) {
       // be invoked to log in the newly registered user.
       req.login(user, function(err) {
         if (err) {
+          console.log(err.message);
           req.flash('error', err.message);
           return res.redirect('back');
         }
-        return res.redirect('/auth/account');
+        return res.redirect('/profile');
       });
     }
   });
