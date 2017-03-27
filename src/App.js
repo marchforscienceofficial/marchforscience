@@ -18,7 +18,8 @@ class App extends Component {
           <nav className="app--nav">
             <ul className="app--nav__list">
               <li className="app--nav__logo">
-                <img src="{logo}"/><span>March for Science</span>
+                <img src={logo} alt="March for Science Logo" className="app--nav__img" />
+                <span className="app--nav__title">March for Science</span>
               </li>
               <li><Link className="app--nav__item" to="/profile">Profile</Link></li>
               <li><Link className="app--nav__item" to="/satellites">Satellites</Link></li>

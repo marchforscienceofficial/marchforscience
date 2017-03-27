@@ -24,9 +24,14 @@
     }
   },
   "validations": [],
-  "relations": {},
-  "acls": [
-    
-  ],
+  "relations": {
+    "roles": {
+      "type": "hasMany",
+      "foreignKey": "role_id",
+      "model": "MarchRoles",
+      "through": "RoleMapping"
+    }
+  },
+  "acls": [],
   "methods": {}
 }

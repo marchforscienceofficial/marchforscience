@@ -59,7 +59,34 @@
     }
   },
   "validations": [],
-  "relations": {},
-  "acls": [],
+  "relations": {
+    "owner": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "owner"
+    },
+    "roles": {
+      "type": "hasMany",
+      "model": "user",
+      "foreignKey": "",
+      "through": "SatelliteMapping"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY",
+      "property": "findById"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "SatelliteMember",
+      "permission": "ALLOW",
+      "property": "findById"
+    }
+  ],
   "methods": {}
 }

@@ -23,7 +23,20 @@
 
 .app--nav__logo {
   float: left;
-  line-height: 64px;
+  height: 64px;
   margin-left: 16px;
   color: #FFF;
+  margin: 0;
+}
+
+.app--nav__img {
+  height: 40px;
+  margin: 12px;
+  float: left;
+}
+
+.app--nav__title {
+  float: left;
+  display: block;
+  line-height: 64px;
 }

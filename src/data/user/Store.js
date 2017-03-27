@@ -1,6 +1,7 @@
 import { ReduceStore } from 'flux/utils';
 import Types from './Types';
 import dispatcher from '../dispatcher';
+import API from '../api';
 
 class UserStore extends ReduceStore {
   constructor(...args){
@@ -18,23 +19,29 @@ class UserStore extends ReduceStore {
     switch(action.type) {
 
       case Types.LOGIN:
-        window.fetch('/api/users/login', {
-          method: 'POST',
-          body: JSON.stringify({
-        		username: action.username,
-        		password: action.password
-        	}),
-          headers: new Headers({
-            'Content-Type': 'application/json'
-          })
-        })
-        .then((resp) => {
-          return resp.json();
-        })
-        .then(() => {
-          debugger;
+        API.post('/api/users/login', {
+      		username: action.username,
+      		password: action.password
+      	})
+        .then((data) => {
+          dispatcher.dispatch({
+            type: Types.FETCH,
+            userId: data.userId,
+            token: data.id
+          });
         });
         return state;
+
+      case Types.FETCH:
+        API.get(`/api/users/${action.userId}`)
+        .then((data) => {
+          dispatcher.dispatch({
+            type: Types.UPDATE,
+            obj: data
+          });
+        });
+        return state;
+
 
       case Types.LOGOUT:
         return state;
@@ -79,4 +86,13 @@ class UserStore extends ReduceStore {
 
 }
 
-export default new UserStore(dispatcher);
+const instance = new UserStore(dispatcher);
+
+if (API.isAuthenticated()) {
+  dispatcher.dispatch({
+    type: Types.FETCH,
+    userId: API.userId
+  });
+}
+
+export default instance;

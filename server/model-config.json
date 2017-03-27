@@ -14,7 +14,6 @@
       "./mixins"
     ]
   },
-
   "UserCredential": {
     "dataSource": "rethinkdb",
     "public": false
@@ -49,5 +48,13 @@
   "user": {
     "dataSource": "rethinkdb",
     "public": true
+  },
+  "MarchRoles": {
+    "dataSource": "rethinkdb",
+    "public": false
+  },
+  "SatelliteMapping": {
+    "dataSource": "rethinkdb",
+    "public": false
   }
 }
