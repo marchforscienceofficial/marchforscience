@@ -1,0 +1,61 @@
+float-input {
+  max-height: 70px;
+  opacity: 1;
+  transition: max-height 0.3s, margin 0.3s, opacity 0.3s;
+  overflow: hidden;
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+float-input label.placeholder {
+    position: relative;
+    display: inline;
+    float: left;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: visible;
+    padding-top: 24px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+float-input label.placeholder.animate input {
+    padding: 20px 13px 6px 13px;
+    margin: 0;
+    border: 1px solid #cccccc;
+    display: block;
+    text-align: left;
+    outline: none;
+    border-radius: 3px;
+    transition: border-color 0.3s, opacity 0.3s, color 0.1s;
+    font-size: 1.45rem;
+    line-height: 1.375;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+float-input label.placeholder.animate input ~ span.text-input-label {
+    position: absolute;
+    left: 0;
+    top: 16px;
+    text-transform: none;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 15px;
+    color: #cccccc;
+    cursor: text;
+    line-height: 1.5rem;
+    transition: font-size 0.1s, padding 0.1s, top 0.1s, color 0.1s, opacity 0.3s;
+    font-weight: normal;
+}
+
+float-input label.placeholder.animate input:focus ~ span.text-input-label, float-input label.placeholder.animate input.has-value ~ span.text-input-label {
+    top: 0px;
+    padding: 5px 14px;
+    font-size: 10px;
+    color: #666666;
+}

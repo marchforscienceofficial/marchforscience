@@ -1,0 +1,10 @@
+<label for="text-input-{{id}}-input" class="placeholder text-type animate">
+  <input type={{type}}
+         value={{value}}
+         class="{{if hasValue 'has-value'}}"
+         onInput={{action 'onInput'}}
+         id="text-input-{{id}}-input"
+         name="firstName"
+         required={{required}}>
+  <span class="text-input-label">{{label}}</span>
+</label>

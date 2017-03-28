@@ -1,0 +1,20 @@
+<nav class="app--nav">
+  <ul class="app--nav__list">
+    <li class="app--nav__listitemleft">
+      {{#link-to 'index'}}
+        <img class="app--nav__logo" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="March for Science Logo"/>
+        <span class="app--nav__title">March for Science</span>
+      {{/link-to}}
+    </li>
+    <li class="app--nav__listitem">{{#user-auth}}{{/user-auth}}</li>
+    <li class="app--nav__listitem">{{#link-to 'satellites'}}Satellites{{/link-to}}</li>
+    <li class="app--nav__listitem">{{#link-to 'index'}}Home{{/link-to}}</li>
+  </ul>
+</nav>
+
+<main>
+  {{outlet}}
+</main>
+
+<footer>
+</footer>

@@ -1,0 +1,31 @@
+{{yield}}
+
+{{#if session.isLoggedOut}}
+  <a href="#" onClick={{action 'toggle'}}>Sign in / Register</a>
+{{else}}
+  {{#link-to 'profile'}}Profile{{/link-to}}
+{{/if}}
+
+<section class="auth {{if open 'open'}}">
+  {{#if session.isLoggedOut}}
+
+    <img class="auth--logo" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="March for Science Logo"/>
+
+    <h1 class="auth--title">{{if isLogin 'Sign In' 'Sign Up'}}</h1>
+    <button onClick={{action 'toggleAction'}} class="auth--toggle">{{if isLogin 'Wait I already have an account!' 'Sign in to existing account'}}</button>
+
+    <form onSubmit={{action 'onSubmit'}} class="auth--form">
+      {{float-input value=(mut firstName)  label='First Name' class=(concat 'auth--form__halfinput ' (if isLogin 'hidden'))}}
+      {{float-input value=(mut lastName)  label='Last Name' class=(concat 'auth--form__halfinput ' (if isLogin 'hidden'))}}
+      {{float-input value=(mut phone) type='tel' label='Telephone' class=(concat 'auth--form__halfinput ' (if isLogin 'hidden'))}}
+      {{float-input value=(mut zip) label='Zip Code' class=(concat 'auth--form__halfinput ' (if isLogin 'hidden'))}}
+      {{float-input value=(mut email) type='email' label='Email' class="auth--form__fullinput"}}
+      {{float-input value=(mut password) type='password' label='Password' class="auth--form__fullinput"}}
+      {{float-input value=(mut verifyPassword) type='password' label='Verify Password' class=(concat 'auth--form__fullinput ' (if isLogin 'hidden'))}}
+      <input type="submit" class="u-button">
+    </form>
+
+  {{else}}
+    <button onClick={{action 'logout'}} class="u-button">Log Out</button>
+  {{/if}}
+</section>

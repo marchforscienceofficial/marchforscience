@@ -1,0 +1,79 @@
+@import './theme';
+@import './components';
+@import 'assets';
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: get-color(white);
+  margin-top: 72px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.6rem;
+  background-color: get-color(gray0);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.app--nav {
+  position: fixed;
+  height: 64px;
+  background-color: get-color(blue);
+  left: 0;
+  right: 0;
+  top: 0;
+  padding: 0 12px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background-color: get-color(blue);
+    height: 64px;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 0 12px;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__listitemleft {
+    float: left;
+  }
+
+  &__listitem {
+    float: right;
+
+    a {
+      color: get-color(orange);
+      line-height: 64px;
+      margin-right: 32px;
+      text-decoration: none;
+      display: block;
+    }
+  }
+
+  &__title {
+    color: white;
+    line-height: 64px;
+    float: right;
+    font-size: 1.8rem;
+  }
+
+  &__logo {
+    background-image: asset-url('images/logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 36px;
+    height: 36px;
+    margin: 14px 12px;
+  }
+}
