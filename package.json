@@ -37,9 +37,11 @@
     "eslint-config-loopback": "^4.0.0",
     "flux": "^3.1.2",
     "nsp": "^2.1.0",
+    "react-intl-tel-input": "^4.1.0",
     "react-router": "^4.0.0",
     "react-router-dom": "^4.0.0",
-    "react-scripts": "0.9.5"
+    "react-scripts": "0.9.5",
+    "react-telephone-input-simple": "^4.0.5"
   },
   "repository": {
     "type": "",

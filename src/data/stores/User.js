@@ -1,7 +1,15 @@
 import { ReduceStore } from 'flux/utils';
-import Types from './Types';
 import dispatcher from '../dispatcher';
 import API from '../api';
+
+const Types = {
+  LOGIN: 'USER_LOGIN',
+  FETCH: 'USER_FETCH',
+  LOGOUT: 'USER_LOGOUT',
+  SIGNUP: 'USER_SIGNUP',
+  UPDATE: 'USER_UPDATE',
+  SAVE: 'USER_SAVE'
+};
 
 class UserStore extends ReduceStore {
   constructor(...args){
@@ -9,10 +17,7 @@ class UserStore extends ReduceStore {
   }
 
   getInitialState(){
-    return {
-      firstName: "Foo",
-      lastName: "Bar"
-    }
+    return {}
   }
 
   reduce(state, action) {
@@ -26,8 +31,7 @@ class UserStore extends ReduceStore {
         .then((data) => {
           dispatcher.dispatch({
             type: Types.FETCH,
-            userId: data.userId,
-            token: data.id
+            userId: data.userId
           });
         });
         return state;
@@ -42,12 +46,21 @@ class UserStore extends ReduceStore {
         });
         return state;
 
-
       case Types.LOGOUT:
         return state;
 
       case Types.UPDATE:
         return Object.assign({}, state, action.obj);
+
+      case Types.SAVE:
+        var update = Object.assign({}, state, action.obj);
+        debugger;
+        API.patch(`/api/users/${action.obj.id}`, update)
+        .then((data) => {
+
+        });
+        return update;
+
 
       default:
         return state;
@@ -80,6 +93,13 @@ class UserStore extends ReduceStore {
   update(obj){
     dispatcher.dispatch({
       type: Types.UPDATE,
+      obj
+    });
+  }
+
+  save(obj){
+    dispatcher.dispatch({
+      type: Types.SAVE,
       obj
     });
   }

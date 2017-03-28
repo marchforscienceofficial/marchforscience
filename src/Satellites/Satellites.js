@@ -4,6 +4,7 @@ import './Satellites.css';
 
 import List from './List/List.js';
 import Profile from './Profile/Profile.js';
+import Admin from './Admin/Admin.js';
 
 class Satellites extends Component {
 
@@ -19,10 +20,13 @@ class Satellites extends Component {
       return <Router>
         <div>
           <h1>Satellite Page {this.state.id}</h1>
+          <Link to={`/satellites/admin`}>Manage Satellites</Link>
 
           <main>
             <Route exact path={`${this.state.path}/`} component={List} />
+            <Route path={`${this.state.path}/admin`} component={Admin} />
             <Route path={`${this.state.path}/:id`} component={Profile} />
+
           </main>
         </div>
       </Router>

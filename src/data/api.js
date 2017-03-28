@@ -54,6 +54,29 @@ const API = {
         }
         return data;
       });
+  },
+
+
+  patch(url, data={}){
+    url += `${!!~url.indexOf('?') ? '&' : '?'}access_token=${ACCESS_TOKEN}`;
+    return window.fetch(url, {
+      method: 'PATCH',
+      body: JSON.stringify(data),
+      headers: new Headers({
+        'Content-Type': 'application/json'
+      })
+    })
+      .then(function(resp){
+
+        if (resp.status !== 200) {
+          // alert("Oops! Something went wrong. Please refresh the page and try again.");
+        }
+
+        return resp.json();
+      })
+      .then(function(data){
+        return data;
+      });
   }
 };
 

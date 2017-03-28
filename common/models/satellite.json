@@ -74,14 +74,14 @@
   },
   "acls": [
     {
-      "accessType": "EXECUTE",
+      "accessType": "WRITE",
       "principalType": "ROLE",
       "principalId": "$everyone",
       "permission": "DENY",
       "property": "findById"
     },
     {
-      "accessType": "EXECUTE",
+      "accessType": "WRITE",
       "principalType": "ROLE",
       "principalId": "SatelliteMember",
       "permission": "ALLOW",

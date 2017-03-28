@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Login.css';
-import Store from '../../data/user/Store.js';
+import Store from '../../data/stores/User.js';
 
 class Login extends Component {
 

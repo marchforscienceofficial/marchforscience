@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './List.css';
+import Store from '../../data/stores/Satellites.js';
 
 const List = () => (
   <mfs-satellite-list>
