@@ -55,12 +55,15 @@
 .auth--toggle {
   background-color: transparent;
   color: get-color(blue);
+  opacity: .85;
   border: 0;
   font-size: 1.6rem;
   margin: 0 0 16px;
+  text-decoration: underline;
+  transition: opacity .3s;
   &:hover {
-    text-decoration: underline;
     cursor: pointer;
+    opacity: 1;
   }
 }
 
@@ -87,6 +90,7 @@
   width: 640px;
   display: block;
   margin: auto;
+  margin-bottom: 36px;
 }
 
 .auth--form__halfinput {

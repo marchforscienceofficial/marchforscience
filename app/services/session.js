@@ -15,7 +15,13 @@ export default Ember.Service.extend({
 
   login(email, password){
 
-    if (this.get('isLoggedIn')) { return; }
+    if (this.get('isLoggedIn')) {
+      return new Promise((resolve, reject) => {
+        reject({
+          error: 'Already logged in'
+        });
+      });
+    }
 
     return $.post('/api/users/login', {
       email: email,
