@@ -23,5 +23,5 @@ In three separate terminal tabs:
  - Start the Ember client: `npm start`
 
 The web app will be accessible at [http://localhost:4200/](http://localhost:4200/)
-The API explorer will be accessible at [http://localhost:4200/explorer](http://localhost:4000/explorer)
+The API explorer will be accessible at [http://localhost:4000/explorer](http://localhost:4000/explorer)
 The database explorer will be accessible at [http://localhost:8080/](http://localhost:8080/)
