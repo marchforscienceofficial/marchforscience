@@ -1,8 +1,10 @@
+
+{{world-map}}
+
 {{#each model.satellites as |satellite|}}
   {{satellite.id}}
-  {{satellite.city}}
-  {{satellite.state}}
-  {{satellite.country}}
-{{/each}}
 
-{{outlet}}
+  {{#link-to 'satellite.page' satellite.id}}
+    {{satellite.city}} {{satellite.state}}{{satellite.country}}
+  {{/link-to}}
+{{/each}}

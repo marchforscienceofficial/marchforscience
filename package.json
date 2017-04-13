@@ -23,6 +23,7 @@
     "loopback-component-passport": "^3.2.0",
     "loopback-connector-rethinkdb": "^1.0.2",
     "passport-facebook": "^2.1.1",
+    "pixel-tracker": "0.0.5",
     "rethinkdb": "^2.3.3",
     "serve-favicon": "^2.0.1",
     "strong-error-handler": "^1.0.1"
@@ -30,6 +31,7 @@
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^2.4.1",
+    "ember-browserify": "^1.1.13",
     "ember-cli": "2.12.1",
     "ember-cli-app-version": "^2.0.0",
     "ember-cli-babel": "^5.1.7",
@@ -52,7 +54,11 @@
     "eslint": "^2.13.1",
     "eslint-config-loopback": "^4.0.0",
     "loader.js": "^4.2.3",
-    "nsp": "^2.1.0"
+    "nsp": "^2.1.0",
+    "quill": "^1.2.3",
+    "quill-delta": "^3.5.0",
+    "quill-image-drop-module": "^1.0.3",
+    "quill-image-resize-module": "^1.0.0"
   },
   "repository": {
     "type": "",

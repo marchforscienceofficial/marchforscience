@@ -8,9 +8,12 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('index', { path: '/' });
-  this.route('satellites', function() {
+  this.route('satellites');
+  this.route('satellite', function() {
     this.route('page', { path: '/:id' }, function() {
-      this.route('admin');
+      this.route('admin', function() {
+        this.route('email');
+      });
     });
     this.route('admin');
   });

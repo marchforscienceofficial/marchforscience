@@ -30,6 +30,8 @@ export default Ember.Component.extend({
       let firstName = this.get('firstName');
       let lastName = this.get('lastName');
       let phone = this.get('phone');
+      let zip = this.get('zip');
+
       if (!email || !password || !firstName || !lastName || !phone){ return; }
       this.get('session').register({
         email,

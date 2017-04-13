@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   options: {
     theme: "snow",
+    placeholder: 'Compose your email...',
     modules: {
       toolbar: [
         [{header: [2, 3, 4, false]}],

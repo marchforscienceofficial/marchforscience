@@ -1,0 +1,60 @@
+#satellites-admin-email {
+
+  .quill-editor {
+    width: 600px;
+    margin: auto;
+    border: 1px solid get-color(gray2);
+    border-radius: 3px;
+
+    .email-header {
+      background-image: asset-url('images/logo_color.png');
+      display: block;
+      padding-top: 160px;
+      background-size: 160px;
+      background-repeat: no-repeat;
+      background-position: top center;
+      text-align: center;
+      font-size: 3.2rem;
+      color: get-color(orange);
+      border-top: 8px solid get-color(blue);
+      border-radius: 3px 3px 0 0;
+
+      h1 {
+        font-size: 3.2rem;
+        color: get-color(blue5);
+        margin: 12px 0 0;
+        font-weight: 400;
+      }
+      h2 {
+        font-size: 2.4rem;
+        color: get-color(orange);
+        margin: 0;
+        font-weight: 400;
+      }
+    }
+
+    .ql-button {
+      display: table;
+      margin: auto auto auto 0;
+      background-color: get-color(orange);
+      padding: 8px 6px;
+      color: get-color(white);
+      text-decoration: none;
+
+      &.ql-align-center {
+        margin: auto;
+      }
+
+      &.ql-align-right {
+        margin: auto 0 auto auto;
+      }
+
+      &.ql-align-justify {
+        margin: auto;
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+  }
+}
