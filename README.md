@@ -19,6 +19,8 @@ Ensure the following is installed on your system before starting.
 
 In three separate terminal tabs:
  - Start RethinkDB by running: `rethinkdb`
+    * Go to localhost:8080 in your browser
+    * Add a new database called "March for Science"
  - Start the API server: `npm run server`
  - Start the Ember client: `npm start`
 
