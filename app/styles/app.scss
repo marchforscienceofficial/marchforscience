@@ -4,14 +4,21 @@
 
 html {
   font-size: 62.5%;
+
+  @include breakpoint(mama-bear){
+    font-size: 58.5%;
+  }
+  @include breakpoint(baby-bear){
+    font-size: 52.5%;
+  }
 }
 
 body {
   background-color: get-color(white);
-  margin-top: 72px;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 1.6rem;
   background-color: get-color(gray0);
+  margin: 64px 0 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -26,6 +33,7 @@ h1, h2, h3, h4, h5, h6 {
   right: 0;
   top: 0;
   padding: 0 12px;
+  z-index: 999;
 
   &:before {
     content: "";
@@ -78,5 +86,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-@import 'satellite/admin/email';
+@import 'satellite';
+@import 'satellites';
+
 

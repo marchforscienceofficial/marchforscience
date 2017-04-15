@@ -9,7 +9,7 @@ export default Ember.Component.extend({
       event.preventDefault();
       let email = this.get('email');
       let password = this.get('password');
-      this.get('session').login(email, password).then(() => {
+      this.get('session').login(email, password).then((err, res) => {
         this.setProperties({
           open: false,
           email: '',
@@ -40,7 +40,8 @@ export default Ember.Component.extend({
         lastName,
         phone,
         zip
-      }).then(() => {
+      }).then((err, res) => {
+        if (err) return;
         this.setProperties({
           open: false,
           email: '',

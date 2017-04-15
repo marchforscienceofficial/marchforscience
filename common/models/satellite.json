@@ -21,14 +21,20 @@
       "required": true
     },
     "state": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "zip": {
+      "type": "string"
+    },
+    "country": {
       "type": "string",
       "required": true
     },
-    "country": {
+    "latitude": {
+      "type": "string",
+      "required": true
+    },
+    "longitude": {
       "type": "string",
       "required": true
     },
@@ -78,14 +84,21 @@
       "principalType": "ROLE",
       "principalId": "$everyone",
       "permission": "DENY",
-      "property": "findById"
+      "property": "*"
     },
     {
       "accessType": "WRITE",
       "principalType": "ROLE",
       "principalId": "SatelliteMember",
       "permission": "ALLOW",
-      "property": "findById"
+      "property": "updateAttributes"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "SuperAdmin",
+      "permission": "ALLOW",
+      "property": "*"
     }
   ],
   "methods": {}

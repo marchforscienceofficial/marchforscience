@@ -1,10 +1,20 @@
 
-{{world-map}}
+{{world-map satellites=model.satellites}}
 
-{{#each model.satellites as |satellite|}}
-  {{satellite.id}}
+<section id="satellites-page" class="u-grid-container">
 
-  {{#link-to 'satellite.page' satellite.id}}
-    {{satellite.city}} {{satellite.state}}{{satellite.country}}
-  {{/link-to}}
-{{/each}}
+  <h1 class="u-text-center u-text-orange">{{t 'satellites.search_primary_cta' count=satelliteCount}}</h1>
+  <h2 class="u-text-center u-text-blue">{{t 'satellites.search_secondary_cta'}}</h2>
+
+  <div class="satellite-typeahead u-grid-12 u-grid-center">
+    {{aupac-typeahead
+        modelClass='satellite'
+        source=satelliteQuery
+        limit='999'
+        transformSelection=transformSelection
+        placeholder=(t 'satellites.typeahead_search')
+        action=(action 'selectSatelliteTypeahead')
+    }}
+  </div>
+
+</section>

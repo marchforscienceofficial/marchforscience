@@ -1,0 +1,84 @@
+.satellite-profile {
+  .satellite-profile__header {
+    width: 100%;
+    display: block;
+    min-height: 380px;
+    box-sizing: border-box;
+    padding-top: 24px;
+    position: relative;
+  }
+
+  .satellite-profile__header--logo {
+    width: 120px;
+    height: 120px;
+    background-image: asset-url('images/logo_color_inverse.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-bottom: 12px;
+  }
+
+  .satellite-profile__header--background {
+    filter: sepia(100) contrast(.8) brightness(0.25) saturate(2.5) hue-rotate(-205deg);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    background-color: get-color(gray1);
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+
+  .satellite-profile__header--button {
+    margin-top: 24px;
+  }
+
+  .satellite-profile__section {
+    @include clearfix();
+    margin-bottom: 32px;
+    min-height: 240px;
+  }
+
+  .satellite-profile__section--gray {
+    @include clearfix();
+    min-height: 240px;
+    position: relative;
+    padding: 32px 0;
+    margin-bottom: 32px;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50vw);
+      width: 100vw;
+      z-index: -1;
+      background-color: get-color(gray1);
+      height: 100%;
+    }
+  }
+
+  .satellite-profile__section--orange {
+    @include clearfix();
+    min-height: 240px;
+    overflow: hidden;
+    position: relative;
+    padding: 32px 0;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50vw);
+      width: 100vw;
+      z-index: -1;
+      background-color: get-color(orange);
+      height: 100%;
+    }
+  }
+
+
+}

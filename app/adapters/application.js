@@ -7,6 +7,7 @@ export default DS.JSONAPIAdapter.extend({
   headers: Ember.computed('session.accessToken', function() {
     return {
       'Accept': '*/*',
+      'Content-Type': 'application/json',
       'Authorization': this.get('session.accessToken')
     };
   })

@@ -1,0 +1,51 @@
+.ivy-tabs-tabpanel {
+  display: none;
+}
+
+.ivy-tabs-tabpanel.active {
+  display: block;
+}
+
+.ivy-tabs-tablist {
+  display: table;
+  width: 100%;
+  margin-bottom: 32px;
+  table-layout: fixed;
+}
+
+.ivy-tabs-tablist ul{
+  display: table-row;
+}
+
+.ivy-tabs-tablist li{
+  display: table-cell;
+  text-align: center;
+}
+
+.ivy-tabs-tablist li a {
+  display: block;
+  height: 62px;
+  line-height: 62px;
+  text-decoration: none;
+  width: calc(100% - 12px);
+  margin: 0 6px;
+  box-sizing: border-box;
+  border-bottom: 2px solid get-color(gray2);
+  transition: border-color .3s, color .3s;
+  color: get-color(blue5);
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 1px;
+
+  &:hover, &:active, &.active, &:focus  {
+    border-bottom-color: get-color(orange);
+    color: get-color(orange);
+    outline: none;
+  }
+
+  a {
+    width: 100%;
+    margin: 0;
+  }
+
+}

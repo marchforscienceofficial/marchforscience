@@ -102,15 +102,13 @@ function middleware (req, res, next) {
     cache:      qs.parse(req.headers['cache-control']) || {},
     referer:    req.headers.referer || req.headers.referrer || 'direct',
     params:     req.params || {},
+    query:      req.query || {},
     decay:      req.query.decay || +new Date() + (1000 * 60 * 5),
     language:   _getLanguage(req.headers['accept-language']),
     domain:     url.parse(_fixHref(req.headers.host)).hostname,
     geo:        { ip: _getRemoteAddress(req) },
     useragent:  _getAgent(req.headers['user-agent'], 2)
   };
-
-  // Mix in query values
-  Object.assign(response, req.query);
 
   // Pass to all callbacks
   fns.forEach((fn) => { fn(null, response) });

@@ -11,6 +11,9 @@
       "type": "string",
       "required": true
     },
+    "middleName": {
+      "type": "string"
+    },
     "lastName": {
       "type": "string",
       "required": true
@@ -20,6 +23,9 @@
       "required": true
     },
     "photo": {
+      "type": "string"
+    },
+    "role": {
       "type": "string"
     }
   },

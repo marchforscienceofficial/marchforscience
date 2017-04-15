@@ -1,0 +1,75 @@
+.u-text-center {
+  text-align: center;
+}
+
+.u-text-bold {
+  font-weight: 800;
+}
+
+.u-text-capital {
+  text-transform: uppercase;
+}
+
+.u-text-normal {
+  font-weight: 400;
+}
+
+.u-text-light {
+  font-weight: 200;
+}
+
+.u-text-orange {
+  color: get-color(orange);
+}
+
+.u-text-blue {
+  color: get-color(blue5);
+}
+
+.u-text-teal {
+  color: get-color(teal4);
+}
+
+.u-text-black {
+  color: get-color(black);
+}
+
+.u-text-white {
+  color: get-color(white);
+}
+
+.u-text-h1, h1 {
+  font-size: 4.0rem;
+  font-weight: 500;
+  margin: 0 0 12px;
+}
+
+.u-text-h2, h2 {
+  font-size: 3.2rem;
+  font-weight: 500;
+  margin: 0 0 12px;
+}
+
+.u-text-h3, h3 {
+  font-size: 2.8rem;
+  font-weight: 500;
+  margin: 0 0 12px;
+}
+
+.u-text-h4, h4 {
+  font-size: 2.4rem;
+  font-weight: 200;
+  margin: 0 0 12px;
+}
+
+.u-text-h5, h5 {
+  font-size: 2.0rem;
+  font-weight: 200;
+  margin: 0 0 8px;
+}
+
+.u-text-h6, h6 {
+  font-size: 1.6rem;
+  font-weight: 200;
+  margin: 0 0 8px;
+}

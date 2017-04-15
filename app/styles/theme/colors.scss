@@ -4,10 +4,13 @@ $COLORS: (
   blue:   #002238,
   blue5:   rgb(0, 80, 130),
   teal:   #00c9c4,
+  teal5:   #00c9c4,
+  teal4:   rgba(50,189,188,1),
   orange: #e8674d,
   gray0: #f9f9fa,
   gray1: #eeeeee,
-  gray2: #cccccc
+  gray2: #cccccc,
+  gray3: #aaaaaa
 );
 
 @function get-color($color, $opacity: 1){

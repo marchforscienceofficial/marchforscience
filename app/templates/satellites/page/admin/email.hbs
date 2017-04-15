@@ -1,0 +1,8 @@
+<section id="satellites-admin-email" class="u-grid-container">
+  {{outlet}}
+
+  <section class="quill-editor">
+    {{quill-editor value=value options=model.options textChange=(route-action "updateText")}}
+  </section>
+
+</section>

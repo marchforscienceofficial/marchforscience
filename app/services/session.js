@@ -10,7 +10,10 @@ export default Ember.Service.extend({
     this.set('accessToken', (document.cookie.match(/session=([^;]+)/) || [])[1]);
     this.set('id', (document.cookie.match(/uid=([^;]+)/) || [])[1]);
     let id = this.get('id');
-    if (id){ this.set('user', this.get('store').findRecord('user', id)); }
+    if (!id) return;
+    return this.get('store').findRecord('user', id).then((data) => {
+      this.set('user', data);
+    });
   },
 
   login(email, password){
@@ -39,6 +42,7 @@ export default Ember.Service.extend({
       return response;
     }, (err) => {
       Ember.Logger.error(err);
+      throw new Error('Error logging in', err);
     })
 
   },
@@ -62,10 +66,11 @@ export default Ember.Service.extend({
       attributes: obj
     }})
 
-    .then(() => {
+    .then((response) => {
       return this.login(obj.email, obj.password);
     }, (err) => {
       Ember.Logger.error(err);
+      throw new Error('Error registering in', err);
     })
 
   },
