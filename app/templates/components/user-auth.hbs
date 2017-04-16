@@ -12,7 +12,7 @@
     <img class="auth--logo" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="March for Science Logo"/>
 
     <h1 class="auth--title">{{if isLogin 'Sign In' 'Sign Up'}}</h1>
-    <button onClick={{action 'toggleAction'}} class="auth--toggle">{{if isLogin 'Wait I already have an account!' 'Sign in to an existing account'}}</button>
+    <button onClick={{action 'toggleAction'}} class="auth--toggle">{{if isLogin 'Click here to create a new account' 'Sign in to an existing account'}}</button>
 
     <form onSubmit={{action 'onSubmit'}} class="auth--form">
       {{float-input value=(mut firstName)  label='First Name' class=(concat 'auth--form__halfinput ' (if isLogin 'hidden'))}}
