@@ -6,7 +6,7 @@
     <h2 class="u-text-orange">{{model.displayName}}</h2>
 
     {{#if model.isAdmin}}
-      {{#link-to 'satellite.admin' class="satellite-profile__header--button u-button--large"}}Edit{{/link-to}}
+      {{#link-to 'satellite.admin' model.id  class="satellite-profile__header--button u-button--large"}}Edit{{/link-to}}
     {{else}}
       <button class="satellite-profile__header--button u-button--large">Subscribe</button>
     {{/if}}

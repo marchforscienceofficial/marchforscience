@@ -13,11 +13,12 @@ Router.map(function() {
     this.route('admin', function() {
       this.route('team');
       this.route('message');
+      this.route('about');
+      this.route('resources');
+      this.route('events');
     });
   });
   this.route('profile');
-  this.route('satellite.admin.index');
-  this.route('satellite.admin.team');
 });
 
 export default Router;

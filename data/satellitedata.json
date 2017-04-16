@@ -1293,7 +1293,7 @@
       "name": "foo", "zip": "12345", "city": "Tok", "state": "Alaska", "country": "US", "facebook": "", "twitter": "", "instagram": "", "website": "", "email": "nicolewells.ak@gmail.com", "latitude": "63.3366667", "longitude": "-142.9855556"
   },
   {
-      "name": "foo", "zip": "12345", "city": "Tokyo", "state": "", "country": "Japan", "facebook": "https://www.facebook.com/groups/marchforsciencetokyo/", "twitter": "https://twitter.com/SciMarchTokyo", "instagram": "", "website": "", "email": "", "latitude": "35.6894875", "longitude": "139.6917064"
+      "name": "foo", "zip": "12345", "city": "Tokyo", "state": "", "country": "JP", "facebook": "https://www.facebook.com/groups/marchforsciencetokyo/", "twitter": "https://twitter.com/SciMarchTokyo", "instagram": "", "website": "", "email": "", "latitude": "35.6894875", "longitude": "139.6917064"
   },
   {
       "name": "foo", "zip": "12345", "city": "Toledo", "state": "Ohio", "country": "US", "facebook": "https://www.facebook.com/sciencemarchtoledo/", "twitter": "https://twitter.com/March4SciToledo", "instagram": "", "website": "https://www.sciencemarchtoledo.com/", "email": "ekurfis@gmail.com", "latitude": "39.8064486", "longitude": "-83.886874"
@@ -1320,7 +1320,7 @@
       "name": "foo", "zip": "12345", "city": "Trondheim", "state": "", "country": "Norway", "facebook": "https://www.facebook.com/marchforsciencenorway/", "twitter": "https://twitter.com/SciMarchNorway", "instagram": "https://www.instagram.com/marchforsciencenorge", "website": "http://marchforsciencenorway.com/", "email": "trondheimmarchforscience@gmail.com", "latitude": "63.4305149", "longitude": "10.3950528"
   },
   {
-      "name": "foo", "zip": "12345", "city": "Tsukuba", "state": "", "country": "Japan", "facebook": "https://www.facebook.com/groups/marchforsciencetsukuba/", "twitter": "", "instagram": "", "website": "", "email": "", "latitude": "36.0834857", "longitude": "140.0766423"
+      "name": "foo", "zip": "12345", "city": "Tsukuba", "state": "", "country": "JP", "facebook": "https://www.facebook.com/groups/marchforsciencetsukuba/", "twitter": "", "instagram": "", "website": "", "email": "", "latitude": "36.0834857", "longitude": "140.0766423"
   },
   {
       "name": "foo", "zip": "12345", "city": "Tucson", "state": "Arizona", "country": "US", "facebook": "https://www.facebook.com/ScienceMarchTUCSON/", "twitter": "https://twitter.com/ScienceMarchTUC", "instagram": "", "website": "", "email": "", "latitude": "32.2217429", "longitude": "-110.926479"
@@ -1524,7 +1524,7 @@
       "name": "foo", "zip": "12345", "city": "Umeå", "state": "Västerbotten", "country": "Sweden", "facebook": "https://www.facebook.com/MarchForSciUmea/", "twitter": "", "instagram": "", "website": "http://www.marchforscience.se", "email": "annika.mossing@slu.se", "latitude": "63.8258471", "longitude": "20.2630354"
   },
   {
-      "name": "foo", "zip": "12345", "city": "Tsukuba", "state": "Ibaraki", "country": "Japan", "facebook": "https://www.facebook.com/groups/marchforsciencetsukuba/", "twitter": "https://twitter.com/SciMarchTokyo", "instagram": "", "website": "", "email": "okubocheryl@gmail.com", "latitude": "36.0834857", "longitude": "140.0766423"
+      "name": "foo", "zip": "12345", "city": "Tsukuba", "state": "Ibaraki", "country": "JP", "facebook": "https://www.facebook.com/groups/marchforsciencetsukuba/", "twitter": "https://twitter.com/SciMarchTokyo", "instagram": "", "website": "", "email": "okubocheryl@gmail.com", "latitude": "36.0834857", "longitude": "140.0766423"
   },
   {
       "name": "foo", "zip": "12345", "city": "Bogotá", "state": "Cundinamarca", "country": "Colombia", "facebook": "https://www.facebook.com/CienciasPlanetariasUN/", "twitter": "", "instagram": "", "website": "http://www.cienciasplanetarias.org/", "email": "mtceferinor@unal.edu.co", "latitude": "4.7109886", "longitude": "-74.072092"

@@ -1,6 +1,6 @@
 import { moduleFor, test } from 'ember-qunit';
 
-moduleFor('route:satellite.admin.team', 'Unit | Route | satellite.admin.team', {
+moduleFor('route:satellite/admin/resources', 'Unit | Route | satellite/admin/resources', {
   // Specify the other units that are required for this test.
   // needs: ['controller:foo']
 });
