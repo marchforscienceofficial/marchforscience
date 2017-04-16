@@ -19,8 +19,8 @@ module.exports = function(server) {
       if (err) return cb(err);
       server.models.satellite.create(data, function(err, users) {
         if (err) return cb(err);
-      })
-    }
+      });
+    });
   }
 
 };
