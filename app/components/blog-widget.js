@@ -22,9 +22,10 @@ function formatBlogData(host, response) {
   switch(host) {
     case "medium":
       var responseWierdness =  '])}while(1);</x>';
-      var parsedResponse = response.slice(responseWierdness.length);
-      console.log("medium!");
-      return parsedResponse;
+      var parsedResponse = JSON.parse(response.slice(responseWierdness.length));
+      var posts = parsedResponse.payload.references.Post;
+      console.log('posts loaded');
+      return posts;
     case "square":
       console.log("square!");
       return response;
