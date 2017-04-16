@@ -1,4 +1,5 @@
 'use strict';
+require('dotenv').config();
 
 var loopback      = require('loopback');
 var boot          = require('loopback-boot');
@@ -6,7 +7,6 @@ var bodyParser    = require('body-parser');
 var cookieParser  = require('cookie-parser');
 var session       = require('express-session');
 var flash         = require('express-flash');
-
 
 var app = module.exports = loopback();
 
