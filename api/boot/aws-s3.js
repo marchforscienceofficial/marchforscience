@@ -7,7 +7,7 @@ var s3Options = {
  region: process.env.S3_REGION,
  bucket: process.env.S3_BUCKET
 };
-
+console.log(s3Options)
 const aws = require('aws-sdk');
 
 aws.config.update(s3Options);
@@ -19,11 +19,11 @@ function signedUrl(fileName, fileType) {
    const params = {
      Bucket: bucket,
      Key: fileName,
-     Expires: Math.round((Date.now() + (1000 * 60)) / 1000),
+     Expires: 60,
      ContentType: fileType,
      ACL: 'public-read'
    };
-
+   console.log(params)
    client.getSignedUrl('putObject', params, function(err, data){
      if (err) {
        console.error('Error fetching s3 token', err);
