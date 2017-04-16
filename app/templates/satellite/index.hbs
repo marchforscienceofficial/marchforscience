@@ -1,3 +1,73 @@
-{{outlet}}
+{{#ivy-tabs selection=selection as |tabs|}}
+  {{#tabs.tablist as |tablist|}}
+    <ul role="presentation">
+      <li role="presentation">
+        {{#tablist.tab "goals" on-select=(action (mut selection))}}
+          {{scroll-to href='#about' label='About' offset=-64}}
+        {{/tablist.tab}}
+      </li>
 
-<div id="chartdiv"></div>
+      <li role="presentation">
+        {{#tablist.tab "team" on-select=(action (mut selection))}}
+          {{scroll-to href='#team' label='Team' offset=-64}}
+        {{/tablist.tab}}
+      </li>
+
+      <li role="presentation">
+        {{#tablist.tab "events" on-select=(action (mut selection))}}
+          {{scroll-to href='#events' label='Programs' offset=-64}}
+        {{/tablist.tab}}
+      </li>
+
+      <li role="presentation">
+        {{#tablist.tab "blog" on-select=(action (mut selection))}}
+          {{scroll-to href='#resources' label='Resources' offset=-64}}
+        {{/tablist.tab}}
+      </li>
+
+      {{#if session.user.isAdmin}}
+        <li role="presentation">
+          {{#tablist.tab "admin" on-select=(action (mut selection))}}Admin{{/tablist.tab}}
+        </li>
+      {{/if}}
+    </ul>
+  {{/tabs.tablist}}
+
+  <section class="satellite-profile__section" id="about">
+    <div class="u-grid-16">
+      <h3>Mission</h3>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+      <p>Why do we use it?
+      It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+    </div>
+
+    <div class="u-grid-8 u-grid-last">
+      <button class="u-button--large u-grid-center">Donate</button>
+    </div>
+
+    <div class="u-grid-12">
+      {{blog-widget}}
+    </div>
+
+    <div class="u-grid-12 u-grid-last">
+      <h3>Twitter</h3>
+      <a class="twitter-timeline" data-height="420" data-theme="light" href="https://twitter.com/TwitterDev">Tweets by TwitterDev</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+
+  </section>
+
+  <section class="satellite-profile__section--gray" id="team">
+    <h3>Team</h3>
+  </section>
+
+  <section class="satellite-profile__section" id="events">
+    <h3>Programs</h3>
+
+  </section>
+
+  <section class="satellite-profile__section" id="resources">
+    <h3>Local Resources</h3>
+  </section>
+
+{{/ivy-tabs}}

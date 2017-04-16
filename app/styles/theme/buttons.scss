@@ -14,6 +14,8 @@
   color: white;
   transition: background-color .3s, color .3s;
   margin-bottom: 12px;
+  display: inline-block;
+  text-decoration: none;
 
   &:hover {
     background-color: darken(get-color(orange), 4%);
@@ -40,6 +42,8 @@
   color: white;
   transition: background-color .3s, color .3s;
   margin-bottom: 12px;
+  display: inline-block;
+  text-decoration: none;
 
   &:hover {
     background-color: darken(get-color(orange), 4%);
@@ -60,5 +64,33 @@
 
   &:active {
     background-color: darken(get-color(teal4), 8%);
+  }
+}
+
+.u-button__tertiary {
+  color: get-color(orange);
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  font-size: 1.7rem;
+  font-weight: 600;
+  font-family: inherit;
+  height: 32px;
+  line-height: 32px;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  transition: color .3s;
+  margin-bottom: 12px;
+  display: inline-block;
+  text-decoration: none;
+
+  &:hover {
+    color: darken(get-color(orange), 4%);
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: darken(get-color(orange), 8%);
   }
 }

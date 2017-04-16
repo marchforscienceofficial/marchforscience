@@ -19,6 +19,10 @@ export default DS.Model.extend({
     var country = country_data.countries[this.get('country')];
     country = country ? (country = country.name) : ''
     return `${city}, ${state ? state + ', ': ''}${country}`
+  }),
+
+  isAdmin: Ember.computed(function() {
+    return true;
   })
 
 });

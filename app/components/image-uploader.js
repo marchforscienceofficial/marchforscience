@@ -9,14 +9,19 @@ export default Ember.Component.extend({
     this.uploadImage = this.uploadImage.bind(this);
   },
 
+  classNames: ['image-uploader'],
   amazonS3: service(),
+
+  url: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
 
   uploadImage(file){
     return new Promise((resolve, reject) => {
       const fileName = `${file.name}-${Date.now()}`
       const fileType = file.type;
-      this.get('amazonS3').upload(fileName, fileType, file.data).then((url) => {
+      this.get('amazonS3').upload(fileName, fileType, file).then((url) => {
         this.set('url', url);
+        var onUpload = this.get('onUpload');
+        onUpload && onUpload(url);
       });
     });
   },

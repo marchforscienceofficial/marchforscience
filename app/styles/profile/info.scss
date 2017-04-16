@@ -1,0 +1,22 @@
+#user-profile__container {
+  padding-top: 32px;
+
+  .user-profile__user-image {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    float: left;
+  }
+
+  .user-profile__user-name {
+    line-height: 90px;
+    padding-left: 12px;
+    float: left;
+  }
+
+  .user-profile__log-out {
+    margin: 37px 0 0 12px;
+    float: left;
+  }
+
+}

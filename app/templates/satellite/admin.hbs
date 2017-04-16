@@ -1,1 +1,37 @@
-{{outlet}}
+{{#ivy-tabs selection=selection as |tabs|}}
+
+  {{#tabs.tablist as |tablist|}}
+
+    <ul role="presentation">
+
+      <li role="presentation">
+        {{#tablist.tab "goals" on-select=(route-action 'routeTab' 'satellite.admin.about')}}
+          Admin
+        {{/tablist.tab}}
+      </li>
+
+      <li role="presentation">
+        {{#tablist.tab "team" on-select=(route-action 'routeTab' 'satellite.admin.team')}}
+          Team
+        {{/tablist.tab}}
+      </li>
+
+      <li role="presentation">
+        {{#tablist.tab "events" on-select=(route-action 'routeTab' 'satellite.admin.events')}}
+          Programs
+        {{/tablist.tab}}
+      </li>
+
+      <li role="presentation">
+        {{#tablist.tab "blog" on-select=(route-action 'routeTab' 'satellite.admin.resources')}}
+          Resources
+        {{/tablist.tab}}
+      </li>
+
+    </ul>
+
+  {{/tabs.tablist}}
+
+  {{outlet}}
+
+{{/ivy-tabs}}

@@ -19,6 +19,10 @@ export default Ember.Route.extend({
         obj.setProperties(this.get('session.user'));
         obj.save();
       });
+    },
+
+    onProfileImageUpload(url){
+      this.set('session.user.image', url)
     }
   },
 
