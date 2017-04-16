@@ -18,12 +18,24 @@ function ajax (url, options) {
   });
 }
 
+function orderPostsByTime(posts) {
+  const postsByTime = [];
+
+  for (let postId in posts) {
+    postsByTime.push(posts[postId]);
+  }
+  postsByTime.sort(function(a, b) {
+    return b.firstPublishedAt - a.firstPublishedAt;
+  });
+  return postsByTime.splice(0,3)
+}
+
 function formatBlogData(host, response) {
   switch(host) {
     case "medium":
       var responseWierdness =  '])}while(1);</x>';
       var parsedResponse = JSON.parse(response.slice(responseWierdness.length));
-      var posts = parsedResponse.payload.references.Post;
+      var posts = orderPostsByTime(parsedResponse.payload.references.Post);
       console.log('posts loaded');
       return posts;
     case "square":

@@ -2,14 +2,13 @@
   <h3>Blog</h3>
     {{log recentBlogPosts}}
     <ul>
-      {{#each-in recentBlogPosts as |postId post|}}
+      {{#each recentBlogPosts as |post|}}
         <li>
           <h4>{{post.title}}</h4>
-          <p>14/04/2017</p>
-          <p>NAME</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, dicta excepturi illo ipsa minima nam natus quas quo sunt ullam veniam vero? Delectus error ex molestias, optio suscipit unde voluptates.</p>
+          <p>{{post.firstPublishedAt}}</p>
+          <p>{{post.content.subtitle}}</p>
         </li>
         {{log post}}
-      {{/each-in}}
+      {{/each}}
     </ul>
 </section>
