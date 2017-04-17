@@ -1,4 +1,15 @@
 import Ember from 'ember';
+import country_data from 'npm:country-data';
+
+const { get, set } = Ember;
+
+function displayName(city='', state='', country='') {
+  var city = city;
+  var state = state;
+  var country = country_data.countries[country];
+  country = country ? (country = country.name) : ''
+  return `${city}, ${state ? state + ', ': ''}${country}`
+}
 
 export default Ember.Controller.extend({
 
@@ -9,13 +20,14 @@ export default Ember.Controller.extend({
   satelliteQuery(query, syncResults) {
     const regex = new RegExp(`.*${query}.*`, 'i');
     var filtered = this.get('model.satellites').filter((item) => {
-      return regex.test(item.get('displayName'));
+      item.displayName = displayName(item.city, item.state, item.country);
+      return regex.test(item.displayName);
     });
     syncResults(filtered);
   },
 
   transformSelection(selection){
-    return (selection && selection.get) ? selection.get('displayName') : '';
+    return (selection) ? get(selection, 'displayName') : '';
   },
 
   satelliteCount: Ember.computed('model.satellites', function(){
@@ -24,7 +36,7 @@ export default Ember.Controller.extend({
 
   actions: {
     selectSatelliteTypeahead(data){
-      if (data) this.transitionToRoute('satellite', data.get('id'));
+      if (data) this.transitionToRoute('satellite', get(data, 'id'));
     }
   }
 

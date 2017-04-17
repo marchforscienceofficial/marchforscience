@@ -6,6 +6,9 @@ module.exports = function(environment) {
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
+    'ember-cli-notifications': {
+      includeFontAwesome: true
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -31,6 +34,7 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
+    ENV.S3_URL = 'https://s3-us-west-1.amazonaws.com/dev.marchforscience';
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -50,6 +54,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+    ENV.S3_URL = 'https://s3-us-west-1.amazonaws.com/prod.marchforscience';
 
   }
 

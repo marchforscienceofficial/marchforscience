@@ -9,12 +9,11 @@ export default DS.Model.extend({
   lastName: DS.attr(),
   email: DS.attr(),
   phone: DS.attr(),
-  image: DS.attr('string'),
+  image: DS.attr('string', { defaultValue: defaultImage }),
   role: DS.attr(),
+  bio: DS.attr('string'),
 
-  photo: Ember.computed('image', function(){
-    return this.get('image') || defaultImage;
-  }),
+  satellites: DS.hasMany('satellite'),
 
   isAdmin: Ember.computed('role', function(){
     return this.get('role') === 'admin';

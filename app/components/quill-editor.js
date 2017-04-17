@@ -2,90 +2,63 @@ import Ember from 'ember';
 import Quill from 'npm:quill';
 import ImageResize from '../scripts/quill-image-resize-module';
 import ImageDrop from '../scripts/quill-image-drop-module';
-import ButtonDrop from '../scripts/quill-button-drop-module';
 
 Quill.register('modules/imageResize', ImageResize);
 Quill.register('modules/imageDrop', ImageDrop);
-Quill.register('modules/buttonDrop', ButtonDrop);
-
-
-let Block = Quill.import('blots/block');
-
-var callback = function callback(){
-  console.log('woo!', arguments)
-}
-
-class ButtonBlot extends Block {
-  static create(value) {
-    let node = super.create();
-    console.log(arguments);
-    debugger;
-    node.innerHTML = 'Click me';
-    node.setAttribute('href', value);
-    node.setAttribute('contenteditable', 'true');
-    node.addEventListener('focus', callback);
-    node.classList.add('ql-button');
-    return node;
-  }
-
-  replace(){
-    debugger;
-    this.domNode.innerHTML = '';
-    super.replace.apply(this, arguments);
-  }
-
-  static formats(node) {
-    // We will only be called with a node already
-    // determined to be a Link blot, so we do
-    // not need to check ourselves
-    return node.getAttribute('href');
-  }
-}
-ButtonBlot.blotName = 'button';
-ButtonBlot.tagName = 'a';
-
-Quill.register(ButtonBlot);
 
 export default Ember.Component.extend({
   tagName: 'main',
-  actions: {
-    updateText(editor){
-      console.log(editor);
-    },
-    onButtonDrag(e){
-      console.log(e);
-      e.dataTransfer.setData("text", 'button');
-    }
+  bindAttributes: ['class'],
+  readonly: false,
+  seamless: false,
+
+  init(){
+    this._super(...arguments);
+    this.onChangeCallback = this.onChangeCallback.bind(this);
   },
+
+  onChangeCallback() {
+    var onChange = this.get('onChange');
+    onChange(this.quill);
+  },
+
   didRender(){
-    console.log(this);
-    new Quill('#quill-editor', {
-      theme: "bubble",
-      handlers: {
-        image(){
-          debugger;
-        }
-      },
-      placeholder: "Draft your email...",
+
+    // Render only once. ops will come in again.
+    if (this._hasRendered) return;
+    this._hasRendered = true;
+
+    this.quill = new Quill('#quill-editor', {
+      theme: this.get('seamless') ? "bubble" : "snow",
+      handlers: {},
+      readOnly: this.get('readonly') || this.get('seamless'),
+      placeholder: "Draft your local mission statement...",
       modules: {
         imageResize: true,
         imageDrop: true,
-        buttonDrop: true,
 
         toolbar: [
           [{header: [1, 2, 3, false]}],
-          [{ 'size': ['small', false, 'large'] }],  // custom dropdown
+          // [{ 'size': ['small', false, 'large'] }],  // custom dropdown
           ["bold", "italic", "underline", "strike"],
           ['blockquote', 'code-block'],
           [{"color": []}, { 'background': [] }],
+          [{"align": []}],
           [{"list": "ordered"}, {"list": "bullet"}],
           [{"indent": "-1"}, {"indent": "+1"}],
           [{ 'script': 'sub'}, { 'script': 'super' }],
-          [{"align": []}],
           ["link", "image"],
           ["clean"]
         ]
       }
     });
+
+    this.quill.updateContents(this.get('ops'));
+    this.quill.on('text-change', this.onChangeCallback);
   },
+
+  willDestroyElement(){
+    this.quill.off('text-change', this.onChangeCallback);
+    delete this.quill;
+  }
 });

@@ -5,7 +5,7 @@ var rethinkdb = require('rethinkdb');
 var data = require('../../data/satellitedata');
 
 module.exports = function(server) {
-
+  var Satellite = server.models.satellite;
   function cb(err) {
     console.log(err);
   }
@@ -15,11 +15,19 @@ module.exports = function(server) {
   } catch(e){};
 
   if (server.models.satellite) {
-    server.models.satellite.destroyAll(function(err, info){
-      if (err) return cb(err);
-      server.models.satellite.create(data, function(err, users) {
-        if (err) return cb(err);
-      });
+    Satellite.count({}, (err, count) => {
+      if (err) {
+        console.log(err);
+        return cb(null, false);
+      }
+      if (count === 0) {
+        Satellite.destroyAll(function(err, info){
+          if (err) return cb(err);
+          Satellite.create(data, function(err, users) {
+            if (err) return cb(err);
+          });
+        });
+      }
     });
   }
 

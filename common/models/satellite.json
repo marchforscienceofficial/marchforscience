@@ -71,11 +71,18 @@
       "model": "user",
       "foreignKey": "owner"
     },
-    "roles": {
+    "members": {
       "type": "hasMany",
       "model": "user",
-      "foreignKey": "",
-      "through": "SatelliteMapping"
+      "foreignKey": "satid",
+      "through": "SatelliteMembership"
+    },
+    "admins": {
+      "type": "hasMany",
+      "model": "user",
+      "foreignKey": "satelliteId",
+      "through": "SatelliteAdmins",
+      "keyThrough": "userId"
     }
   },
   "acls": [
@@ -89,9 +96,9 @@
     {
       "accessType": "WRITE",
       "principalType": "ROLE",
-      "principalId": "SatelliteMember",
+      "principalId": "SatelliteAdmin",
       "permission": "ALLOW",
-      "property": "updateAttributes"
+      "property": "*"
     },
     {
       "accessType": "WRITE",

@@ -27,15 +27,19 @@
     },
     "role": {
       "type": "string"
+    },
+    "bio": {
+      "type": "string"
     }
   },
   "validations": [],
   "relations": {
-    "roles": {
+    "satellites": {
       "type": "hasMany",
-      "foreignKey": "role_id",
-      "model": "MarchRoles",
-      "through": "RoleMapping"
+      "model": "satellite",
+      "foreignKey": "userId",
+      "through": "SatelliteAdmins",
+      "keyThrough": "satelliteId"
     }
   },
   "acls": [],

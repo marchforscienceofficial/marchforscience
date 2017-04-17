@@ -1,7 +1,7 @@
 <section id="user-profile__container" class="u-grid-container">
 
   {{#image-uploader onUpload=(route-action 'onProfileImageUpload') as | url |}}
-    <img src={{session.user.photo}} class="user-profile__user-image">
+    <img src={{session.user.image}} class="user-profile__user-image">
   {{/image-uploader}}
 
   <h1 class="user-profile__user-name">{{session.user.firstName}} {{session.user.lastName}}</h1>
@@ -16,11 +16,9 @@
         <li role="presentation">
           {{#tablist.tab "subs" on-select=(action (mut selection))}}Subscriptions{{/tablist.tab}}
         </li>
-        {{#if session.user.isAdmin}}
-          <li role="presentation">
-            {{#tablist.tab "satellites" on-select=(action (mut selection))}}Satellites{{/tablist.tab}}
-          </li>
-        {{/if}}
+        <li role="presentation">
+          {{#tablist.tab "satellites" on-select=(action (mut selection))}}Satellites{{/tablist.tab}}
+        </li>
       </ul>
     {{/tabs.tablist}}
 
@@ -41,6 +39,15 @@
 
     {{#tabs.tabpanel "satellites"}}
       <h2>Satellites</h2>
+      <ul>
+        {{log session.user.satellites}}
+      {{#each session.user.satellites as | satellite |}}
+        <li>
+          {{satellite.id}}
+        </li>
+      {{/each}}
+    </ul>
+
     {{/tabs.tabpanel}}
   {{/ivy-tabs}}
 

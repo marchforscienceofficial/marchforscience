@@ -10,13 +10,14 @@ module.exports = function(app) {
       });
     }
 
-    // if the target model is not satellite
+    // if the target model is not a satellite, disallow
     if (context.modelName !== 'satellite') {
       return reject();
     }
 
     // do not allow anonymous users
     var userId = context.accessToken.userId;
+
     if (!userId) {
       return reject();
     }
@@ -26,12 +27,9 @@ module.exports = function(app) {
 
     Members.count({
       role: 'admin',
-      principalId: userId,
+      id: userId,
     }, function(err, count) {
-      if (err) {
-        console.log(err);
-        return cb(null, false);
-      }
+      if (err) { return cb(null, false);}
 
       cb(null, count > 0); // true = is a team member
     });

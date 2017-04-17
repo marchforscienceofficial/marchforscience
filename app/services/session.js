@@ -1,19 +1,27 @@
 import Ember from 'ember';
 import $ from 'jquery';
 
-export default Ember.Service.extend({
 
-  store: Ember.inject.service('store'),
+export default Ember.Service.extend({
 
   init(){
     this._super(...arguments);
     this.set('accessToken', (document.cookie.match(/session=([^;]+)/) || [])[1]);
     this.set('id', (document.cookie.match(/uid=([^;]+)/) || [])[1]);
+
+    $.ajaxSetup({
+      beforeSend: (xhr) => {
+         xhr.setRequestHeader('Accept', '*/*');
+         xhr.setRequestHeader("Authorization", this.get('accessToken'));
+      }
+    });
+
     let id = this.get('id');
     if (!id) return;
-    return this.get('store').findRecord('user', id).then((data) => {
+    $.get(`/api/users/${id}`).then((data) => {
       this.set('user', data);
-    });
+    })
+
   },
 
   login(email, password){
@@ -32,13 +40,14 @@ export default Ember.Service.extend({
     })
 
     .then((response) => {
+      debugger;
       response.accessToken = response.id;
       delete response.id;
       this.set('accessToken', response.accessToken);
       this.set('id', response.userId);
       document.cookie = `session=${response.accessToken}; expires=${new Date(Date.now() + response.ttl).toGMTString()}`;
       document.cookie = `uid=${response.userId}; expires=${new Date(Date.now() + response.ttl).toGMTString()}`;
-      this.set('user', this.get('store').findRecord('user', response.userId));
+      this.set('user', $.get(`/api/users/${response.userId}`));
       return response;
     }, (err) => {
       Ember.Logger.error(err);
@@ -61,10 +70,7 @@ export default Ember.Service.extend({
 
     if (this.get('isLoggedIn')) { return; }
 
-    return $.post('/api/users', { data: {
-      type: 'users',
-      attributes: obj
-    }})
+    return $.post('/api/users', obj)
 
     .then((response) => {
       return this.login(obj.email, obj.password);

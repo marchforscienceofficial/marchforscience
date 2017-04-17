@@ -18,11 +18,22 @@ export default DS.JSONAPISerializer.extend({
       };
     }
 
+    var keys = Object.keys(payload);
+    var relationships = {};
+    keys.forEach((key) => {
+      if (Array.isArray(payload[key])){
+        debugger;
+        relationships[key] = { data: payload[key] };
+        delete payload[key];
+      }
+    });
+    debugger;
     return {
       data: {
         attributes: payload,
         id: id,
-        type: primaryModelClass.modelName
+        type: primaryModelClass.modelName,
+        relationships: relationships
       }
     };
 

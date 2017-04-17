@@ -1,21 +1,5 @@
 <section class="satellite-profile">
-  <header class="satellite-profile__header u-text-center">
-    <div class="satellite-profile__header--background" aria-hidden="true" style="background-image: url(http://ww1.hdnux.com/photos/55/61/72/12000916/7/1024x1024.jpg)"></div>
-    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="satellite-profile__header--logo">
-    <h1 class="u-text-white u-text-bold u-text-capital">March for Science</h1>
-    <h2 class="u-text-orange">{{model.displayName}}</h2>
-
-    {{#if model.isAdmin}}
-      {{#link-to 'satellite.admin' model.id  class="satellite-profile__header--button u-button--large"}}Edit{{/link-to}}
-    {{else}}
-      <button class="satellite-profile__header--button u-button--large">Subscribe</button>
-    {{/if}}
-
-  </header>
-
-  <main class="u-grid-container">
 
     {{outlet}}
 
-  </main>
 </section>

@@ -1,37 +1,76 @@
-{{#ivy-tabs selection=selection as |tabs|}}
+<header class="satellite-profile__header u-text-center">
+  <div class="satellite-profile__header--background" aria-hidden="true" style="background-image: url({{model.banner}})"></div>
 
-  {{#tabs.tablist as |tablist|}}
+  {{#image-uploader onUpload=(route-action 'onSatelliteImageUpload') as | url |}}
+    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+         class="satellite-profile__header--logo"
+         alt="Satellite March Logo"
+         style="background-image: url({{model.logo}});position: relative;z-index: 2"
+        >
+  {{/image-uploader}}
 
-    <ul role="presentation">
 
-      <li role="presentation">
-        {{#tablist.tab "goals" on-select=(route-action 'routeTab' 'satellite.admin.about')}}
-          About
-        {{/tablist.tab}}
-      </li>
+  {{#image-uploader onUpload=(route-action 'onSatelliteBannerUpload') as | url |}}
+    <div style="width: 100%; height: 100%;position:absolute;top:0;left:0;z-index:1"></div>
+  {{/image-uploader}}
 
-      <li role="presentation">
-        {{#tablist.tab "team" on-select=(route-action 'routeTab' 'satellite.admin.team')}}
-          Team
-        {{/tablist.tab}}
-      </li>
+  <h1 class="u-text-white u-text-bold u-text-capital">March for Science</h1>
+  <h2 class="u-text-orange">{{model.displayName}}</h2>
 
-      <li role="presentation">
-        {{#tablist.tab "events" on-select=(route-action 'routeTab' 'satellite.admin.events')}}
-          Programs
-        {{/tablist.tab}}
-      </li>
+  <button {{action (route-action 'saveChanges')}} class="u-button--large" style="positon: relative;z-index:3">Save Changes</button>
+  <button {{action (route-action 'cancelChanges')}} class="u-button__tertiary" style="positon: relative;z-index:3;margin-left: 24px;">Cancel</button>
 
-      <li role="presentation">
-        {{#tablist.tab "blog" on-select=(route-action 'routeTab' 'satellite.admin.resources')}}
-          Resources
-        {{/tablist.tab}}
-      </li>
+</header>
 
-    </ul>
+<main class="u-grid-container">
+  {{#ivy-tabs selection=selection as |tabs|}}
 
-  {{/tabs.tablist}}
+    {{#tabs.tablist as |tablist|}}
 
-  {{outlet}}
+      <ul role="presentation">
 
-{{/ivy-tabs}}
+        <li role="presentation">
+          {{#tablist.tab "goals" on-select=(route-action 'routeTab' 'satellite.admin.about')}}
+            About
+          {{/tablist.tab}}
+        </li>
+
+        <li role="presentation">
+          {{#tablist.tab "team" on-select=(route-action 'routeTab' 'satellite.admin.team')}}
+            Team
+          {{/tablist.tab}}
+        </li>
+
+        <li role="presentation">
+          {{#tablist.tab "events" on-select=(route-action 'routeTab' 'satellite.admin.events')}}
+            Programs
+          {{/tablist.tab}}
+        </li>
+
+        <li role="presentation">
+          {{#tablist.tab "blog" on-select=(route-action 'routeTab' 'satellite.admin.resources')}}
+            Resources
+          {{/tablist.tab}}
+        </li>
+
+      </ul>
+
+    {{/tabs.tablist}}
+
+    <section class="satellite-profile__section" id="about">
+      <div class="u-grid-16">
+        <h3>Mission</h3>
+        Foo?
+        {{#quill-editor ops=model.parsedMission onChange=(route-action "onMissionChange")}}{{/quill-editor}}
+      </div>
+
+      <div class="u-grid-8 u-grid-last">
+        <button class="u-button--large u-grid-center">Donate</button>
+      </div>
+
+    </section>
+
+    {{outlet}}
+
+  {{/ivy-tabs}}
+</main>

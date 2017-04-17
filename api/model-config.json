@@ -56,5 +56,9 @@
   "SatelliteMapping": {
     "dataSource": "rethinkdb",
     "public": false
+  },
+  "SatelliteAdmins": {
+    "dataSource": "rethinkdb",
+    "public": false
   }
 }
