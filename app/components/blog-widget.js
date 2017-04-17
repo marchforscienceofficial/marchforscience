@@ -46,12 +46,15 @@ function formatBlogData(host, response) {
       return response;
   }
 }
-
-const listOfRecentPostBlogUrl = encodeURIComponent("https://medium.com/@bryantaxs/latest?format=json");
+//TODO: this part should be editable based on admin access
+const blogUrl = 'https://medium.com/@bryantaxs/';
+const listOfRecentPostBlogUrl = encodeURIComponent(`${blogUrl}latest?format=json`);
 
 export default Ember.Component.extend({
   init() {
     this._super(...arguments);
     ajax(`/api/blog?url=${listOfRecentPostBlogUrl}`).then((res) => set(this, 'recentBlogPosts', formatBlogData('medium', res)));
   },
+  classNames: ['blog-widget'],
+  blogUrl:  blogUrl
 });

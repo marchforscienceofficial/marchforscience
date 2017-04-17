@@ -1,14 +1,9 @@
 <section>
-  <h3>Blog</h3>
-    {{log recentBlogPosts}}
     <ul>
       {{#each recentBlogPosts as |post|}}
         <li>
-          <h4>{{post.title}}</h4>
-          <p>{{post.firstPublishedAt}}</p>
-          <p>{{post.content.subtitle}}</p>
+            {{blog-post blogUrl=blogUrl post=post}}
         </li>
-        {{log post}}
       {{/each}}
     </ul>
 </section>
