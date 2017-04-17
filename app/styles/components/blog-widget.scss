@@ -1,12 +1,23 @@
 .blog-widget {
-  background-color: white;
+  padding: 12px;
+  background-color: get-color(white);
 }
 
 .blog-widget li {
   list-style: none;
+  padding: 0;
 }
 
 .blog-widget a {
   text-decoration: none;
-  color: black;
+  color: inherit;
+}
+
+.blog-widget h4 {
+  margin-bottom: 0;
+  color: get-color(orange);
+}
+
+.blog-widget .post-date {
+  color: get-color(gray3);
 }
