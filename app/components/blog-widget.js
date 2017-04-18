@@ -18,14 +18,18 @@ function ajax (url, options) {
   });
 }
 
-function orderPostsByTime(posts) {
-  const postsByTime = [];
-
-  for (let postId in posts) {
-    postsByTime.push(posts[postId]);
+function orderPostsByTime(posts, timeKey) {
+  let postsByTime = [];
+  if (Ember.isArray(posts)) {
+    postsByTime = posts.slice(0);
+  } else {
+    for (let postId in posts) {
+      postsByTime.push(posts[postId]);
+    }
   }
+
   postsByTime.sort(function(a, b) {
-    return b.firstPublishedAt - a.firstPublishedAt;
+    return b[timeKey] - a[timeKey];
   });
   return postsByTime.splice(0,3)
 }
@@ -38,42 +42,63 @@ function fakeSquareData() {
 // postId: { datePosted: "", title: "", summary: ""}
 
 function formatBlogData(host, response) {
+  let parsedResponse;
+  let posts;
+  const parsedPosts = [];
+
+  class Post {
+    constructor(title, datePosted, summary, uniqueSlug) {
+      this.title = title;
+      this.datePosted = datePosted;
+      this.summary = summary;
+      this.uniqueSlug = uniqueSlug
+    }
+  }
+
   switch(host) {
     case "medium":
       const responseWierdness =  '])}while(1);</x>';
-      const parsedResponse = JSON.parse(response.slice(responseWierdness.length));
-      const posts = orderPostsByTime(parsedResponse.payload.references.Post);
-      const parsedPosts = [];
+      parsedResponse = JSON.parse(response.slice(responseWierdness.length));
+      posts = orderPostsByTime(parsedResponse.payload.references.Post, 'firstPublishedAt');
       posts.forEach(function(post) {
-          const newPost = {};
-          newPost['datePosted'] = post.firstPublishedAt;
-          newPost['title'] = post.title;
-          newPost['summary'] = post.content.subtitle;
-          newPost['uniqueSlug'] = post.uniqueSlug;
-          console.log(newPost);
-          parsedPosts.push(newPost);
+        const mediumPost = new Post(post.title, post.firstPublishedAt, post.content.subtitle, post.uniqueSlug);
+          console.log(mediumPost);
+          parsedPosts.push(mediumPost);
       });
-      console.log('posts loaded');
-      console.log(parsedPosts);
       return parsedPosts;
     case "square":
-      console.log("square!");
-      // return response;
-      // TODO: use real response
-      return fakeSquareData();
+      console.log("these are the items!", response.items);
+      posts = orderPostsByTime(response.items, 'publishedOn');
+      posts.forEach(function(post) {
+        const squarePost = new Post(post.title, post.publishOn, post.excerpt, post.fullUrl);
+        console.log(squarePost);
+        parsedPosts.push(squarePost);
+      });
+      return parsedPosts;
     default:
       console.log("create a blog!");
       return response;
   }
 }
 //TODO: this part should be editable based on admin access
-const blogUrl = 'https://medium.com/@bryantaxs/';
+// const blogUrl = 'https://medium.com/@bryantaxs/';
+// const blogProvider = 'medium';
+
+const blogUrl = 'https://www.marchforscience.com';
+const blogProvider = 'square';
+
 const listOfRecentPostBlogUrl = encodeURIComponent(`${blogUrl}latest?format=json`);
 
 export default Ember.Component.extend({
-  init() {
-    this._super(...arguments);
-    ajax(`/api/blog?url=${listOfRecentPostBlogUrl}`).then((res) => set(this, 'recentBlogPosts', formatBlogData('medium', res)));
+  didReceiveAttrs() {
+    // TODO: real response for square, rather than hardcoded
+    if (blogProvider === "medium")
+      ajax(`/api/blog?url=${listOfRecentPostBlogUrl}`).then((res) => set(this, 'recentBlogPosts', formatBlogData(blogProvider, res)));
+    else if(blogProvider === "square") {
+      let placeholderSquareData = fakeSquareData();
+      console.log('it was square!', placeholderSquareData);
+      set(this, 'recentBlogPosts', formatBlogData(blogProvider, placeholderSquareData));
+    }
   },
   classNames: ['blog-widget'],
   blogUrl:  blogUrl
