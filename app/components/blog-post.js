@@ -5,7 +5,7 @@ export default Ember.Component.extend({
     return `${this.get('blogUrl')}${this.get('post.uniqueSlug')}`
   }),
   displayPostDate: Ember.computed('post', function() {
-    const date = new Date(this.get('post.firstPublishedAt'));
+    const date = new Date(this.get('post.datePosted'));
     return new Intl.DateTimeFormat().format(date) ;
   })
 });
