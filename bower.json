@@ -2,6 +2,7 @@
   "name": "marchforscience",
   "dependencies": {
     "corejs-typeahead": "~1.1.1",
-    "blob": "*"
+    "blob": "*",
+    "font-awesome": "~4.7.0"
   }
 }
