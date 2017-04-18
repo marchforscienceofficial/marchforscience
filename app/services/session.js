@@ -5,6 +5,7 @@ import $ from 'jquery';
 export default Ember.Service.extend({
 
   init(){
+
     this._super(...arguments);
     this.set('accessToken', (document.cookie.match(/session=([^;]+)/) || [])[1]);
     this.set('id', (document.cookie.match(/uid=([^;]+)/) || [])[1]);
@@ -16,11 +17,17 @@ export default Ember.Service.extend({
       }
     });
 
+    // If we don't have an ID saved from cookies, finish.
     let id = this.get('id');
     if (!id) return;
+
+    // Otherwise, fetch logged in user profile
     $.get(`/api/users/${id}`).then((data) => {
       this.set('user', data);
-    })
+    }, (err) => {
+      Ember.Logger.error(err);
+      throw new Error('Error logging in', err);
+    });
 
   },
 
@@ -40,19 +47,23 @@ export default Ember.Service.extend({
     })
 
     .then((response) => {
-      debugger;
       response.accessToken = response.id;
       delete response.id;
       this.set('accessToken', response.accessToken);
       this.set('id', response.userId);
       document.cookie = `session=${response.accessToken}; expires=${new Date(Date.now() + response.ttl).toGMTString()}`;
       document.cookie = `uid=${response.userId}; expires=${new Date(Date.now() + response.ttl).toGMTString()}`;
-      this.set('user', $.get(`/api/users/${response.userId}`));
-      return response;
+
+      return $.get(`/api/users/${response.userId}`).then((data) => {
+        this.set('user', data);
+      }, (e) => {
+        Ember.Logger.error('Error loading user profile', e)
+      });
+
     }, (err) => {
       Ember.Logger.error(err);
       throw new Error('Error logging in', err);
-    })
+    });
 
   },
 

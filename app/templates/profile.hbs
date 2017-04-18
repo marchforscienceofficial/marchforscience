@@ -40,7 +40,6 @@
     {{#tabs.tabpanel "satellites"}}
       <h2>Satellites</h2>
       <ul>
-        {{log session.user.satellites}}
       {{#each session.user.satellites as | satellite |}}
         <li>
           {{satellite.id}}
