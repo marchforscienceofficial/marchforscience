@@ -20,6 +20,7 @@ function ajax (url, options) {
 
 function orderPostsByTime(posts, timeKey) {
   let postsByTime = [];
+  // TODO: should I use an Ember.Enumerable here instead?
   if (Ember.isArray(posts)) {
     postsByTime = posts.slice(0);
   } else {
@@ -66,7 +67,8 @@ function formatBlogData(host, response) {
           parsedPosts.push(mediumPost);
       });
       return parsedPosts;
-    case "square":
+
+    case "squarespace":
       console.log("these are the items!", response.items);
       posts = orderPostsByTime(response.items, 'publishedOn');
       posts.forEach(function(post) {
@@ -75,28 +77,47 @@ function formatBlogData(host, response) {
         parsedPosts.push(squarePost);
       });
       return parsedPosts;
+
+    case "wordpress":
+      response.splice(0,3).forEach(function(post) {
+        const wordpressPost = new Post(post.title.rendered, post.date, post.excerpt.rendered, post.link);
+        console.log(wordpressPost);
+        parsedPosts.push(wordpressPost);
+      });
+      return parsedPosts;
     default:
-      console.log("create a blog!");
-      return response;
+      return {title: "Create a blog and display it here!"};
   }
 }
 //TODO: this part should be editable based on admin access
 // const blogUrl = 'https://medium.com/@bryantaxs/';
 // const blogProvider = 'medium';
+//
+// const blogUrl = 'https://www.marchforscience.com';
+// const blogProvider = 'squarespace';
 
-const blogUrl = 'https://www.marchforscience.com';
-const blogProvider = 'square';
+const blogUrl = 'http://www.molecularecologist.com//wp-json/wp/v2/posts';
+const blogProvider = 'wordpress';
 
 const listOfRecentPostBlogUrl = encodeURIComponent(`${blogUrl}latest?format=json`);
 
 export default Ember.Component.extend({
   didReceiveAttrs() {
-    // TODO: real response for square, rather than hardcoded
-    if (blogProvider === "medium")
-      ajax(`/api/blog?url=${listOfRecentPostBlogUrl}`).then((res) => set(this, 'recentBlogPosts', formatBlogData(blogProvider, res)));
-    else if(blogProvider === "square") {
-      let placeholderSquareData = fakeSquareData();
-      set(this, 'recentBlogPosts', formatBlogData(blogProvider, placeholderSquareData));
+    switch(blogProvider) {
+      case "medium":
+        ajax(`/api/blog?url=${listOfRecentPostBlogUrl}`)
+          .then((res) => set(this, 'recentBlogPosts', formatBlogData(blogProvider, res)));
+        break;
+
+      case "wordpress":
+        ajax(blogUrl)
+          .then((res) => set(this, 'recentBlogPosts', formatBlogData(blogProvider, res)));
+        break;
+
+      case "squarespace":
+        // TODO: real response for square, rather than hardcoded
+        let placeholderSquareData = fakeSquareData();
+        set(this, 'recentBlogPosts', formatBlogData(blogProvider, placeholderSquareData));
     }
   },
   classNames: ['blog-widget'],
