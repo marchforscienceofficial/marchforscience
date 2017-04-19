@@ -96,7 +96,6 @@ export default Ember.Component.extend({
       ajax(`/api/blog?url=${listOfRecentPostBlogUrl}`).then((res) => set(this, 'recentBlogPosts', formatBlogData(blogProvider, res)));
     else if(blogProvider === "square") {
       let placeholderSquareData = fakeSquareData();
-      console.log('it was square!', placeholderSquareData);
       set(this, 'recentBlogPosts', formatBlogData(blogProvider, placeholderSquareData));
     }
   },
