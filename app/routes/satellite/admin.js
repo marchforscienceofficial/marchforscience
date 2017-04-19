@@ -2,16 +2,16 @@ import Ember from 'ember';
 
 const { get, set } = Ember;
 
+// Keys we will send to the server
+const savedKeys = [ 'logo', 'banner', 'mission', 'storeLink', 'storeImage', 'donateLink' ];
+
 export default Ember.Route.extend({
   actions: {
     routeTab(route){
       this.transitionTo(route);
     },
-    onSatelliteImageUpload(url){
-      set(this.currentModel, 'logo', url);
-    },
-    onSatelliteBannerUpload(url){
-      set(this.currentModel, 'banner', url);
+    onImageUpload(url, key){
+      set(this.currentModel, url, key);
     },
     onMissionChange(editor) {
       set(this.currentModel, 'mission', JSON.stringify(editor.getContents().ops));
@@ -20,9 +20,8 @@ export default Ember.Route.extend({
 
       // Construct a proper data object to send from the model
       var data = {};
-      var keys = ['logo', 'banner', 'mission'];
-      keys.forEach((key) => { data[key] = get(this.currentModel, key); });
-      debugger;
+      savedKeys.forEach((key) => { data[key] = get(this.currentModel, key); });
+
       // Send data to server
       $.ajax(`/api/satellites/${get(this.currentModel, 'id')}`, {
         method: 'PATCH',

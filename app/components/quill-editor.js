@@ -34,8 +34,8 @@ export default Ember.Component.extend({
       readOnly: this.get('readonly') || this.get('seamless'),
       placeholder: "Draft your local mission statement...",
       modules: {
-        imageResize: true,
-        imageDrop: true,
+        imageResize: !this.get('seamless'),
+        imageDrop: !this.get('seamless'),
 
         toolbar: [
           [{header: [1, 2, 3, false]}],

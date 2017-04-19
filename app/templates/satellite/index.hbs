@@ -4,10 +4,20 @@
   <h1 class="u-text-white u-text-bold u-text-capital">March for Science</h1>
   <h2 class="u-text-orange">{{model.displayName}}</h2>
 
-  {{#if model.isAdmin}}
-    {{#link-to 'satellite.admin' model.id  class="satellite-profile__header--button u-button--large"}}Edit{{/link-to}}
+  {{#if isAdmin}}
+    {{#link-to 'satellite.admin' model.id  class="satellite-profile__header--button u-button--large"}}
+      <i class="fa fa-pencil" aria-hidden="true"></i>
+      Edit
+    {{/link-to}}
   {{else}}
     <button class="satellite-profile__header--button u-button--large">Subscribe</button>
+
+    {{#if session.user.isSuper}}
+      {{#link-to 'satellite.admin' model.id  class="u-button__tertiary satellite-profile__header--button"}}
+        <i class="fa fa-pencil" aria-hidden="true" style="margin-left: 32px;"></i>
+        Edit
+      {{/link-to}}
+    {{/if}}
   {{/if}}
 
 </header>
@@ -51,15 +61,19 @@
     <section class="satellite-profile__section" id="about">
       <div class="u-grid-16">
         <h3>Mission</h3>
-        {{#quill-editor ops=model.parsedMission seamless=true}}{{/quill-editor}}
+        {{#quill-editor ops=mission seamless=true}}{{/quill-editor}}
       </div>
 
       <div class="u-grid-8 u-grid-last">
-        <button class="u-button--large u-grid-center">Donate</button>
-      </div>
-
-      <div class="u-grid-12">
-        {{!-- {{blog-widget}} --}}
+        <a href="{{donateLink}}" class="u-button--large u-button-block" target="_blank">Donate to this Satellite</a>
+        <p class="u-text-center">or</p>
+        <a href={{storeLink}} target="_blank">
+          <img src={{transparent-pixel}}
+               class="satellite-profile__store-image"
+               alt="Purchase from the Satellite March Store"
+               style="background-image: url({{storeImage}});position: relative;z-index: 2"
+              >
+        </a>
       </div>
 
     <div class="u-grid-12">
@@ -76,10 +90,23 @@
 
     <section class="satellite-profile__section--gray" id="team">
       <h3>Team</h3>
-      {{log model}}
-      {{#each model.admins as | admin |}}
-        {{admin.firstName}} {{admin.lastName}}
-      {{/each}}
+      <ul class="satellite-profile__section--team">
+        {{#each model.admins as | admin |}}
+            <li class="satellite-profile__team-member u-grid-8 u-grid-last">
+              <img  src={{transparent-pixel}}
+                    alt="{{admin.firstName}} {{admin.lastName}} Profile Image"
+                    style="background-image: url({{admin.image}})">
+              <h4>{{admin.firstName}} {{admin.lastName}}</h4>
+              {{#if admin.adminroles.0.title}}<h5>{{admin.adminroles.0.title}}</h5>{{/if}}
+              <p>{{admin.bio}}</p>
+            </li>
+        {{else}}
+          <li class="satellite-profile__team-member--empty u-grid-block u-grid-last u-text-center">
+            <h4>No team members yet</h4>
+            <a href="mailto:march@marchforscience.com">Run this Satellite? Click here to claim this page</a>
+          </li>
+        {{/each}}
+      </ul>
     </section>
 
     <section class="satellite-profile__section" id="events">

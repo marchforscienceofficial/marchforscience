@@ -1,7 +1,7 @@
 <header class="satellite-profile__header u-text-center">
   <div class="satellite-profile__header--background" aria-hidden="true" style="background-image: url({{model.banner}})"></div>
 
-  {{#image-uploader onUpload=(route-action 'onSatelliteImageUpload') as | url |}}
+  {{#image-uploader onUpload=(route-action 'onImageUpload' 'logo') class="satellite-profile__image-upload" as | url |}}
     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
          class="satellite-profile__header--logo"
          alt="Satellite March Logo"
@@ -10,15 +10,15 @@
   {{/image-uploader}}
 
 
-  {{#image-uploader onUpload=(route-action 'onSatelliteBannerUpload') as | url |}}
-    <div style="width: 100%; height: 100%;position:absolute;top:0;left:0;z-index:1"></div>
+  {{#image-uploader onUpload=(route-action 'onImageUpload' 'banner') as | url |}}
+    <div class="satellite-profile__banner-upload" style="width: 100%; height: 100%;position:absolute;top:0;left:0;z-index:1"></div>
   {{/image-uploader}}
 
   <h1 class="u-text-white u-text-bold u-text-capital">March for Science</h1>
   <h2 class="u-text-orange">{{model.displayName}}</h2>
 
-  <button {{action (route-action 'saveChanges')}} class="u-button--large" style="positon: relative;z-index:3">Save Changes</button>
-  <button {{action (route-action 'cancelChanges')}} class="u-button__tertiary" style="positon: relative;z-index:3;margin-left: 24px;">Cancel</button>
+  <button {{action (route-action 'saveChanges')}} class="u-button--large satellite-profile__header--button" style="positon: relative;z-index:3">Save Changes</button>
+  <button {{action (route-action 'cancelChanges')}} class="u-button__tertiary satellite-profile__header--button" style="positon: relative;z-index:3;margin-left: 24px;">Cancel</button>
 
 </header>
 
@@ -64,7 +64,17 @@
       </div>
 
       <div class="u-grid-8 u-grid-last">
-        <button class="u-button--large u-grid-center">Donate</button>
+        {{float-input value=(mut model.donateLink) label="Donate Link"}}
+
+        {{float-input value=(mut model.storeLink) label="Store Link" class="satellite-profile__store-link"}}
+        {{#image-uploader onUpload=(route-action 'onImageUpload' 'storeImage') as | url |}}
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+               class="satellite-profile__store-image"
+               alt="Satellite March Store Image"
+               style="background-image: url({{model.storeImage}});position: relative;z-index: 2"
+              >
+        {{/image-uploader}}
+
       </div>
 
     </section>

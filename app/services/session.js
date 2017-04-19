@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import $ from 'jquery';
 
+import User from '../models/user';
 
 export default Ember.Service.extend({
 
@@ -23,7 +24,7 @@ export default Ember.Service.extend({
 
     // Otherwise, fetch logged in user profile
     $.get(`/api/users/${id}`).then((data) => {
-      this.set('user', data);
+      this.set('user', User.create(data));
     }, (err) => {
       Ember.Logger.error(err);
       throw new Error('Error logging in', err);
@@ -55,7 +56,7 @@ export default Ember.Service.extend({
       document.cookie = `uid=${response.userId}; expires=${new Date(Date.now() + response.ttl).toGMTString()}`;
 
       return $.get(`/api/users/${response.userId}`).then((data) => {
-        this.set('user', data);
+        this.set('user', User.create(data));
       }, (e) => {
         Ember.Logger.error('Error loading user profile', e)
       });

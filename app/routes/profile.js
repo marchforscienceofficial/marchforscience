@@ -1,5 +1,10 @@
 import Ember from 'ember';
 
+const { get, set } = Ember;
+
+// Keys we will send to the server
+const savedKeys = [ 'image', 'firstName', 'lastName', 'middleName', 'email', 'phone', 'bio' ];
+
 export default Ember.Route.extend({
 
   session: Ember.inject.service('session'),
@@ -16,10 +21,22 @@ export default Ember.Route.extend({
     },
 
     saveUserInfo(){
-      this.store.find('user', this.get('session.user.id')).then((obj) => {
-        obj.setProperties(this.get('session.user'));
-        obj.save();
+
+      // Construct a proper data object to send from the model
+      var data = {};
+      var model = this.get('session.user');
+      savedKeys.forEach((key) => { data[key] = get(model, key); });
+
+      // Send data to server
+      $.ajax(`/api/users/${get(this, 'session.user.id')}`, {
+        method: 'PATCH',
+        data: data
+      }).then(() => {
+        this.get('notifications').success('Saved successfully!');
+      }, () => {
+        this.get('notifications').error('Oops, something went wrong...');
       });
+
     },
 
     onProfileImageUpload(url){

@@ -19,10 +19,16 @@
 
   &:hover {
     background-color: darken(get-color(orange), 4%);
+    text-decoration: none;
   }
 
   &:active {
     background-color: darken(get-color(orange), 8%);
+  }
+
+  i {
+    margin-right: 4px;
+    margin-left: -8px;
   }
 }
 
@@ -47,10 +53,16 @@
 
   &:hover {
     background-color: darken(get-color(orange), 4%);
+    text-decoration: none;
   }
 
   &:active {
     background-color: darken(get-color(orange), 8%);
+  }
+
+  i {
+    margin-right: 4px;
+    margin-left: -8px;
   }
 }
 
@@ -60,11 +72,17 @@
 
   &:hover {
     background-color: darken(get-color(teal4), 4%);
+    text-decoration: none;
   }
 
   &:active {
     background-color: darken(get-color(teal4), 8%);
   }
+}
+
+.u-button-block {
+  display: block;
+  text-align: center;
 }
 
 .u-button__tertiary {
@@ -82,7 +100,7 @@
   position: relative;
   transition: color .3s;
   margin-bottom: 12px;
-  display: inline-block;
+  display: inline;
   text-decoration: none;
 
   &:hover {
@@ -92,5 +110,10 @@
 
   &:active {
     color: darken(get-color(orange), 8%);
+  }
+
+  i {
+    margin-right: 4px;
+    margin-left: -8px;
   }
 }

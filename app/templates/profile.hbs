@@ -1,7 +1,7 @@
 <section id="user-profile__container" class="u-grid-container">
 
-  {{#image-uploader onUpload=(route-action 'onProfileImageUpload') as | url |}}
-    <img src={{session.user.image}} class="user-profile__user-image">
+  {{#image-uploader onUpload=(route-action 'onProfileImageUpload') class="user-profile__image-upload" as | url |}}
+    <img src={{transparent-pixel}} style="background-image: url({{session.user.image}})" class="user-profile__user-image">
   {{/image-uploader}}
 
   <h1 class="user-profile__user-name">{{session.user.firstName}} {{session.user.lastName}}</h1>
@@ -29,7 +29,7 @@
         {{float-input value=(mut session.user.lastName) label="Last Name" class="u-grid-8 u-grid-last"}}
         {{float-input value=(mut session.user.email) label="Email" class="u-grid-12"}}
         {{float-input value=(mut session.user.phone) label="Phone Number" class="u-grid-12 u-grid-last"}}
-
+        {{textarea value=(mut session.user.bio)}}
         <button onClick={{route-action 'saveUserInfo'}} class="u-button">Save</button>
     {{/tabs.tabpanel}}
 
@@ -39,10 +39,13 @@
 
     {{#tabs.tabpanel "satellites"}}
       <h2>Satellites</h2>
-      <ul>
+      <ul class="user-profile__satellite">
       {{#each session.user.satellites as | satellite |}}
-        <li>
-          {{satellite.id}}
+        <li class="user-profile__satellite-list">
+            {{#link-to 'satellite' satellite.id class="user-profile__satellite-link"}}
+              <img src={{transparent-pixel}} style="background-image: url({{satellite.logo}});">
+              <h3>{{satellite.city}}, {{satellite.state}}, {{satellite.country}}</h3>
+            {{/link-to}}
         </li>
       {{/each}}
     </ul>

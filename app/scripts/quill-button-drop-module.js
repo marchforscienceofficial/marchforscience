@@ -30,7 +30,7 @@ export default class ButtonDrop {
 	 */
 	handleDrop(evt) {
 		evt.preventDefault();
-    console.log(evt.dataTransfer);
+
     if (evt.dataTransfer) {
 
       if (document.caretRangeFromPoint) {
@@ -40,7 +40,7 @@ export default class ButtonDrop {
           selection.setBaseAndExtent(range.startContainer, range.startOffset, range.startContainer, range.startOffset);
         }
       }
-      
+
       this.insert();
 		}
 	}

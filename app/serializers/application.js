@@ -22,12 +22,11 @@ export default DS.JSONAPISerializer.extend({
     var relationships = {};
     keys.forEach((key) => {
       if (Array.isArray(payload[key])){
-        debugger;
         relationships[key] = { data: payload[key] };
         delete payload[key];
       }
     });
-    debugger;
+
     return {
       data: {
         attributes: payload,
@@ -39,7 +38,7 @@ export default DS.JSONAPISerializer.extend({
 
   },
   normalizeFindManyResponse(store, primaryModelClass, payload, id, requestType){
-    debugger;
+
     return {
       data: {
         attributes: payload,

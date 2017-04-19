@@ -40,7 +40,13 @@
       "foreignKey": "userId",
       "through": "SatelliteAdmins",
       "keyThrough": "satelliteId"
+    },
+    "adminroles": {
+      "type": "hasMany",
+      "model": "SatelliteAdmins",
+      "foreignKey": "userId"
     }
+
   },
   "acls": [],
   "methods": {}

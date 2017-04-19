@@ -1,6 +1,8 @@
 import Ember from 'ember';
 import Satellite from '../models/satellite';
 
+const { get, set } = Ember;
+
 export default Ember.Route.extend({
 
   model(args){

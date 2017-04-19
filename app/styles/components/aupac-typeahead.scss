@@ -1,6 +1,6 @@
 .aupac-typeahead {
   padding: 13px;
-  border: 1px solid #cccccc;
+  border: none;
   display: block;
   text-align: left;
   outline: none;
@@ -11,4 +11,5 @@
   box-sizing: border-box;
   background-color: white;
   width: 100%;
+  @include elevation(2);
 }

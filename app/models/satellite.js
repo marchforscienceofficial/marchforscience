@@ -9,6 +9,7 @@ const DEFAULT_LOGO = '801f9cad956f164b261a155c66c74a08';
 const DEFAULT_BANNER = '0f2637cf6abf03124732a239f1873f31';
 
 export default Ember.Object.extend({
+
   name: '',
   banner: `${ENV.S3_URL}/${DEFAULT_BANNER}`,
   logo: `${ENV.S3_URL}/${DEFAULT_LOGO}`,
@@ -34,10 +35,6 @@ export default Ember.Object.extend({
     var country = country_data.countries[this.get('country')];
     country = country ? (country = country.name) : ''
     return `${city}, ${state ? state + ', ': ''}${country}`
-  }),
-
-  isAdmin: Ember.computed(function() {
-    return true;
   })
 
 });

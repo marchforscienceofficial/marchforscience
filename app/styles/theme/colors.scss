@@ -10,7 +10,10 @@ $COLORS: (
   gray0: #f9f9fa,
   gray1: #eeeeee,
   gray2: #cccccc,
-  gray3: #aaaaaa
+  gray3: #aaaaaa,
+  gray4: #888888,
+  gray5: #666666
+
 );
 
 @function get-color($color, $opacity: 1){

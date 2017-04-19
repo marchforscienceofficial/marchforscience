@@ -5,7 +5,11 @@
   "options": {
     "validateUpsert": true
   },
-  "properties": {},
+  "properties": {
+    "title": {
+      "type": "string"
+    }
+  },
   "validations": [],
   "relations": {
     "satellite": {

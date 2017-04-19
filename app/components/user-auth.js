@@ -20,6 +20,8 @@ export default Ember.Component.extend({
           zip: '',
           isLogin: true
         });
+      }, () => {
+        this.get('notifications').error('Invalid email or password');
       });
     },
 

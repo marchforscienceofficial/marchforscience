@@ -1,4 +1,11 @@
+@import "./admin";
+
 .satellite-profile {
+
+  .ql-bubble.ql-disabled .ql-editor {
+    padding: 0;
+  }
+
   .satellite-profile__header {
     width: 100%;
     display: block;
@@ -15,6 +22,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     margin-bottom: 12px;
+    border-radius: 8px;
   }
 
   .satellite-profile__header--background {
@@ -80,5 +88,60 @@
     }
   }
 
+  .satellite-profile__store-image {
+    width: 100%;
+    height: 0px;
+    padding: 0 0 100% 0;
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .satellite-profile__store-link {
+    margin-bottom: 0;
+
+    input {
+      border-radius: 3px 3px 0 0 !important;
+    }
+  }
+
+
+  .satellite-profile__section--team {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .satellite-profile__team-member {
+    text-align: center;
+    margin-bottom: 18px;
+
+    img {
+      @include elevation(2);
+      width: 90px;
+      height: 90px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 50%;
+      border: 6px solid white;
+      margin-bottom: 8px;
+    }
+
+    h4 {
+      margin-bottom: 0px;
+    }
+
+    h5 {
+      color: get-color(gray4);
+      font-size: 1.6rem;
+    }
+
+  }
+
+  .satellite-profile__team-member--empty {
+    margin-top: 52px;
+    color: get-color(gray5);
+  }
 
 }
