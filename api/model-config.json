@@ -59,6 +59,6 @@
   },
   "SatelliteAdmins": {
     "dataSource": "rethinkdb",
-    "public": false
+    "public": true
   }
 }

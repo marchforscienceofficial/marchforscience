@@ -113,11 +113,32 @@
     padding: 0;
   }
 
+  .satellite-profile__teammate-remove {
+    @include elevation(2);
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    border-radius: 50%;
+    background-color: white;
+    border: none;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    transform: translateX(20px) scale(1);
+    transition: transform .3s;
+
+    &:hover {
+      transform: translateX(20px) scale(1.1);
+    }
+  }
+
   .satellite-profile__team-member {
     text-align: center;
     margin-bottom: 18px;
+    position: relative;
+    height: 200px;
 
-    img {
+    img, .satellite-profile__add-new--image {
       @include elevation(2);
       width: 90px;
       height: 90px;
@@ -128,13 +149,72 @@
       margin-bottom: 8px;
     }
 
+    &.satellite-profile_add-new {
+      cursor: pointer;
+
+      &:hover .satellite-profile__add-new--image {
+        transform: scale(1.05);
+      }
+    }
+
+    .satellite-profile__add-new--image {
+      position: relative;
+      display: block;
+      float: none;
+      margin: 0 auto 8px;
+      transition: transform .3s;
+
+      &:before {
+        content: "\f067";
+        font-family: "fontawesome";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        line-height: 95px;
+        text-align: center;
+        color: get-color(gray5);
+        font-size: 6.2rem;
+      }
+
+    }
+
     h4 {
       margin-bottom: 0px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-height: 60px;
     }
 
     h5 {
       color: get-color(gray4);
       font-size: 1.6rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    p {
+      position: absolute;
+      top: 0;
+      left: 12px;
+      bottom: 0;
+      right: 12px;
+      overflow: auto;
+      padding: 18px;
+      background-color: rgba(0,0,0,.75);
+      transition: opacity .3s;
+      opacity: 0;
+      margin: 0;
+      color: white;
+      font-size: 1.5rem;
+      text-align: left;
+      border-radius: 3px;
+    }
+
+
+    &:hover p {
+      opacity: 1;
     }
 
   }

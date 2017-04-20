@@ -16,31 +16,34 @@ module.exports = function(server) {
     r.dbCreate('marchforscience').run(conn, callback);
   } catch(e){};
 
-  User.create({
-    firstName: 'Super',
-    lastName: 'User',
-    email: 'superuser@marchforscience.com',
-    password: 'password',
-    role: 'admin',
-    phone: '1234567890'
-  }, function(err, users) {
-    if (err) return cb(err);
-  });
+  if (User) {
+    User.count({where: { email: 'superuser@marchforscience.com'}}, (err, count) => {
+      if (err) return cb(err);
+      if (count !== 0) return;
+      User.create({
+        firstName: 'Super',
+        lastName: 'User',
+        email: 'superuser@marchforscience.com',
+        password: 'password',
+        role: 'admin',
+        phone: '1234567890',
+        image: 'https://dev.marchforscience.s3.amazonaws.com/b094f6140a64b3e932c43458773ded61'
+      }, function(err, users) {
+        if (err) return cb(err);
+      });
+    });
+  }
 
-  if (server.models.satellite) {
+  if (Satellite) {
     Satellite.count({}, (err, count) => {
-      if (err) {
-        console.log(err);
-        return cb(null, false);
-      }
-      if (count === 0) {
-        Satellite.destroyAll(function(err, info){
+      if (err) return cb(err);
+      if (count !== 0) return;
+      Satellite.destroyAll(function(err, info){
+        if (err) return cb(err);
+        Satellite.create(data, function(err, users) {
           if (err) return cb(err);
-          Satellite.create(data, function(err, users) {
-            if (err) return cb(err);
-          });
         });
-      }
+      });
     });
   }
 

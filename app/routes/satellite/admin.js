@@ -10,12 +10,15 @@ export default Ember.Route.extend({
     routeTab(route){
       this.transitionTo(route);
     },
+
     onImageUpload(url, key){
       set(this.currentModel, url, key);
     },
+
     onMissionChange(editor) {
       set(this.currentModel, 'mission', JSON.stringify(editor.getContents().ops));
     },
+
     saveChanges() {
 
       // Construct a proper data object to send from the model
@@ -33,10 +36,11 @@ export default Ember.Route.extend({
         this.get('notifications').error('Oops, something went wrong...');
       });
     },
+
     cancelChanges(){
-      // satellite.rollbackAttributes();
       this.transitionTo('satellite', get(this.currentModel, 'id'))
     }
+    
   },
 
   beforeModel(){

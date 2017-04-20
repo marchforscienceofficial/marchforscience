@@ -68,7 +68,7 @@
 
         {{float-input value=(mut model.storeLink) label="Store Link" class="satellite-profile__store-link"}}
         {{#image-uploader onUpload=(route-action 'onImageUpload' 'storeImage') as | url |}}
-          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+          <img src={{transparent-pixel}}
                class="satellite-profile__store-image"
                alt="Satellite March Store Image"
                style="background-image: url({{model.storeImage}});position: relative;z-index: 2"
@@ -78,6 +78,55 @@
       </div>
 
     </section>
+
+    <section class="satellite-profile__section--gray" id="team">
+      <h3>Team</h3>
+      <ul class="satellite-profile__section--team">
+        {{#each model.admins as | admin |}}
+            <li class="satellite-profile__team-member u-grid-6 u-grid-last">
+              <img  src={{transparent-pixel}}
+                    alt="{{admin.firstName}} {{admin.lastName}} Profile Image"
+                    style="background-image: url({{admin.image}})">
+              <h4>{{admin.firstName}} {{admin.lastName}}</h4>
+              <button class="fa fa-close satellite-profile__teammate-remove" {{action "removeTeammate" admin.adminroles.0.id admin}}></button>
+              {{#if admin.adminroles.0.title}}<h5>{{admin.adminroles.0.title}}</h5>{{/if}}
+            </li>
+        {{/each}}
+
+        {{#if showAddTeammate}}
+          <li class="satellite-profile__team-member satellite-profile_add-new u-grid-6 u-grid-last">
+            {{float-input value=(mut newTeamEmail) label="Member Email"}}
+            {{float-input value=(mut newTeamTitle) label="Position Title"}}
+            <button class="u-button" {{action 'addTeammate' newTeamEmail newTeamTitle}}>Save</button>
+            <button class="u-button__tertiary" style="margin-left: 8px;"{{action 'toggleAddTeammate'}}>Cancel</button>
+          </li>
+        {{else}}
+          <li class="satellite-profile__team-member satellite-profile_add-new u-grid-6 u-grid-last" {{action 'toggleAddTeammate'}}>
+            <span class="satellite-profile__add-new--image"></span>
+            <h4>Add a teammate</h4>
+          </li>
+        {{/if}}
+
+      </ul>
+    </section>
+
+    <div class="u-grid-12">
+      <h3>Blog</h3>
+      <select>
+        <option value="medium">Medium</option>
+        <option value="wordpress">Wordpress</option>
+        <option value="wordpress">Squarespace</option>
+        <option value="wordpress">Other</option>
+      </select>
+      {{float-input value=(mut blogUrl) label="Blog URL"}}
+    </div>
+
+    <div class="u-grid-12 u-grid-last">
+      <h3>Social Media</h3>
+      {{float-input value=(mut blogUrl) label="Facebook Page" icon="facebook-official"}}
+      {{float-input value=(mut blogUrl) label="Twitter Handle" icon="twitter"}}
+      {{float-input value=(mut blogUrl) label="Instagram Handle" icon="instagram"}}
+    </div>
 
     {{outlet}}
 
