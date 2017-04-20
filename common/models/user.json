@@ -46,7 +46,6 @@
       "model": "SatelliteAdmins",
       "foreignKey": "userId"
     }
-
   },
   "acls": [
     {

@@ -19,6 +19,7 @@ Router.map(function() {
     });
   });
   this.route('profile');
+  this.route('verified');
 });
 
 export default Router;

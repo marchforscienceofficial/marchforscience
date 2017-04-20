@@ -34,7 +34,9 @@ export default Ember.Component.extend({
       let phone = this.get('phone');
       let zip = this.get('zip');
 
-      if (!email || !password || !firstName || !lastName || !phone){ return; }
+      if (!email || !password || !firstName || !lastName || !phone){
+        return this.get('notifications').error('Please fill out all fields');
+      }
       this.get('session').register({
         email,
         password,
@@ -44,6 +46,7 @@ export default Ember.Component.extend({
         zip
       }).then((err, res) => {
         if (err) return;
+        this.get('notifications').success('Account created');
         this.setProperties({
           open: false,
           email: '',
@@ -54,6 +57,8 @@ export default Ember.Component.extend({
           zip: '',
           isLogin: true
         });
+      }, (err) => {
+        this.get('notifications').error('Problem registering user account');
       });
     },
 

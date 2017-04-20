@@ -14,6 +14,9 @@
       "./mixins"
     ]
   },
+  "Email": {
+    "dataSource": "ses"
+  },
   "UserCredential": {
     "dataSource": "rethinkdb",
     "public": false
@@ -47,7 +50,10 @@
   },
   "user": {
     "dataSource": "rethinkdb",
-    "public": true
+    "public": true,
+    "options": {
+      "emailVerificationRequired": true
+    }
   },
   "MarchRoles": {
     "dataSource": "rethinkdb",

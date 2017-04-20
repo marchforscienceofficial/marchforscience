@@ -29,7 +29,7 @@
         {{float-input value=(mut session.user.lastName) label="Last Name" class="u-grid-8 u-grid-last"}}
         {{float-input value=(mut session.user.email) label="Email" class="u-grid-12"}}
         {{float-input value=(mut session.user.phone) label="Phone Number" class="u-grid-12 u-grid-last"}}
-        {{textarea value=(mut session.user.bio)}}
+        {{textarea value=(mut session.user.bio) placeholder="Biography"}}
         <button onClick={{route-action 'saveUserInfo'}} class="u-button">Save</button>
     {{/tabs.tabpanel}}
 
