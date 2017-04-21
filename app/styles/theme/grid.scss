@@ -23,7 +23,14 @@ $CONFIG_FLEXGRID_MIN_CANVAS_WIDTH: 320px;
   width: $CONFIG_FLEXGRID_LARGE_BREAKPOINT;
   display: block;
   margin: auto;
+  box-sizing: border-box;
+
+  @include breakpoint(mama-bear) {
+    padding: 0 18px;
+    width: 100% !important;
+  }
   @include breakpoint(baby-bear) {
+    padding: 0 12px;
     width: 100% !important;
   }
 }
@@ -111,10 +118,10 @@ $CONFIG_FLEXGRID_MIN_CANVAS_WIDTH: 320px;
 }
 
 .u-grid-center {
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: auto !important;
+  margin-right: auto !important;
   display: block !important;
-  float: none;
+  float: none !important;
 }
 
 .u-float-left {

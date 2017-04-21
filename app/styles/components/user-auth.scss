@@ -122,3 +122,15 @@
   }
 
 }
+
+.auth__nav-image {
+  @include elevation(2);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  margin: 5px 0;
+  position: relative;
+  top: 4px;
+}

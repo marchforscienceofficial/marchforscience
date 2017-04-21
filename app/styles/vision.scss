@@ -1,5 +1,88 @@
+.vision__header {
+  height: 480px;
+  background-color: get-color(gray5);
+  margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    filter: sepia(100) brightness(0.65) saturate(.6) hue-rotate(-200deg);
+    background-image: asset-url('images/bg.jpg');
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+}
+
+.vision__header--textbox {
+  width: 100%;
+  max-width: 520px;
+  background-color: rgba(get-color(blue), .55);
+  margin: auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 32px 24px;
+  text-align: center;
+  text-transform: uppercase;
+
+  h1 {
+    letter-spacing: 6px;
+  }
+
+  h3 {
+    letter-spacing: 2px;
+  }
+
+  h2 {
+    letter-spacing: 3px;
+  }
+
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 50vw;
+      height: 3px;
+      background-color: white;
+      display: inline-block;
+      top: 50%;
+      transform: translateX(calc(-50vw - 32px)) translateY(-2px);
+      left: 0;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 50vw;
+      height: 3px;
+      background-color: white;
+      display: inline-block;
+      top: 50%;
+      transform: translateX(32px) translateY(-2px);
+      left: 100%;
+    }
+
+}
+
 .vision__section {
     margin-bottom: 32px;
+
+    ol {
+      width: 75%;
+      margin: auto;
+    }
+
+    li {
+      margin-bottom: 8px;
+      text-align: left;
+    }
 }
 
 .vision__block-header {
@@ -12,6 +95,7 @@
   line-height: 90px;
   margin-bottom: 32px;
   position: relative;
+  overflow: hidden;
 
   &:before {
     content: "";
@@ -44,6 +128,14 @@
   background-color: get-color(teal);
 }
 
+.vision__block-header--gray {
+  background-color: get-color(gray5);
+}
+
+.vision__block-header--blue {
+  background-color: get-color(blue5);
+}
+
 .vision__tall-copy {
   font-size: 2.2rem;
   text-transform: uppercase;
@@ -74,4 +166,154 @@
 .vision__quad-section {
   text-align: left;
   color: #666;
+  padding-left: 48px;
+  box-sizing: border-box;
+  position: relative;
+
+  &:before {
+    content: "";
+    top: 0;
+    left: 0;
+    width: 38px;
+    height: 38px;
+    background-color: get-color(orange);
+    display: block;
+    position: absolute;
+  }
+}
+
+.vision__pillar {
+  margin-right: 0px;
+  border-right: 2px solid get-color(teal);
+  position: relative;
+  overflow: visible;
+  padding-bottom: 38px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    right: -2px;
+    top: 0;
+    height: 120px;
+    width: 2px;
+    background-color: get-color(gray0);
+    z-index: 9;
+  }
+
+  &:last-of-type {
+    border: none;
+  }
+
+  @include breakpoint(baby-bear){
+    &:before {
+      display: none;
+    }
+    border: none;
+  }
+}
+
+.vision__pillar-headline {
+  width: 100%;
+  background: get-color(teal);
+  color: white;
+  font-size: 3.4rem;
+  padding: 18px 0;
+  line-height: 2.8rem;
+  letter-spacing: -1px;
+  margin-bottom: 38px;
+  margin-top: 28px;
+
+  span {
+    display: block;
+    color: get-color(blue5);
+  }
+}
+
+.vision__piller-subhead {
+  color: get-color(teal);
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 32px auto 24px;;
+  min-width: 50%;
+  padding-bottom: 8px;
+  border-bottom: 2px solid get-color(teal);
+  font-weight: bold;
+
+}
+
+.vision__piller-description {
+  min-height: 78px;
+  padding: 0 8px;
+}
+
+.vision__piller-summary {
+  width: 75%;
+}
+
+.vision__piller-goals {
+  list-style: none;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 16px;
+  li {
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0 0 4px 0;
+  }
+}
+
+.vision__strategy-list {
+  list-style: none;
+  padding: 0;
+  li {
+    margin-bottom: 8px;
+    padding-left: 188px;
+    position: relative;
+    min-height: 188px;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 160px;
+      height: 160px;
+      display: block;
+      background-color: get-color(blue5);
+    }
+
+    @include breakpoint(baby-bear){
+      padding-left: 42px;
+      &:before {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+  h3 {
+    font-size: 1.8rem;
+  }
+  h4 {
+    font-size: 1.3rem;
+  }
+  p {
+    font-size: 1.8rem;
+  }
+
+}
+
+.vision__involved-list {
+  list-style: none;
+  padding: 0;
+  li {
+    position: relative;
+    margin-bottom: 3.2rem;
+  }
+  h3 {
+    border-bottom: 2px solid get-color(gray5);
+    padding-bottom: 4px;
+    display: inline-block;
+  }
 }

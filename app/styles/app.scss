@@ -82,24 +82,37 @@ hr {
       margin-right: 32px;
       text-decoration: none;
       line-height: 32px;
+      font-size: 1.4rem;
+      width: 100%;
+      display: block;
     }
     a.active {
       color: get-color(orange);
+    }
+
+    &:last-of-type {
+      background-color: rgba(255,255,255,.25);
+      padding: 8px;
+      text-align: center;
+      margin-right: -12px;
     }
   }
 
   &__title {
     color: white;
-    line-height: 64px;
+    line-height: 72px;
     float: right;
     font-size: 1.8rem;
   }
 
   &__logo {
-    height: 60px;
+    height: 48px;
     width: auto;
     margin: 12px 12px;
+    line-height: 48px;
+    color: white;
   }
+
 }
 
 textarea {

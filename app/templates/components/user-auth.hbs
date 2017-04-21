@@ -1,15 +1,15 @@
 {{yield}}
 
 {{#if session.isLoggedOut}}
-  <a href="#" onClick={{action 'toggle'}}>Sign in / Register</a>
+  <a href="#" onClick={{action 'toggle'}}>Sign in</a>
 {{else}}
-  {{#link-to 'profile'}}Profile{{/link-to}}
+  {{#link-to 'profile'}}<img src={{transparent-pixel}} style="background-image: url({{session.user.image}})" alt="Profile Edit" class="auth__nav-image">{{/link-to}}
 {{/if}}
 
 <section class="auth {{if open 'open'}}">
 
   <div style="height: 100%;display: block;overflow: auto;">
-    <img class="auth--logo" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="March for Science Logo"/>
+    <img class="auth--logo" src={{transparent-pixel}} alt="March for Science Logo"/>
 
     {{#if verification}}
 

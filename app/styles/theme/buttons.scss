@@ -80,6 +80,20 @@
   }
 }
 
+
+.u-button--gray {
+  background-color: get-color(gray5);
+
+  &:hover {
+    background-color: darken(get-color(gray5), 4%);
+    text-decoration: none;
+  }
+
+  &:active {
+    background-color: darken(get-color(gray5), 8%);
+  }
+}
+
 .u-button-block {
   display: block;
   text-align: center;
