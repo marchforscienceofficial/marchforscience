@@ -2,11 +2,11 @@ module.exports = {
   "mongodb": {
     "connector": "mongodb",
     "name": "mongodb",
-    "host": "146.148.36.227",
+    "host": process.env.MONGO_HOST,
     "database": "marchforscience",
     "url":  "",
-    "user": "root",
-    "password": "SHn5Dhhs",
+    "user": "marchforscience",
+    "password": process.env.MONGO_PASS,
     "port": 27017
   }
 };
