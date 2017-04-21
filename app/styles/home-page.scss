@@ -26,14 +26,21 @@
     background-color: get-color(gray2);
     display: flex;
     flex-flow: row nowrap;
-    padding: 0 auto;
+    padding: 0;
     overflow-x: scroll;
-    justify-content: center;
     justify-self: flex-start;
 
     li {
       list-style: none;
       position: relative;
+
+      &:first-child {
+        margin-left: auto;
+      }
+
+      &:last-child {
+        margin-right: auto;
+      }
 
       a {
         flex-flow: column;

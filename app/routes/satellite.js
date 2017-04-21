@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import Satellite from '../models/satellite';
 
-const { get, set } = Ember;
+const { get } = Ember;
 
 export default Ember.Route.extend({
 
@@ -13,7 +13,7 @@ export default Ember.Route.extend({
 
   model(args){
     var sid = args.id;
-    var sats = this.get('satellites.list')
+    var sats = this.get('satellites.list');
     var data = sats.find((obj) => {
       return get(obj, 'uriName') === sid || get(obj, 'id') === sid;
     });
