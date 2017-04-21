@@ -1,5 +1,4 @@
 'use strict';
-var rethinkdb = require('rethinkdb');
 
 var data = require('../../data/satellitedata');
 
@@ -10,10 +9,6 @@ module.exports = function(server) {
   function cb(err) {
     console.log(err);
   }
-
-  try {
-    r.dbCreate('marchforscience').run(conn, callback);
-  } catch(e){};
 
   if (User) {
     User.count({ email: 'superuser@marchforscience.com' }, (err, count) => {
