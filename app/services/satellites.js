@@ -4,7 +4,7 @@ import Satellite from '../models/satellite';
 export default Ember.Service.extend({
   init(){
     return $.get(`/api/satellites`).then((data) => {
-      debugger
+
       // Sort to help typeahead later on
       data = data.sort(function(obj1, obj2){
         if (obj1.city > obj2.city) return 1;

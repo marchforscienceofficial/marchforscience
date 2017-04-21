@@ -42,7 +42,6 @@ export default Ember.Controller.extend({
 
   actions: {
     selectSatelliteTypeahead(data){
-      debugger;
       if (data) this.transitionToRoute('satellite', get(data, 'uriName'));
       return false;
     }

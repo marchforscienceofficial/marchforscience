@@ -1,13 +1,11 @@
 import Ember from 'ember';
-import Satellite from '../models/satellite';
 
-var { get } = Ember
+var { get, set } = Ember
 
 export default Ember.Route.extend({
 
   model(){
       return { };
-    });
   }
 
 });
