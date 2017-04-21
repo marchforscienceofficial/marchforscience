@@ -2,8 +2,16 @@
   text-align: center;
 }
 
+.u-text-left {
+  text-align: left;
+}
+
 .u-text-bold {
   font-weight: 800;
+}
+
+.u-text-normal {
+  font-weight: 400;
 }
 
 .u-text-capital {
@@ -40,6 +48,10 @@
 
 .u-text-gray5 {
   color: get-color(gray5);
+}
+
+.u-text-darkgreen {
+  color: get-color(green2);
 }
 
 .u-text-h1, h1 {

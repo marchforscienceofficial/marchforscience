@@ -19,6 +19,7 @@ $CONFIG_FLEXGRID_MIN_CANVAS_WIDTH: 320px;
 }
 
 .u-grid-container {
+  @include clearfix();
   width: $CONFIG_FLEXGRID_LARGE_BREAKPOINT;
   display: block;
   margin: auto;
@@ -76,6 +77,24 @@ $CONFIG_FLEXGRID_MIN_CANVAS_WIDTH: 320px;
 
 .u-grid-16 {
   width: calc(66.666666666% - 12px + (12px / 3));
+  margin-right: 12px;
+  float: left;
+  @include breakpoint(baby-bear) {
+    width: 100%;
+  }
+}
+
+.u-grid-18 {
+  width: calc(75% - 12px + (12px / 3));
+  margin-right: 12px;
+  float: left;
+  @include breakpoint(baby-bear) {
+    width: 100%;
+  }
+}
+
+.u-grid-20 {
+  width: calc(83.333333333% - 12px + (12px / 3));
   margin-right: 12px;
   float: left;
   @include breakpoint(baby-bear) {

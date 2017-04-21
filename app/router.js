@@ -20,6 +20,7 @@ Router.map(function() {
   });
   this.route('profile');
   this.route('verified');
+  this.route('vision');
 });
 
 export default Router;
