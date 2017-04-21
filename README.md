@@ -12,7 +12,7 @@ Web Client [Ember](http://emberjs.com)
 ### Getting Set Up
 
 Ensure the following is installed on your system before starting.
- - [Install RethinkDB](https://www.rethinkdb.com/docs/install/)
+ - Install MongoDB: `brew install mongodb && mkdir -p /data/db && sudo chmod 777 /data/db`
  - Install Loopback CLI: `npm install -g loopback-cli`
  - Install Ember CLI: `npm install -g ember-cli`
  - NPM Install: `npm install`
@@ -20,7 +20,7 @@ Ensure the following is installed on your system before starting.
 ### Getting Started
 
 In three separate terminal tabs:
- - Start RethinkDB by running: `rethinkdb`
+ - Start MongoDB by running: `mongod`
     * Go to localhost:8080 in your browser
     * Add a new database called "marchforscience"
  - Start the API server: `npm run server`

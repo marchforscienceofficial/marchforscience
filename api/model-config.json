@@ -18,53 +18,53 @@
     "dataSource": "ses"
   },
   "UserCredential": {
-    "dataSource": "rethinkdb",
+    "dataSource": "mongodb",
     "public": false
   },
   "UserIdentity": {
-    "dataSource": "rethinkdb",
+    "dataSource": "mongodb",
     "public": false
   },
   "AccessToken": {
-    "dataSource": "rethinkdb",
+    "dataSource": "mongodb",
     "public": false
   },
   "ACL": {
-    "dataSource": "rethinkdb",
+    "dataSource": "mongodb",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "rethinkdb",
+    "dataSource": "mongodb",
     "public": false,
     "options": {
       "strictObjectIDCoercion": true
     }
   },
   "Role": {
-    "dataSource": "rethinkdb",
+    "dataSource": "mongodb",
     "public": false
   },
   "satellite": {
-    "dataSource": "rethinkdb",
+    "dataSource": "mongodb",
     "public": true
   },
   "user": {
-    "dataSource": "rethinkdb",
+    "dataSource": "mongodb",
     "public": true,
     "options": {
       "emailVerificationRequired": true
     }
   },
   "MarchRoles": {
-    "dataSource": "rethinkdb",
+    "dataSource": "mongodb",
     "public": false
   },
   "SatelliteMapping": {
-    "dataSource": "rethinkdb",
+    "dataSource": "mongodb",
     "public": false
   },
   "SatelliteAdmins": {
-    "dataSource": "rethinkdb",
+    "dataSource": "mongodb",
     "public": true
   }
 }
