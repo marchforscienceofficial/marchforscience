@@ -4,6 +4,8 @@
     height: 400px;
     background-color: get-color(blue);
     background-image: asset-url('images/bg.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
     color: white;
 
     display: flex;
@@ -28,11 +30,16 @@
     flex-flow: row nowrap;
     padding: 0;
     overflow-x: scroll;
+    overflow-y: hidden;
     justify-self: flex-start;
 
     li {
       list-style: none;
       position: relative;
+      background-image: asset-url("images/button-active.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+
 
       &:first-child {
         margin-left: auto;
@@ -40,6 +47,10 @@
 
       &:last-child {
         margin-right: auto;
+      }
+
+      img {
+        height: 100%;
       }
 
       a {
@@ -52,15 +63,28 @@
         align-items: center;
         top: 0;
         left: 0;
+        color: get-color(gray2);
+
+
+        &:hover,
+        &:focus {
+          color: get-color(orange);
+          text-decoration: none;
+        }
 
         span {
           text-transform: uppercase;
         }
 
         .scienceCalendar-scienceTag {
-          margin-top: 30px;
+          font-size: 28px;
+          font-weight: 100;
+          flex: 1;
+          display: flex;
+          align-items: flex-end;
 
         }
+
         .scienceCalendar-dayTag {
           font-size: 8px;
           background-color: get-color(gray2);
@@ -75,6 +99,20 @@
           }
         }
       }
+    }
+
+    li:hover img,
+    li:focus img {
+      opacity: 0;
+      transition: opacity .3s;
+    }
+
+    li:hover .scienceCalendar-dayTag,
+    li:focus .scienceCalendar-dayTag {
+      background-color: #30bdbb;
+      //TODO: make this asset using background colors
+      //background-color: get-color(teal);
+      transition: background-color .3s;
     }
   }
 
