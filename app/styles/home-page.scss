@@ -1,0 +1,171 @@
+.home-page {
+
+  .jumbotron {
+    height: 400px;
+    background-color: get-color(blue);
+    background-image: asset-url('images/bg.jpg');
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .textContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-transform: uppercase;
+      background-color: get-color(blue, .9);
+      padding: 16px;
+      letter-spacing: 2px;
+    }
+  }
+
+  .scienceCalendar {
+    display: flex;
+    flex-flow: row nowrap;
+    li {
+      list-style: none;
+      flex: 1;
+      a {
+        display: flex;
+        flex-flow: column;
+      }
+    }
+  }
+
+  .QOD {
+    color: get-color(teal4);
+    font-size: 40px;
+    font-weight: 100;
+    text-align: center;
+  }
+
+  .callToAction {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+
+    li {
+      list-style: none;
+      padding: 16px;
+      background-color: get-color(teal);
+      display: flex;
+      flex-flow: column;
+    }
+
+    h3 {
+      display: flex;
+      font-family: inherit;
+      color: get-color(black);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .callToAction-body {
+      flex: 1;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .u-button {
+
+      background-color: get-color(black);
+
+      color: get-color(white);
+      text-transform: uppercase;
+      a {
+        color: get-color(white);
+      }
+      a:hover, a:focus {
+        text-decoration: none;
+        outline: none;
+      }
+    }
+  }
+
+  .socialMedia {
+
+    header {
+      background-color: get-color(orange);
+
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      color: white;
+
+      h1 {
+        margin: 0;
+
+        font-family: inherit;
+        font-size: 3.8em;
+        font-weight: 600;
+      }
+
+      .u-button {
+        margin: 0;
+        height: 100%;
+
+        background-color: get-color(white, .4);
+        padding: 4px 12px;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        line-height: initial;
+
+        .socialMedia-actionHow {
+          font-size: .1em;
+          font-weight: 100;
+          text-transform: uppercase;
+          text-space: 4px;
+          letter-spacing: 1px;
+        }
+      }
+
+    }
+    .socialMedia-longActionStory {
+      padding: 16px;
+      text-align: center;
+
+      span {
+        display: block;
+      }
+    }
+
+    .socialMedia-links {
+      display: flex;
+      justify-content: center;
+
+      li {
+        list-style: none;
+        padding: 0 24px 24px 0;
+      }
+    }
+  }
+
+  .moreCallToAction {
+    background-color: get-color(teal, .2);
+    display: flex;
+    flex-direction: column;
+    header {
+      background-color: get-color(teal);
+      padding: 12px 0;
+      h1 {
+        background-color: get-color(white);
+        margin: 0;
+        padding: 4px 24px;
+      }
+    }
+
+    li {
+      list-style: none;
+      p span {
+        display: block;
+      }
+    }
+  }
+
+}
+
+
