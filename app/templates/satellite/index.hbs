@@ -5,7 +5,7 @@
   <h2 class="u-text-orange">{{model.displayName}}</h2>
 
   {{#if isAdmin}}
-    {{#link-to 'satellite.admin' model.id  class="satellite-profile__header--button u-button--large"}}
+    {{#link-to 'satellite.admin' model.uriName  class="satellite-profile__header--button u-button--large"}}
       <i class="fa fa-pencil" aria-hidden="true"></i>
       Edit
     {{/link-to}}
@@ -13,7 +13,7 @@
     <button class="satellite-profile__header--button u-button--large">Subscribe</button>
 
     {{#if session.user.isSuper}}
-      {{#link-to 'satellite.admin' model.id  class="u-button__tertiary satellite-profile__header--button"}}
+      {{#link-to 'satellite.admin' model.uriName  class="u-button__tertiary satellite-profile__header--button"}}
         <i class="fa fa-pencil" aria-hidden="true" style="margin-left: 32px;"></i>
         Edit
       {{/link-to}}
@@ -60,7 +60,6 @@
 
     <section class="satellite-profile__section" id="about">
       <div class="u-grid-16">
-        <h3>Mission</h3>
         {{#quill-editor ops=mission seamless=true}}{{/quill-editor}}
       </div>
 

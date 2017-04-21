@@ -27,6 +27,7 @@ export default Ember.Component.extend({
     // Render only once. ops will come in again.
     if (this._hasRendered) return;
     this._hasRendered = true;
+    var colors = ['#e8674d', '#002238', 'rgb(0, 80, 130)', '#00c9c4', '#00c9c4', 'rgba(50,189,188,1)', '#FFFFFF', '#FFFFFF','#eeeeee', '#cccccc', '#aaaaaa', '#888888', '#666666', '#000000' ]
 
     this.quill = new Quill('#quill-editor', {
       theme: this.get('seamless') ? "bubble" : "snow",
@@ -36,13 +37,12 @@ export default Ember.Component.extend({
       modules: {
         imageResize: !this.get('seamless'),
         imageDrop: !this.get('seamless'),
-
         toolbar: [
           [{header: [1, 2, 3, false]}],
           // [{ 'size': ['small', false, 'large'] }],  // custom dropdown
           ["bold", "italic", "underline", "strike"],
           ['blockquote', 'code-block'],
-          [{"color": ['#e8674d']}, { 'background': [] }],
+          [{"color": colors}, { 'background': colors }],
           [{"align": []}],
           [{"list": "ordered"}, {"list": "bullet"}],
           [{"indent": "-1"}, {"indent": "+1"}],

@@ -12,10 +12,10 @@ export default Ember.Route.extend({
   },
 
   model(args){
-    var uid = args.id;
+    var sid = args.id;
     var sats = this.get('satellites.list')
     var data = sats.find((obj) => {
-      return get(obj, 'uriName') === uid;
+      return get(obj, 'uriName') === sid || get(obj, 'id') === sid;
     });
     return $.get(`/api/satellites/${data.id}`).then((data) => {
       return new Satellite(data);
