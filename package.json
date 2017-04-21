@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node api/server.js",
+    "start": "ember build && node api/server.js",
     "test": "ember test",
     "ember": "ember server --proxy http://localhost:4000",
     "build": "ember build",
