@@ -4,4 +4,73 @@
   .satellite-typeahead {
     margin-top: 32px;
   }
+
+  .tt-menu {
+    @include clearfix();
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    width: calc(100% + 20px);
+    position: relative;
+    left: -10px !important;
+    padding-bottom: 10px;
+    height: calc(100vh - 371px);
+    overflow: visible;
+    margin-bottom: 32px;
+  }
+
+  .tt-suggestion {
+    @include elevation(2);
+    box-sizing: border-box;
+    width: calc(100% - 20px);
+    line-height: 45px;
+    padding: 8px;
+    margin: 16px 0 0 0;
+    border-radius: 3px;
+    transition: background-color .3s, transform .3s;
+    background-color: rgba(get-color(white), .75);
+    height: calc(45px + 16px);
+    position: relative;
+    left: 10px;
+    cursor: pointer;
+    color: black;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 63px;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: get-color(blue);
+      opacity: .85;
+      z-index: 0;
+    }
+
+    &:focus, &:hover {
+      background-color: rgba(get-color(white), .85);
+      color: black;
+      transform: scale(1.02);
+    }
+  }
+
+  .tt-highlight {
+    color: get-color(orange);
+    font-weight: bold;
+  }
+
+  .satellites__typeahead-image {
+    background-size: contain;
+    width: 45px;
+    height: 45px;
+    border-radius: 5px;
+    background-position: center;
+    background-repeat: no-repeat;
+    float: left;
+    margin-right: 16px;
+    position: relative;
+    z-index: 1;
+  }
 }

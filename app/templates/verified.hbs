@@ -1,9 +1,11 @@
 {{outlet}}
 
 <section class="u-grid-container u-text-center" style="padding-top: 32px;">
+  <img class="auth--logo" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="March for Science Logo"/>
+
   <h2 class="u-text-blue">Your email has been verified!</h2>
   <h4 class="u-text-orange">Please log in to your account</h4>
-  <form onSubmit={{route-action 'onSubmit'}} class="u-grid-8 u-grid-center">
+  <form onSubmit={{route-action 'onSubmit'}} class="u-grid-8 u-grid-center" style="padding-top: 32px;">
     {{float-input value=(mut model.email) type='email' label='Email' class="auth--form__fullinput"}}
     {{float-input value=(mut model.password) type='password' label='Password' class="auth--form__fullinput"}}
     <input type="submit" class="u-button--large">

@@ -17,6 +17,7 @@
     "cors": "^2.5.2",
     "country-data": "0.0.31",
     "dotenv": "^4.0.0",
+    "email-validator": "^1.0.7",
     "ember-aupac-typeahead": "^2.2.0",
     "express-flash": "0.0.2",
     "express-session": "^1.15.1",

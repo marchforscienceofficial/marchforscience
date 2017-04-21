@@ -27,8 +27,28 @@ $CONFIG_FLEXGRID_MIN_CANVAS_WIDTH: 320px;
   }
 }
 
+
+
+.u-grid-24 {
+  width: 100%;
+  float: left;
+  @include breakpoint(baby-bear) {
+    width: 100%;
+  }
+}
+
 .u-grid-12 {
   width: calc(50% - 12px + (12px / 2));
+  margin-right: 12px;
+  float: left;
+  @include breakpoint(baby-bear) {
+    width: 100%;
+  }
+}
+
+
+.u-grid-6 {
+  width: calc(20% - 12px + (12px / 5));
   margin-right: 12px;
   float: left;
   @include breakpoint(baby-bear) {
@@ -45,8 +65,8 @@ $CONFIG_FLEXGRID_MIN_CANVAS_WIDTH: 320px;
   }
 }
 
-.u-grid-6 {
-  width: calc(20% - 12px + (12px / 5));
+.u-grid-10 {
+  width: calc(41.666666666% - 12px + (12px / 3));
   margin-right: 12px;
   float: left;
   @include breakpoint(baby-bear) {
@@ -74,6 +94,14 @@ $CONFIG_FLEXGRID_MIN_CANVAS_WIDTH: 320px;
 .u-grid-center {
   margin-left: auto;
   margin-right: auto;
-  display: block;
+  display: block !important;
   float: none;
+}
+
+.u-float-left {
+  float: left;
+}
+
+.u-float-right {
+  float: right;
 }

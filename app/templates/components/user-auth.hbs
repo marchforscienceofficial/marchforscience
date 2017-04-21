@@ -11,19 +11,31 @@
   <div style="height: 100%;display: block;overflow: auto;">
     <img class="auth--logo" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="March for Science Logo"/>
 
-    <h1 class="auth--title">{{if isLogin 'Sign In' 'Sign Up'}}</h1>
-    <button onClick={{action 'toggleAction'}} class="auth--toggle">{{if isLogin 'Click here to create a new account' 'Sign in to an existing account'}}</button>
+    {{#if verification}}
 
-    <form onSubmit={{action 'onSubmit'}} class="auth--form">
-      {{float-input value=(mut firstName)  label='First Name' class=(concat 'auth--form__halfinput ' (if isLogin 'hidden'))}}
-      {{float-input value=(mut lastName)  label='Last Name' class=(concat 'auth--form__halfinput ' (if isLogin 'hidden'))}}
-      {{float-input value=(mut phone) type='tel' label='Telephone' class=(concat 'auth--form__halfinput ' (if isLogin 'hidden'))}}
-      {{float-input value=(mut zip) label='Zip Code' class=(concat 'auth--form__halfinput ' (if isLogin 'hidden'))}}
-      {{float-input value=(mut email) type='email' label='Email' class="auth--form__fullinput"}}
-      {{float-input value=(mut password) type='password' label='Password' class="auth--form__fullinput"}}
-      {{float-input value=(mut verifyPassword) type='password' label='Verify Password' class=(concat 'auth--form__fullinput ' (if isLogin 'hidden'))}}
-      <input type="submit" class="u-button">
-    </form>
+
+    <h2 class="u-text-blue">A verification link was sent to your email</h2>
+    <h4 class="u-text-orange">Please check your email and then log in again</h4>
+    <button onClick={{action 'reverify'}} class="u-button--large">Re-send verification email</button>
+
+    {{else}}
+
+      <h1 class="auth--title">{{if isLogin 'Sign In' 'Sign Up'}}</h1>
+      <button onClick={{action 'toggleAction'}} class="auth--toggle">{{if isLogin 'Click here to create a new account' 'Sign in to an existing account'}}</button>
+
+
+
+      <form onSubmit={{action 'onSubmit'}} class="auth--form">
+        {{float-input value=(mut firstName)  label='First Name' class=(concat 'auth--form__halfinput ' (if isLogin 'hidden'))}}
+        {{float-input value=(mut lastName)  label='Last Name' class=(concat 'auth--form__halfinput ' (if isLogin 'hidden'))}}
+        {{float-input value=(mut phone) type='tel' label='Telephone' class=(concat 'auth--form__halfinput ' (if isLogin 'hidden'))}}
+        {{float-input value=(mut zip) label='Zip Code' class=(concat 'auth--form__halfinput ' (if isLogin 'hidden'))}}
+        {{float-input value=(mut email) type='email' label='Email' class="auth--form__fullinput"}}
+        {{float-input value=(mut password) type='password' label='Password' class="auth--form__fullinput"}}
+        {{float-input value=(mut verifyPassword) type='password' label='Verify Password' class=(concat 'auth--form__fullinput ' (if isLogin 'hidden'))}}
+        <input type="submit" class="u-button">
+      </form>
+    {{/if}}
   </div>
 
 </section>

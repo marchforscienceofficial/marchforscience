@@ -25,6 +25,15 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
 }
 
+hr {
+  background-color: get-color(gray3);
+  margin: 18px 0;
+  height: 1px;
+  width: 100%;
+  border: none;
+  float: left;
+}
+
 .app--nav {
   position: fixed;
   height: 64px;

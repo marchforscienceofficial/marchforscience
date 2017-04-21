@@ -23,14 +23,27 @@
     {{/tabs.tablist}}
 
     {{#tabs.tabpanel "info"}}
-      <h2>Info</h2>
+      <section class="u-grid-24">
+
+        <h2>Info</h2>
         {{float-input value=(mut session.user.firstName) label="First Name" class="u-grid-8"}}
         {{float-input value=(mut session.user.middleName) label="Middle Name" class="u-grid-8"}}
         {{float-input value=(mut session.user.lastName) label="Last Name" class="u-grid-8 u-grid-last"}}
         {{float-input value=(mut session.user.email) label="Email" class="u-grid-12"}}
         {{float-input value=(mut session.user.phone) label="Phone Number" class="u-grid-12 u-grid-last"}}
         {{textarea value=(mut session.user.bio) placeholder="Biography"}}
-        <button onClick={{route-action 'saveUserInfo'}} class="u-button">Save</button>
+        <button onClick={{route-action 'saveUserInfo'}} class="u-button u-grid-6 u-grid-center">Save</button>
+      </section>
+      <hr>
+      <section class="u-grid-24">
+        <h2>Password</h2>
+        <div class="u-grid-24">
+          {{float-input value=(mut session.user.oldPass) type="password" label="Current Password" class="u-grid-8"}}
+          {{float-input value=(mut session.user.newPass) type="password" label="New Password" class="u-grid-8"}}
+        </div>
+        <button onClick={{route-action 'updatePassword'}} class="u-button u-grid-6">Update</button>
+      </section>
+
     {{/tabs.tabpanel}}
 
     {{#tabs.tabpanel "subs"}}

@@ -6,7 +6,7 @@ module.exports = function(Satellite) {
     Satellite.find = function(filter={}, auth, cb) {
 
       // Don't infinite loop while including users (which in turn include satellites...)
-      if (cb.name !== 'targetsFetchHandler'){
+      if (cb && cb.name !== 'targetsFetchHandler'){
         filter.include = [{
           relation: 'admins',
           scope: {

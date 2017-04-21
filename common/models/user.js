@@ -6,7 +6,7 @@ module.exports = function(User) {
     var find = User.find;
     User.find = function(filter={}, auth, cb) {
       // Don't infinite loop while including satellites (which in turn include users...)
-      if (cb.name !== 'targetsFetchHandler'){
+      if (cb && cb.name !== 'targetsFetchHandler'){
         filter.include = [{
           relation: 'satellites',
           scope: {
@@ -20,6 +20,7 @@ module.exports = function(User) {
 
 
   User.afterRemote('create', function(context, userInstance, next) {
+
     console.log('> user.afterRemote triggered');
 
     var options = {
@@ -33,8 +34,11 @@ module.exports = function(User) {
     };
 
     userInstance.verify(options, function(err, response) {
-      console.error("Error sending user verification email", err);
-      if (err) return next(err);
+
+      if (err) {
+        console.error("Error sending user verification email", err);
+        return next(err);
+      }
 
       console.log('> verification email sent:', response);
 

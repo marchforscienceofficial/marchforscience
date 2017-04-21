@@ -29,7 +29,14 @@ export default Ember.Object.extend({
     } catch(e) { return []; }
   }),
 
-  displayName: Ember.computed('city', 'state', function() {
+  uriName: Ember.computed('city', 'state', 'country', function() {
+    var city = this.get('city') || '';
+    var state = this.get('state') || '';
+    var country = this.get('country') || '';
+    return window.encodeURIComponent((`${city}-${state ? state + '-': ''}${country}`).replace(/\s/g, '-').toLowerCase());
+  }),
+
+  displayName: Ember.computed('city', 'state', 'country', function() {
     var city = this.get('city');
     var state = this.get('state');
     var country = country_data.countries[this.get('country')];

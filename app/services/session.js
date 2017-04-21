@@ -27,7 +27,7 @@ export default Ember.Service.extend({
       this.set('user', User.create(data));
     }, (err) => {
       Ember.Logger.error(err);
-      throw new Error('Error logging in', err);
+      throw err;
     });
 
   },
@@ -63,7 +63,7 @@ export default Ember.Service.extend({
 
     }, (err) => {
       Ember.Logger.error(err);
-      throw new Error('Error logging in', err);
+      throw err;
     });
 
   },

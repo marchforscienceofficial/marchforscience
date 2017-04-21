@@ -39,6 +39,26 @@ export default Ember.Route.extend({
 
     },
 
+    updatePassword(){
+      // Send data to server
+      var model = this.get('session.user');
+
+      $.ajax(`/api/users/change-password`, {
+        method: 'POST',
+        data: {
+          oldPassword: get(model, 'oldPass'),
+          newPassword: get(model, 'newPass'),
+        }
+      }).then(() => {
+        this.get('notifications').success('Password updated!');
+        set(model, 'oldPass', '');
+        set(model, 'newPass', '');
+      }, () => {
+        this.get('notifications').error('Oops, something went wrong...');
+      });
+
+    },
+
     onProfileImageUpload(url){
       this.set('session.user.image', url)
     }
