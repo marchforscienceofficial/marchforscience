@@ -5,6 +5,8 @@ import User from '../models/user';
 
 export default Ember.Service.extend({
 
+  open: false,
+
   init(){
 
     this._super(...arguments);

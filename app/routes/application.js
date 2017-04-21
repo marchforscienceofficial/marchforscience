@@ -4,8 +4,9 @@ export default Ember.Route.extend({
 
   session: Ember.inject.service('session'),
 
-  init(){
-    this._super(...arguments);
-    this.get('notifications').setDefaultAutoClear(true);
+  actions: {
+    willTransition(transition) {
+      this.get('session').set('open', false);
+    }
   }
 });

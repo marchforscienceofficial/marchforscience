@@ -2,7 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   session: Ember.inject.service('session'),
-  open: false,
   isLogin: true,
   actions: {
 
@@ -21,9 +20,8 @@ export default Ember.Component.extend({
       let email = this.get('email');
       let password = this.get('password');
       this.get('session').login(email, password).then((err, res) => {
-
+        this.get('session').set('open', false);
         this.setProperties({
-          open: false,
           email: '',
           password: '',
           firstName: '',
@@ -82,7 +80,7 @@ export default Ember.Component.extend({
     },
 
     toggle(){
-      this.toggleProperty('open');
+      this.get('session').toggleProperty('open');
     },
 
     toggleAction(){

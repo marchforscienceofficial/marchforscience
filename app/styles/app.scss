@@ -85,6 +85,7 @@ hr {
       font-size: 1.4rem;
       width: 100%;
       display: block;
+      line-height: 64px;
     }
     a.active {
       color: get-color(orange);
@@ -92,7 +93,7 @@ hr {
 
     &:last-of-type {
       background-color: rgba(255,255,255,.25);
-      padding: 8px;
+      padding: 0 8px;
       text-align: center;
       margin-right: -12px;
     }
