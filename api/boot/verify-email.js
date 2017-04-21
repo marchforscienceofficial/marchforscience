@@ -13,7 +13,6 @@ module.exports = function(server) {
     User.find({ where: { email: email } }, (err, users=[]) => {
 
       var user = users[0];
-      console.log(user)
       if (err || !user) return res.send({status: 'error', message: 'Error finding user'});
 
       var options = {

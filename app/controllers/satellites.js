@@ -26,7 +26,6 @@ export default Ember.Controller.extend({
     const regex = new RegExp(`.*${query}.*`, 'i');
 
     var filtered = this.get('satellites.list').filter((item) => {
-      console.log(item, get(item, 'displayName'))
       return regex.test(get(item, 'displayName'));
     });
     syncResults(filtered);

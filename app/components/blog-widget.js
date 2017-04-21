@@ -59,17 +59,14 @@ function formatBlogData(host, response) {
       posts = orderPostsByTime(parsedResponse.payload.references.Post, 'firstPublishedAt');
       posts.forEach(function(post) {
         const mediumPost = new Post(post.title, post.firstPublishedAt, post.content.subtitle, post.uniqueSlug);
-          console.log(mediumPost);
           parsedPosts.push(mediumPost);
       });
       return parsedPosts;
 
     case "squarespace":
-      console.log("these are the items!", response.items);
       posts = orderPostsByTime(response.items, 'publishedOn');
       posts.forEach(function(post) {
         const squarePost = new Post(post.title, post.publishOn, post.excerpt, post.fullUrl);
-        console.log(squarePost);
         parsedPosts.push(squarePost);
       });
       return parsedPosts;
@@ -77,7 +74,6 @@ function formatBlogData(host, response) {
     case "wordpress":
       response.splice(0,3).forEach(function(post) {
         const wordpressPost = new Post(post.title.rendered, post.date, post.excerpt.rendered, post.link);
-        console.log(wordpressPost);
         parsedPosts.push(wordpressPost);
       });
       return parsedPosts;

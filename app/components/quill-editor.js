@@ -42,7 +42,7 @@ export default Ember.Component.extend({
           // [{ 'size': ['small', false, 'large'] }],  // custom dropdown
           ["bold", "italic", "underline", "strike"],
           ['blockquote', 'code-block'],
-          [{"color": []}, { 'background': [] }],
+          [{"color": ['#e8674d']}, { 'background': [] }],
           [{"align": []}],
           [{"list": "ordered"}, {"list": "bullet"}],
           [{"indent": "-1"}, {"indent": "+1"}],

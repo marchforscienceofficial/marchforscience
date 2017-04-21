@@ -28,7 +28,6 @@ export default Ember.Component.extend({
 
   actions: {
     fileLoaded: function(file) {
-      console.log(arguments);
       this.uploadImage(file)
     }
   }
