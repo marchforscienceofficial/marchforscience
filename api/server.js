@@ -43,7 +43,7 @@ app.middleware('auth', loopback.token({
 
 app.middleware('session:before', cookieParser(app.get('cookieSecret')));
 app.middleware('session', session({
-  secret: 'kitty',
+  secret: process.env.NODE_SESSION_SECRET,
   saveUninitialized: true,
   resave: true,
 }));
