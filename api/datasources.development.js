@@ -6,7 +6,7 @@ module.exports = {
     "url":  "",
     "database": "marchforscience",
     "user": "me",
-    "password": "",
+    "password": "me",
     "port": 27017
   }
 };
