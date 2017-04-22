@@ -326,34 +326,13 @@
 
 }
 
-  .callToAction-rightCall {
-    background-color: get-color(teal, .2);
-    flex: 4 auto;
+.callToAction-rightCall {
+  background-color: get-color(teal, .2);
+  flex: 4 auto;
 
-    display: flex;
-    flex-flow: column;
-    justify-content: space-between;
-  }
-
-    h3 {
-      color: get-color(black, .7);
-      display: flex;
-      font-family: inherit;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-  .callToAction-body {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
-  }
-
-  .u-button {
-    background-color: get-color(black, .7);
-    min-width: 50px;
-    color: get-color(white);
-    text-transform: uppercase;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
 
     a {
       color: get-color(white);
@@ -364,6 +343,12 @@
       outline: none;
     }
   }
+
+.callToAction-body {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+}
 
 .home-page-megaphone {
   display: flex;
@@ -384,7 +369,8 @@
 
 .home-page-megaphone-triangle {
   position: relative;
-  margin: -80px;
+  margin-left: -44px;
+  margin-top: -20px;
 
   .home-page-megaphone-triangle-border {
     width: 0;
@@ -406,21 +392,22 @@
   }
 }
 
-//.home-page-megaphone-text {
-//  border: 4px solid get-color(gray3);
-//  min-height: 300px;
-//}
+.home-page-megaphone-text {
+  border: 4px solid get-color(gray3);
+  background-color: get-color(white);
+
+  min-height: 200px;
+  min-width: 320px;
+
+  padding: 16px
+}
 
 
-
-
-  .home-page-callToAction {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-flow: column;
-
-  }
+.home-page-callToAction {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: column;
 
   .home-page-callToAction-header {
     padding: 20px 0;
@@ -478,8 +465,38 @@
 
     header {
       display: flex;
+
+      h3 {
+        color: get-color(black, .7);
+        display: flex;
+        font-family: inherit;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+    }
+
+    .u-button {
+      background-color: get-color(black, .7);
+      min-width: 50px;
+      color: get-color(white);
+      text-transform: uppercase;
+
+      a {
+        color: get-color(white);
+      }
+
+    }
+
+    .u-button:hover,
+    .u-button:focus {
+      background-color: get-color(orange);
+
+      a {
+        text-decoration: none;
+      }
     }
   }
+}
 
 
 
