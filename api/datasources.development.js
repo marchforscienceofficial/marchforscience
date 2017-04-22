@@ -3,8 +3,8 @@ module.exports = {
     "name": "gcloud-datastore",
     "connector": "gcloud",
     "projectId": process.env.GOOGLE_PROJECT_ID,
-    "keyFilename": "/home/ekay/datastore-secret-key.json",
-    "email": "cloud-datastore-user@march-for-scienc-1486718000456.iam.gserviceaccount.com",
+    "keyFilename": "datastore-secret-key.json",
+    "email": "cloud-datastore-user@" + process.env.GOOGLE_PROJECT_ID + ".iam.gserviceaccount.com",
   },
   "mongodb": {
     "connector": "mongodb",

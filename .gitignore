@@ -20,3 +20,4 @@ rethinkdb_data
 /.idea/
 .env
 /data/mongodb
+/datastore-secret-key.json
