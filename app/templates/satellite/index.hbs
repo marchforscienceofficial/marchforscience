@@ -20,11 +20,26 @@
     {{/if}}
   {{/if}}
 
+  <ul class="satellite-profile__header-social-icons">
+    {{#if model.facebookUrl}}
+      <li><a href="{{model.facebookUrl}}" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+    {{/if}}
+    {{#if model.twitterUrl}}
+      <li><a href="{{model.twitterUrl}}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+    {{/if}}
+    {{#if model.instagramUrl}}
+      <li><a href="{{model.instagramUrl}}" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+    {{/if}}
+    {{#if model.websiteUrl}}
+      <li><a href="{{model.websiteUrl}}" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i></a></li>
+    {{/if}}
+  </ul>
+
 </header>
 
-<main class="u-grid-container">
+<main class="u-grid-container" style="padding-top: 42px;">
   {{#ivy-tabs selection=selection as |tabs|}}
-    {{#tabs.tablist as |tablist|}}
+    {{!-- {{#tabs.tablist as |tablist|}}
       <ul role="presentation">
         <li role="presentation">
           {{#tablist.tab "goals" on-select=(action (mut selection))}}
@@ -56,7 +71,7 @@
           </li>
         {{/if}}
       </ul>
-    {{/tabs.tablist}}
+    {{/tabs.tablist}} --}}
 
     <section class="satellite-profile__section" id="about">
       <div class="u-grid-16">
@@ -116,37 +131,41 @@
       </ul>
     </section>
 
-    <section class="satellite-profile__section" id="sponsors">
-      <h3>Sponsors</h3>
-      <ul class="satellite-profile__section--team">
-        {{#each model.sponsors as | sponsor |}}
-            <li class="satellite-profile__company-logo u-grid-6 u-grid-last">
-              <a href="{{sponsor.link}}" target="_blank">
-                <img  src={{transparent-pixel}}
-                      alt="{{sponsor.name}} Profile Image"
-                      style="background-image: url({{sponsor.image}})">
-                <h4>{{sponsor.name}}</h4>
-              </a>
-            </li>
-        {{/each}}
-      </ul>
-    </section>
+    {{#if model.sponsors}}
+      <section class="satellite-profile__section" id="sponsors">
+        <h3>Sponsors</h3>
+        <ul class="satellite-profile__section--team">
+          {{#each model.sponsors as | sponsor |}}
+              <li class="satellite-profile__company-logo u-grid-6 u-grid-last">
+                <a href="{{sponsor.link}}" target="_blank">
+                  <img  src={{transparent-pixel}}
+                        alt="{{sponsor.name}} Profile Image"
+                        style="background-image: url({{sponsor.image}})">
+                  <h4>{{sponsor.name}}</h4>
+                </a>
+              </li>
+          {{/each}}
+        </ul>
+      </section>
+    {{/if}}
 
-    <section class="satellite-profile__section" id="endorsements">
-      <h3>Endorsements</h3>
-      <ul class="satellite-profile__section--team">
-        {{#each model.endorsements as | endorsement |}}
-            <li class="satellite-profile__company-logo u-grid-6 u-grid-last">
-              <a href="{{endorsement.link}}" target="_blank">
-                <img  src={{transparent-pixel}}
-                      alt="{{endorsement.name}} Profile Image"
-                      style="background-image: url({{endorsement.image}})">
-                <h4>{{endorsement.name}}</h4>
-              </a>
-            </li>
-        {{/each}}
-      </ul>
-    </section>
+    {{#if model.sponsors}}
+      <section class="satellite-profile__section" id="endorsements">
+        <h3>Endorsements</h3>
+        <ul class="satellite-profile__section--team">
+          {{#each model.endorsements as | endorsement |}}
+              <li class="satellite-profile__company-logo u-grid-6 u-grid-last">
+                <a href="{{endorsement.link}}" target="_blank">
+                  <img  src={{transparent-pixel}}
+                        alt="{{endorsement.name}} Profile Image"
+                        style="background-image: url({{endorsement.image}})">
+                  <h4>{{endorsement.name}}</h4>
+                </a>
+              </li>
+          {{/each}}
+        </ul>
+      </section>
+    {{/if}}
 
   {{/ivy-tabs}}
 

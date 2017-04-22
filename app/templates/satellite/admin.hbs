@@ -25,7 +25,7 @@
 <main class="u-grid-container">
   {{#ivy-tabs selection=selection as |tabs|}}
 
-    {{#tabs.tablist as |tablist|}}
+    {{!-- {{#tabs.tablist as |tablist|}}
 
       <ul role="presentation">
 
@@ -55,7 +55,7 @@
 
       </ul>
 
-    {{/tabs.tablist}}
+    {{/tabs.tablist}} --}}
 
     <section class="satellite-profile__section" id="about">
       <div class="u-grid-16">
@@ -66,7 +66,7 @@
         {{float-input value=(mut model.donateLink) label="Donate Link"}}
 
         {{float-input value=(mut model.storeLink) label="Store Link" class="satellite-profile__store-link"}}
-        {{#image-uploader onUpload=(route-action 'onImageUpload' 'storeImage') as | url |}}
+        {{#image-uploader onUpload=(route-action 'onImageUpload' 'storeImage') class="satellite-profile__store-imageupload" as | url |}}
           <img src={{transparent-pixel}}
                class="satellite-profile__store-image"
                alt="Satellite March Store Image"
@@ -82,20 +82,22 @@
     <section class="satellite-profile__section">
       <div class="u-grid-12">
         <h3>Blog</h3>
-        <select>
-          <option value="medium">Medium</option>
-          <option value="wordpress">Wordpress</option>
-          <option value="wordpress">Squarespace</option>
-          <option value="wordpress">Other</option>
+        <select style="line-height: 45px;height: 45px;width: 100px;float: left;" onchange={{action (mut model.blogType) value="target.value"}}>
+          <option value="" selected={{eq '' model.blogType}}>Blog Type</option>
+          <option value="medium" selected={{eq 'medium' model.blogType}}>Medium</option>
+          <option value="wordpress" selected={{eq 'wordpress' model.blogType}}>Wordpress</option>
+          <option value="squarespace" selected={{eq 'squarespace' model.blogType}}>Squarespace</option>
+          <option value="other" selected={{eq 'other' model.blogType}}>Other</option>
         </select>
-        {{float-input value=(mut blogUrl) label="Blog URL"}}
+        {{float-input value=(mut model.blogUrl) label="Blog URL" class="blog-options-url"}}
       </div>
 
       <div class="u-grid-12 u-grid-last">
         <h3>Social Media</h3>
-        {{float-input value=(mut facebookUrl) label="Facebook Page" icon="facebook-official" placeholder="https://www.facebook.com/marchforscience"}}
-        {{float-input value=(mut twitterUrl) label="Twitter Page" icon="twitter" placeholder="https://www.facebook.com/sciencemarchdc"}}
-        {{float-input value=(mut instagramUrl) label="Instagram Page" icon="instagram" placeholder="https://www.instagram.com/sciencemarchdc"}}
+        {{float-input value=(mut model.facebookUrl) label="Facebook URL" icon="facebook-official" placeholder="https://www.facebook.com/marchforscience"}}
+        {{float-input value=(mut model.twitterUrl) label="Twitter URL" icon="twitter" placeholder="https://www.facebook.com/sciencemarchdc"}}
+        {{float-input value=(mut model.instagramUrl) label="Instagram URL" icon="instagram" placeholder="https://www.instagram.com/sciencemarchdc"}}
+        {{float-input value=(mut model.websiteUrl) label="Website URL" icon="website" placeholder="https://www.marchforscience.com"}}
       </div>
     </section>
 
