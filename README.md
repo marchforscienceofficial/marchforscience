@@ -12,17 +12,35 @@ Web Client [Ember](http://emberjs.com)
 ### Getting Set Up
 
 Ensure the following is installed on your system before starting.
- - Install MongoDB: `brew install mongodb && mkdir -p /data/db && sudo chmod 777 /data/db`
  - Install Loopback CLI: `npm install -g loopback-cli`
  - Install Ember CLI: `npm install -g ember-cli`
  - NPM Install: `npm install`
 
+Create a [Google Cloud Platform service account](https://cloud.google.com/iam/docs/creating-managing-service-accounts)
+and grant it the Cloud Datastore User role. Save the secret key as `datastore-secret-key.json` in the marchforscience
+project directory.
+
+Create an `.env` file in the marchforscience project directory and populate it with the approprate values.
+
+```
+# Node Process Settings
+NODE_ENV=development
+NODE_SESSION_SECRET=
+
+# Amazon S3 Configuration
+S3_BUCKET=
+S3_REGION=
+S3_SECRET=
+S3_KEY=
+
+# Google Cloud Platform Configuration
+GOOGLE_PROJECT_ID=
+GOOGLE_SERVICE_ACCOUNT=
+```
+
 ### Getting Started
 
-In three separate terminal tabs:
- - Start MongoDB by running: `mongod`
-    * Go to localhost:8080 in your browser
-    * Add a new database called "marchforscience"
+In two separate terminal tabs:
  - Start the API server: `npm run server`
  - Start the Ember client: `npm start`
 
