@@ -9,6 +9,7 @@
       background-color: get-color(white);
       margin: 0;
       padding: 4px 24px;
+      text-align: center;
     }
   }
 
@@ -410,7 +411,7 @@
   padding: 16px;
   display: flex;
   flex-flow: column;
-  //justify-content: space-between
+  justify-content: space-between;
 
   &.leftCall {
     flex: 6;
@@ -436,18 +437,6 @@
   header {
     display: flex;
   }
-
-  p {
-
-  }
-}
-
-.home-page-callToAction-rightCall {
-  //flex: 4 auto;
-  //
-  //display: flex;
-  //flex-flow: column;
-  //justify-content: space-between;
 }
 
 
