@@ -160,15 +160,35 @@
 
   .QOD {
     color: get-color(teal4);
+    margin: 16px 0;
     font-size: 40px;
     font-weight: 100;
     text-align: center;
   }
 
   .callToAction {
+    margin: 0;
     padding: 0;
     display: flex;
     justify-content: space-between;
+
+    .callToAction-leftCall {
+      background-color: get-color(teal);
+      flex: 6;
+    }
+
+    .callToAction-rightCall {
+      background-color: get-color(teal, .2);
+      flex: 4;
+    }
+
+    header {
+      display: flex;
+
+      h3 {
+        color: get-color(black, .7);
+      }
+    }
 
     li {
       list-style: none;
@@ -193,9 +213,8 @@
     }
 
     .u-button {
-
-      background-color: get-color(black);
-
+      background-color: get-color(black, .7);
+      min-width: 50px;
       color: get-color(white);
       text-transform: uppercase;
       a {
@@ -209,18 +228,34 @@
   }
 
   .socialMedia {
+    &-squiggleContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      span {
+        border: solid 2px get-color(gray3);
+        height: 0;
+        width: 100%;
+        margin: 40px 0 40px 0;
+      }
+      img {
+        height: 54px;
+      }
+    }
 
     header {
+      margin-bottom: 16px;
       background-color: get-color(orange);
 
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
       align-items: center;
 
-      color: white;
+      color: get-color(white);
+
 
       h1 {
-        margin: 0;
+        margin: 0 24px 0 0;
 
         font-family: inherit;
         font-size: 3.8em;
@@ -231,8 +266,9 @@
         margin: 0;
         height: 100%;
 
-        background-color: get-color(white, .4);
-        padding: 4px 12px;
+        background-color: get-color(white, .2);
+        border: 2px white solid;
+        padding: 8px 12px;
         display: flex;
         flex-flow: column;
         align-items: center;
@@ -245,6 +281,10 @@
           text-space: 4px;
           letter-spacing: 1px;
         }
+      }
+
+      .u-button:hover {
+        background-color: get-color(white, .4)
       }
 
     }
@@ -272,6 +312,7 @@
     background-color: get-color(teal, .2);
     display: flex;
     flex-direction: column;
+
     header {
       background-color: get-color(teal);
       padding: 12px 0;
@@ -281,9 +322,21 @@
         padding: 4px 24px;
       }
     }
+    ul {
+      padding: 0;
+    }
 
     li {
       list-style: none;
+      display: flex;
+      img {
+        margin: 20px;
+      }
+      p {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+      }
       p span {
         display: block;
       }
