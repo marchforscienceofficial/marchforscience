@@ -18,53 +18,53 @@
     "dataSource": "ses"
   },
   "UserCredential": {
-    "dataSource": "mongodb",
+    "dataSource": "gcloud-datastore",
     "public": false
   },
   "UserIdentity": {
-    "dataSource": "mongodb",
+    "dataSource": "gcloud-datastore",
     "public": false
   },
   "AccessToken": {
-    "dataSource": "mongodb",
+    "dataSource": "gcloud-datastore",
     "public": false
   },
   "ACL": {
-    "dataSource": "mongodb",
+    "dataSource": "gcloud-datastore",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "mongodb",
+    "dataSource": "gcloud-datastore",
     "public": false,
     "options": {
       "strictObjectIDCoercion": true
     }
   },
   "Role": {
-    "dataSource": "mongodb",
+    "dataSource": "gcloud-datastore",
     "public": false
   },
   "satellite": {
-    "dataSource": "mongodb",
+    "dataSource": "gcloud-datastore",
     "public": true
   },
   "user": {
-    "dataSource": "mongodb",
+    "dataSource": "gcloud-datastore",
     "public": true,
     "options": {
       "emailVerificationRequired": true
     }
   },
   "MarchRoles": {
-    "dataSource": "mongodb",
+    "dataSource": "gcloud-datastore",
     "public": false
   },
   "SatelliteMapping": {
-    "dataSource": "mongodb",
+    "dataSource": "gcloud-datastore",
     "public": false
   },
   "SatelliteAdmins": {
-    "dataSource": "mongodb",
+    "dataSource": "gcloud-datastore",
     "public": true
   }
 }
