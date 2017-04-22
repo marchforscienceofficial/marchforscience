@@ -104,6 +104,7 @@ hr {
     line-height: 72px;
     float: right;
     font-size: 1.8rem;
+    float: left;
   }
 
   &__logo {
@@ -112,6 +113,7 @@ hr {
     margin: 12px 12px;
     line-height: 48px;
     color: white;
+    float: left;
   }
 
 }
@@ -137,8 +139,6 @@ a {
   font-weight: bold;
   text-decoration: none;
   transition: color .3s;
-
-  display: flex;
 
   &:hover {
     text-decoration: underline;

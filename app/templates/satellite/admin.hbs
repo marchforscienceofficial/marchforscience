@@ -78,6 +78,27 @@
 
     </section>
 
+
+    <section class="satellite-profile__section">
+      <div class="u-grid-12">
+        <h3>Blog</h3>
+        <select>
+          <option value="medium">Medium</option>
+          <option value="wordpress">Wordpress</option>
+          <option value="wordpress">Squarespace</option>
+          <option value="wordpress">Other</option>
+        </select>
+        {{float-input value=(mut blogUrl) label="Blog URL"}}
+      </div>
+
+      <div class="u-grid-12 u-grid-last">
+        <h3>Social Media</h3>
+        {{float-input value=(mut facebookUrl) label="Facebook Page" icon="facebook-official" placeholder="https://www.facebook.com/marchforscience"}}
+        {{float-input value=(mut twitterUrl) label="Twitter Page" icon="twitter" placeholder="https://www.facebook.com/sciencemarchdc"}}
+        {{float-input value=(mut instagramUrl) label="Instagram Page" icon="instagram" placeholder="https://www.instagram.com/sciencemarchdc"}}
+      </div>
+    </section>
+
     <section class="satellite-profile__section--gray" id="team">
       <h3>Team</h3>
       <ul class="satellite-profile__section--team">
@@ -109,23 +130,72 @@
       </ul>
     </section>
 
-    <div class="u-grid-12">
-      <h3>Blog</h3>
-      <select>
-        <option value="medium">Medium</option>
-        <option value="wordpress">Wordpress</option>
-        <option value="wordpress">Squarespace</option>
-        <option value="wordpress">Other</option>
-      </select>
-      {{float-input value=(mut blogUrl) label="Blog URL"}}
-    </div>
+    <section class="satellite-profile__section" id="sponsors">
+      <h3>Sponsors</h3>
+      <ul class="satellite-profile__section--team">
+        {{#each model.sponsors as | sponsor |}}
+            <li class="satellite-profile__company-logo u-grid-6 u-grid-last">
+              <a href="{{sponsor.link}}" target="_blank">
+                <img  src={{transparent-pixel}}
+                      alt="{{sponsor.name}} Profile Image"
+                      style="background-image: url({{sponsor.image}})">
+                <h4>{{sponsor.name}}</h4>
+                <button class="fa fa-close satellite-profile__teammate-remove" {{action "removeSponsor" sponsor}}></button>
+              </a>
+            </li>
+        {{/each}}
 
-    <div class="u-grid-12 u-grid-last">
-      <h3>Social Media</h3>
-      {{float-input value=(mut blogUrl) label="Facebook Page" icon="facebook-official"}}
-      {{float-input value=(mut blogUrl) label="Twitter Handle" icon="twitter"}}
-      {{float-input value=(mut blogUrl) label="Instagram Handle" icon="instagram"}}
-    </div>
+        {{#if showAddSponsor}}
+          <li class="satellite-profile__company-logo satellite-profile_add-new u-grid-6 u-grid-last">
+            {{float-input value=(mut sponsorName) label="Sponsor Name"}}
+            {{float-input value=(mut sponsorLink) label="Sponsor Link"}}
+            <button class="u-button" {{action 'addSponsor' sponsorName sponsorLink}}>Save</button>
+            <button class="u-button__tertiary" style="margin-left: 8px;"{{action 'toggleSponsor'}}>Cancel</button>
+          </li>
+        {{else}}
+          {{#image-uploader onUpload=(action 'toggleSponsor') class="satellite-profile__endorsement-upload satellite-profile__company-logo u-grid-6 u-grid-last" as | url |}}
+            <li class="satellite-profile__company-logo satellite-profile_add-new u-grid-6 u-grid-last">
+              <span class="satellite-profile__add-new--image"></span>
+              <h4>Add sponsor</h4>
+            </li>
+          {{/image-uploader}}
+        {{/if}}
+      </ul>
+    </section>
+
+    <section class="satellite-profile__section" id="endorsements">
+      <h3>Endorsements</h3>
+      <ul class="satellite-profile__section--team">
+        {{#each model.endorsements as | endorsement |}}
+            <li class="satellite-profile__company-logo u-grid-6 u-grid-last">
+              <a href="{{endorsement.link}}" target="_blank">
+                <img  src={{transparent-pixel}}
+                      alt="{{endorsement.name}} Profile Image"
+                      style="background-image: url({{endorsement.image}})">
+                <h4>{{endorsement.name}}</h4>
+                <button class="fa fa-close satellite-profile__teammate-remove" {{action "removeEndorsement" endorsement}}></button>
+              </a>
+            </li>
+        {{/each}}
+
+        {{#if showAddEndorsement}}
+          <li class="satellite-profile__company-logo satellite-profile_add-new u-grid-6 u-grid-last">
+            {{float-input value=(mut endorsementName) label="Endorsement Name"}}
+            {{float-input value=(mut endorsementLink) label="Endorsement Link"}}
+            <button class="u-button" {{action 'addEndorsement' endorsementName endorsementLink}}>Save</button>
+            <button class="u-button__tertiary" style="margin-left: 8px;"{{action 'toggleEndorsement'}}>Cancel</button>
+          </li>
+        {{else}}
+          {{#image-uploader onUpload=(action 'toggleEndorsement') class="satellite-profile__endorsement-upload satellite-profile__company-logo u-grid-6 u-grid-last" as | url |}}
+            <li class="satellite-profile__company-logo satellite-profile_add-new u-grid-6 u-grid-last">
+              <span class="satellite-profile__add-new--image"></span>
+              <h4>Add endorsement</h4>
+            </li>
+          {{/image-uploader}}
+        {{/if}}
+
+      </ul>
+    </section>
 
     {{outlet}}
 

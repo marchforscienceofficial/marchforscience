@@ -5,8 +5,8 @@ module.exports = {
     "host": "127.0.0.1",
     "url":  "",
     "database": "marchforscience",
-    "user": "me",
-    "password": "me",
+    // "user": "me",
+    // "password": "me",
     "port": 27017
   }
 };

@@ -62,6 +62,16 @@
       "type": [
         "object"
       ]
+    },
+    "endorsements": {
+      "type": [
+        "object"
+      ]
+    },
+    "sponsors": {
+      "type": [
+        "object"
+      ]
     }
   },
   "validations": [],

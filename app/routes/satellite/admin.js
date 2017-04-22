@@ -3,7 +3,7 @@ import Ember from 'ember';
 const { get, set } = Ember;
 
 // Keys we will send to the server
-const savedKeys = [ 'logo', 'banner', 'mission', 'storeLink', 'storeImage', 'donateLink' ];
+const savedKeys = [ 'logo', 'banner', 'mission', 'storeLink', 'storeImage', 'donateLink', 'facebookUrl', 'twitterUrl', 'instagramUrl' ];
 
 export default Ember.Route.extend({
   actions: {
@@ -40,7 +40,7 @@ export default Ember.Route.extend({
     cancelChanges(){
       this.transitionTo('satellite', get(this.currentModel, 'id'))
     }
-    
+
   },
 
   beforeModel(){
