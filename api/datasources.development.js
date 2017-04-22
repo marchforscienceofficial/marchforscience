@@ -4,7 +4,7 @@ module.exports = {
     "connector": "gcloud",
     "projectId": process.env.GOOGLE_PROJECT_ID,
     "keyFilename": "datastore-secret-key.json",
-    "email": "cloud-datastore-user@" + process.env.GOOGLE_PROJECT_ID + ".iam.gserviceaccount.com",
+    "email": process.env.GOOGLE_SERVICE_ACCOUNT
   },
   "mongodb": {
     "connector": "mongodb",
