@@ -11,7 +11,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+service: default
 runtime: nodejs
 env: flex
 env_variables:
   NODE_ENV: 'production'
+automatic_scaling:
+  min_num_instances: 5
+  max_num_instances: 20
+  cool_down_period_sec: 60

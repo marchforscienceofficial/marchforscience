@@ -13,6 +13,8 @@
     box-sizing: border-box;
     padding-top: 24px;
     position: relative;
+
+    margin-bottom: 32px;
   }
 
   .satellite-profile__header--logo {
@@ -89,13 +91,17 @@
   }
 
   .satellite-profile__store-image {
+    @include elevation(2);
+    border: 18px solid transparent;
+    border-radius: 3px;
     width: 100%;
     height: 0px;
-    padding: 0 0 100% 0;
-    background-color: transparent;
+    padding: 0 0 calc(100% - 32px) 0;
+    background-color: white;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    box-sizing: border-box;
   }
 
   .satellite-profile__store-link {
@@ -111,6 +117,8 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-flow: wrap row;
   }
 
   .satellite-profile__teammate-remove {
@@ -132,11 +140,10 @@
     }
   }
 
-  .satellite-profile__team-member {
+  .satellite-profile__team-member, .satellite-profile__company-logo {
     text-align: center;
     margin-bottom: 18px;
     position: relative;
-    height: 200px;
 
     img, .satellite-profile__add-new--image {
       @include elevation(2);
@@ -182,16 +189,11 @@
 
     h4 {
       margin-bottom: 0px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-height: 60px;
     }
 
     h5 {
       color: get-color(gray4);
       font-size: 1.6rem;
-      overflow: hidden;
-      text-overflow: ellipsis;
     }
 
     p {
@@ -219,9 +221,59 @@
 
   }
 
+  .file-picker .satellite-profile__company-logo {
+    width: 100%;
+  }
+
+  .satellite-profile__company-logo {
+    img, .satellite-profile__add-new--image {
+      border-radius: 12px;
+    }
+
+    a {
+      text-decoration: none !important;
+    }
+
+    .satellite-profile__teammate-remove {
+      transform: translateX(32px) scale(1);
+    }
+  }
+
+  .satellite-profile__endorsement-upload {
+
+  }
+
   .satellite-profile__team-member--empty {
     margin-top: 52px;
     color: get-color(gray5);
+    width: 100%;
+  }
+
+  .satellite-profile__header-social-icons {
+    list-style: none;
+    padding: 0 0 24px 0;
+
+    li {
+      display: inline;
+      margin: 0 16px;
+      font-size: 2.8rem;
+      a {
+        color: white;
+        opacity: .75;
+        transition: opacity .3s;
+        cursor: pointer;
+
+        &:hover, &:focus {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .blog-options-url {
+    width: calc(100% - 112px);
+    margin-left: 12px;
+    float: left;
   }
 
 }

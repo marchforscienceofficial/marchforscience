@@ -64,4 +64,37 @@
 
   }
 
+  .satellite-profile__store-image {
+    border-radius: 0 0 3px 3px !important;
+    width: calc(100% - 2px) !important;
+    margin-left: 1px !important;
+  }
+
+  .satellite-profile__store-imageupload {
+    display: block;
+    position: relative;
+    &:before {
+      content: "\f040";
+      font-family: "fontawesome";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 32px;
+      height: 32px;
+      color: rgba(0,0,0,.55);
+      z-index: 999;
+    }
+    &:after {
+      content: "\f030";
+      font-family: "fontawesome";
+      position: absolute;
+      font-size: 90px;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
+      color: rgba(0,0,0,.55);
+      z-index: 999;
+    }
+  }
+
 }

@@ -22,6 +22,8 @@ export default Ember.Object.extend({
   mission: '',
 
   admins: [],
+  endorsements: [],
+  sponsors: [],
 
   parsedMission: Ember.computed('mission', function(){
     try {

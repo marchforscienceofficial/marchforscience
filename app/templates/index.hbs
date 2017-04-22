@@ -39,7 +39,6 @@
     </li>
     <li>
       <img src="images/button-inactive.svg"/>
-
       <a href="">
         <span class="u-text-white u-text-light scienceCalendar-dayTag">wednesday</span>
         <span class="u-text-white scienceCalendar-scienceTag">science</span>
@@ -48,7 +47,6 @@
     </li>
     <li>
       <img src="images/button-inactive.svg"/>
-
       <a href="">
         <span class="u-text-white u-text-light scienceCalendar-dayTag">thursday</span>
         <span class="u-text-white scienceCalendar-scienceTag">science</span>
@@ -57,7 +55,6 @@
     </li>
     <li>
       <img src="images/button-inactive.svg"/>
-
       <a href="">
         <span class="u-text-white u-text-light scienceCalendar-dayTag">friday</span>
         <span class="u-text-white scienceCalendar-scienceTag">science</span>
@@ -74,36 +71,57 @@
     </li>
   </ul>
 
-  <div class="QOD u-text-light">"A movement in motion stays in motion."</div>
-
-  <ul class="callToAction">
-    <li class="callToAction-leftCall">
-      <div>
-        <header>
-          <img src="images/icon-globe.svg"/>
-          <h3>Join the march for science network</h3>
-        </header>
-        <p class="callToAction-body">This is just the beginning. Many Satellites are signing on to become a permanent part of the March for Science network. You can create an account and register to get updates nationwide and in your local community. Keep an eye on your Satellite’s homepage; we’re rolling out exciting new features to keep you informed and connected in the coming weeks!</p>
-        <div>
-          <button class="u-button">{{#user-auth}}{{/user-auth}}</button>
-          <button class="u-button">{{#link-to 'satellites'}}browse satellites{{/link-to}}</button>
+  <div class="home-page-callToAction">
+    <header class="home-page-callToAction-header">
+      <h1 class="u-grid-container">MONDAY</h1>
+      <h2 style="font-size: 32px; font-weight: 200;">SCIENCE ENGAGES</h2>
+      <p class="QOD u-text-light">"A movement in motion stays in motion."</p>
+    </header>
+    <div class="" style="background-color: #00c9c4;overflow: hidden;">
+      <div class="home-page-callToAction-body u-grid-container">
+        <div class="home-page-callToAction-body-call leftCall">
+          <header>
+            <img src="images/icon-globe.svg"/>
+            <h3>Join the march for science network</h3>
+          </header>
+          <p>This is just the beginning. Many Satellites are signing on to become a permanent part of the March for Science network. You can create an account and register to get updates nationwide and in your local community. Keep an eye on your Satellite’s homepage; we’re rolling out exciting new features to keep you informed and connected in the coming weeks!</p>
+          <div class="home-page-callToAction-body-call-buttons">
+            <button class="u-button">{{#link-to 'satellites'}}browse satellites{{/link-to}}</button>
+          </div>
         </div>
-      </div>
-    </li>
-    <li class="callToAction-rightCall">
-      <div>
-        <header>
-          <img src="images/icon-bulb.svg"/>
-          <h3>Listen to the post-march podcast</h3>
-        </header>
-        <p class="callToAction-body">March for Science and the Taste of Science are co-hosting a podcast at the Carnegie Institute. Tune in to listen to organizers and community members share stories from the March and their vision for the future.</p>
-        <div>
+        <div class="home-page-callToAction-body-call rightCall">
+          <header>
+            <img src="images/icon-bulb.svg"/>
+            <h3>Listen to the post-march podcast</h3>
+          </header>
+          <p class="callToAction-body">March for Science and the Taste of Science are co-hosting a podcast at the Carnegie Institute. Tune in to listen to organizers and community members share stories from the March and their vision for the future.</p>
+          <div class="home-page-callToAction-body-call-buttons">
           <button class="u-button">listen now</button>
+          </div>
         </div>
       </div>
-    </li>
-  </ul>
+    </div>
+  </div>
 
+  <section class="home-page-megaphone u-grid-container">
+    <img src="images/megaphone.svg"/>
+    <div class="home-page-megaphone-triangle">
+      <div class="home-page-megaphone-triangle-border grey"></div>
+      <div class="home-page-megaphone-triangle-border white"></div>
+    </div>
+    <div class="home-page-megaphone-text">
+      <h3>science<p>NOT</p>silence</h3>
+      <p class="home-page-megaphone-text-body">
+        <p>Contact your local officials (council members, your mayor,
+          county executives) with a MFS postcard that why they should support
+          scientific institutions and science-based policies.</p>
+        <p class="home-page-megaphone-text-body-action u-text-bold">
+          #NoSidesInScience
+          <a class="u-button">contact now</a>
+        </p>
+      </p>
+    </div>
+  </section>
 
   <section class="socialMedia">
     <div class="socialMedia-squiggleContainer">
@@ -114,21 +132,27 @@
     <header>
       <h1>#KEEPMARCHING</h1>
       <button class="u-button">
-        <span class="socialMedia-actionWhat">Tell us how YOU marched for science. </span>
+        <span class="socialMedia-actionWhat">Tell us how YOU marched for science.</span>
       </button>
     </header>
 
     <p class="socialMedia-longActionStory u-text-light u-text-gray5 u-grid-container">On April 22, 2017, over 500 Marches worldwide stood up for science. Today is all about celebrating the accomplishments of local communities, pushing the conversation forward, and reflecting on the power of this movement. Post pictures of where you marched or the sign you held.
     <span class="u-text-bold">Share your favorite experiences, stories of the people you met, the things you learned, or what you’re inspired to do next.</span></p>
-    <ul class="socialMedia-links u-text-gray5 u-text-h1">
-      <li class="fa fa-twitter"></li>
-      <li class="fa fa-facebook-f"></li>
-      <li class="fa fa-instagram"></li>
+    <ul class="socialMedia-links u-text-h1">
+      <li>
+        <a class="fa fa-twitter" href="https://twitter.com/"></a>
+      </li>
+      <li>
+        <a class="fa fa-facebook-f" href="https://facebook.com"></a>
+      </li>
+      <li>
+        <a class="fa fa-instagram" href="https://instagram.com"></a>
+      </li>
     </ul>
   </section>
 
   <section class="moreCallToAction">
-    <header>
+    <header class="home-page-genericHeader u-text-center">
       <h1 class="u-grid-container u-text-h1 u-text-black">MORE WAYS TO GET INVOLVED</h1>
     </header>
     <ul class="u-grid-container">

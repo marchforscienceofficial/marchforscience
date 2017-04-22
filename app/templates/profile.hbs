@@ -48,6 +48,7 @@
 
     {{#tabs.tabpanel "subs"}}
       <h2>Subscriptions</h2>
+      <h4 class="u-text-center u-text-gray">No Subscriptions</h4>
     {{/tabs.tabpanel}}
 
     {{#tabs.tabpanel "satellites"}}
@@ -60,6 +61,8 @@
               <h3>{{satellite.city}}, {{satellite.state}}, {{satellite.country}}</h3>
             {{/link-to}}
         </li>
+      {{else}}
+        <h4 class="u-text-center u-text-gray">No Satellites</h4>
       {{/each}}
     </ul>
 

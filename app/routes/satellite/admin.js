@@ -3,9 +3,12 @@ import Ember from 'ember';
 const { get, set } = Ember;
 
 // Keys we will send to the server
-const savedKeys = [ 'logo', 'banner', 'mission', 'storeLink', 'storeImage', 'donateLink' ];
+const savedKeys = [ 'logo', 'banner', 'mission', 'storeLink', 'storeImage', 'donateLink', 'facebookUrl', 'twitterUrl', 'instagramUrl', 'websiteUrl', 'blogType', 'blogUrl' ];
 
 export default Ember.Route.extend({
+
+  session: Ember.inject.service('session'),
+
   actions: {
     routeTab(route){
       this.transitionTo(route);
@@ -40,12 +43,30 @@ export default Ember.Route.extend({
     cancelChanges(){
       this.transitionTo('satellite', get(this.currentModel, 'id'))
     }
-    
+
   },
 
   beforeModel(){
 
     // TODO: Redirect on invalid user
+
+  },
+
+  afterModel(model){
+    var admins = get(model, 'admins');
+    var uid = get(this, 'session.id');
+
+    var role = get(this, 'session.user.role');
+
+    if (role === 'admin') return;
+
+    if (!admins || !uid) return;
+
+    for (let i=0;i<admins.length;i++){
+      if (admins[i].id === uid) return true;
+    }
+
+    this.transitionTo('satellite', get(model, 'uriName'));
 
   },
 

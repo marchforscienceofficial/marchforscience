@@ -5,10 +5,24 @@ const { get, set } = Ember;
 export default Ember.Controller.extend({
 
   session: Ember.inject.service('session'),
+
   showAddTeammate: false,
+  showAddEndorsement: false,
+  showAddSponsor: false,
+
   actions: {
     toggleAddTeammate() {
       this.set('showAddTeammate', !this.get('showAddTeammate'));
+    },
+
+    toggleEndorsement(image) {
+      this.set('endorsementImage', image);
+      this.set('showAddEndorsement', !this.get('showAddEndorsement'));
+    },
+
+    toggleSponsor(image) {
+      this.set('sponsorImage', image);
+      this.set('showAddSponsor', !this.get('showAddSponsor'));
     },
 
     removeTeammate(adminId, adminObj){
@@ -99,7 +113,75 @@ export default Ember.Controller.extend({
         console.error('Error saving admin account info.', err);
         return this.get('notifications').error(err.message || 'Oops! Something went wrong. Please try again later.');
       });
+    },
+
+    addEndorsement (name, link){
+      var image = this.get('endorsementImage');
+      var arr = get(this.model, "endorsements");
+      if ( !name || !link ) { return this.get('notifications').error('Please fill out all fields'); }
+      arr.push({ name: name, link: link, image: image });
+      set(this.model, "endorsements", arr.slice());
+
+      return this.saveEndorsements().then(() => {
+        this.set('endorsementName', '');
+        this.set('endorsementLink', '');
+        this.set('endorsementImage', '');
+        this.set('showAddEndorsement', false);
+        return this.get('notifications').success('Endorsement added');
+      });
+    },
+
+    removeEndorsement (obj){
+      var arr = get(this.model, "endorsements");
+      arr.splice(arr.indexOf(obj), 1);
+      set(this.model, 'endorsements', arr.slice());
+      return this.saveEndorsements().then(() => {
+        return this.get('notifications').success('Endorsement removed');
+      });
+    },
+
+    addSponsor (name, link){
+      var image = this.get('sponsorImage');
+      var arr = get(this.model, "sponsors");
+      if ( !name || !link ) { return this.get('notifications').error('Please fill out all fields'); }
+      arr.push({ name: name, link: link, image: image });
+      set(this.model, "sponsors", arr.slice());
+
+      return this.saveSponsors().then(() => {
+        this.set('sponsorName', '');
+        this.set('sponsorLink', '');
+        this.set('sponsorImage', '');
+        this.set('showAddSponsor', false);
+        return this.get('notifications').success('Sponsor added');
+      });
+    },
+
+    removeSponsor (obj) {
+      var arr = get(this.model, "sponsors");
+      arr.splice(arr.indexOf(obj), 1);
+      set(this.model, 'sponsors', arr.slice());
+      return this.saveSponsors().then(() => {
+        return this.get('notifications').success('Sponsor removed');
+      });
     }
+  },
+
+  saveEndorsements (){
+    return $.ajax(`/api/satellites/${get(this.model, 'id')}`, {
+      method: 'PATCH',
+      data: {
+        "endorsements": get(this.model, "endorsements")
+      }
+    });
+  },
+
+  saveSponsors (){
+    return $.ajax(`/api/satellites/${get(this.model, 'id')}`, {
+      method: 'PATCH',
+      data: {
+        "sponsors": get(this.model, "sponsors")
+      }
+    });
   },
 
   isAdmin: Ember.computed('model.admins', 'session.id', function(){
