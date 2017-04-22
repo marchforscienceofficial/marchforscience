@@ -74,36 +74,36 @@
     </li>
   </ul>
 
-  <div class="QOD u-text-light">"A movement in motion stays in motion."</div>
-
-  <ul class="callToAction">
-    <li class="callToAction-leftCall">
-      <div>
+  <div class="home-page-callToAction">
+    <header class="home-page-callToAction-header">
+      <h1 class="u-grid-container">MONDAY</h1>
+      <h2 style="font-size: 32px; font-weight: 200;">SCIENCE ENGAGES</h2>
+      <p class="QOD u-text-light">"A movement in motion stays in motion."</p>
+    </header>
+    <div class="home-page-callToAction-body">
+      <div class="home-page-callToAction-body-call leftCall">
         <header>
           <img src="images/icon-globe.svg"/>
           <h3>Join the march for science network</h3>
         </header>
-        <p class="callToAction-body">This is just the beginning. Many Satellites are signing on to become a permanent part of the March for Science network. You can create an account and register to get updates nationwide and in your local community. Keep an eye on your Satellite’s homepage; we’re rolling out exciting new features to keep you informed and connected in the coming weeks!</p>
-        <div>
+        <p>This is just the beginning. Many Satellites are signing on to become a permanent part of the March for Science network. You can create an account and register to get updates nationwide and in your local community. Keep an eye on your Satellite’s homepage; we’re rolling out exciting new features to keep you informed and connected in the coming weeks!</p>
+        <div class="home-page-callToAction-body-call-buttons">
           <button class="u-button">{{#user-auth}}{{/user-auth}}</button>
           <button class="u-button">{{#link-to 'satellites'}}browse satellites{{/link-to}}</button>
         </div>
       </div>
-    </li>
-    <li class="callToAction-rightCall">
-      <div>
+      <div class="home-page-callToAction-body-call rightCall">
         <header>
           <img src="images/icon-bulb.svg"/>
           <h3>Listen to the post-march podcast</h3>
         </header>
         <p class="callToAction-body">March for Science and the Taste of Science are co-hosting a podcast at the Carnegie Institute. Tune in to listen to organizers and community members share stories from the March and their vision for the future.</p>
-        <div>
-          <button class="u-button">listen now</button>
+        <div class="home-page-callToAction-body-call-buttons">
+        <button class="u-button">listen now</button>
         </div>
       </div>
-    </li>
-  </ul>
-
+    </div>
+  </div>
 
   <section class="socialMedia">
     <div class="socialMedia-squiggleContainer">
@@ -120,15 +120,21 @@
 
     <p class="socialMedia-longActionStory u-text-light u-text-gray5 u-grid-container">On April 22, 2017, over 500 Marches worldwide stood up for science. Today is all about celebrating the accomplishments of local communities, pushing the conversation forward, and reflecting on the power of this movement. Post pictures of where you marched or the sign you held.
     <span class="u-text-bold">Share your favorite experiences, stories of the people you met, the things you learned, or what you’re inspired to do next.</span></p>
-    <ul class="socialMedia-links u-text-gray5 u-text-h1">
-      <li class="fa fa-twitter"></li>
-      <li class="fa fa-facebook-f"></li>
-      <li class="fa fa-instagram"></li>
+    <ul class="socialMedia-links u-text-h1">
+      <li>
+        <a class="fa fa-twitter" href="https://twitter.com/"></a>
+      </li>
+      <li>
+        <a class="fa fa-facebook-f" href="https://facebook.com"></a>
+      </li>
+      <li>
+        <a class="fa fa-instagram" href="https://instagram.com"></a>
+      </li>
     </ul>
   </section>
 
   <section class="moreCallToAction">
-    <header>
+    <header class="home-page-genericHeader">
       <h1 class="u-grid-container u-text-h1 u-text-black">MORE WAYS TO GET INVOLVED</h1>
     </header>
     <ul class="u-grid-container">

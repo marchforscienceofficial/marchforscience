@@ -1,5 +1,17 @@
 .home-page {
 
+  .home-page-genericHeader {
+    background-color: get-color(teal);
+    padding: 12px 0;
+
+    h1 {
+      width: 100%;
+      background-color: get-color(white);
+      margin: 0;
+      padding: 4px 24px;
+    }
+  }
+
   .jumbotron {
     height: 400px;
     color: white;
@@ -180,76 +192,6 @@
       transition: background-color .3s;
     }
   }
-
-  .QOD {
-    color: get-color(teal4);
-    margin: 16px 0;
-    font-size: 40px;
-    font-weight: 100;
-    text-align: center;
-  }
-
-  .callToAction {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-
-    .callToAction-leftCall {
-      background-color: get-color(teal);
-      flex: 6;
-    }
-
-    .callToAction-rightCall {
-      background-color: get-color(teal, .2);
-      flex: 4;
-    }
-
-    header {
-      display: flex;
-
-      h3 {
-        color: get-color(black, .7);
-      }
-    }
-
-    li {
-      list-style: none;
-      padding: 16px;
-      background-color: get-color(teal);
-      display: flex;
-      flex-flow: column;
-    }
-
-    h3 {
-      display: flex;
-      font-family: inherit;
-      color: get-color(black);
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-    .callToAction-body {
-      flex: 1;
-      display: flex;
-      justify-content: flex-start;
-    }
-
-    .u-button {
-      background-color: get-color(black, .7);
-      min-width: 50px;
-      color: get-color(white);
-      text-transform: uppercase;
-      a {
-        color: get-color(white);
-      }
-      a:hover, a:focus {
-        text-decoration: none;
-        outline: none;
-      }
-    }
-  }
-
   .socialMedia {
     &-squiggleContainer {
       display: flex;
@@ -282,6 +224,7 @@
       h1 {
         margin: 0 24px 0 0;
 
+        text-align: center;
         font-family: inherit;
         font-size: 3.8em;
         font-weight: 600;
@@ -325,10 +268,31 @@
     .socialMedia-links {
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
 
       li {
         list-style: none;
         padding: 0 24px 24px 0;
+
+        a {
+          cursor: pointer;
+          color: get-color(gray5);
+
+          &:hover {
+            text-decoration:none;
+            outline: none;
+          }
+
+          &.fa-twitter:hover {
+            color: #1da1f2;
+          }
+          &.fa-facebook-f:hover {
+            color: #3b5998;
+          }
+          &.fa-instagram:hover {
+            color: #cd486b;
+          }
+        }
       }
     }
   }
@@ -338,19 +302,6 @@
     display: flex;
     flex-direction: column;
 
-    header {
-      border-color: get-color(teal);
-      border-style: solid;
-      border-width: 10px 0 10px 0;
-
-      background-color: get-color(white);
-      padding: 12px 0;
-
-      h1 {
-        margin: 0;
-        padding: 4px 24px;
-      }
-    }
     ul {
       padding: 0;
     }
@@ -373,5 +324,120 @@
   }
 
 }
+
+
+
+  .callToAction-rightCall {
+    background-color: get-color(teal, .2);
+    flex: 4 auto;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+  }
+
+    h3 {
+      color: get-color(black, .7);
+    }
+
+  h3 {
+    display: flex;
+    font-family: inherit;
+    color: get-color(black);
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .callToAction-body {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .u-button {
+    background-color: get-color(black, .7);
+    min-width: 50px;
+    color: get-color(white);
+    text-transform: uppercase;
+
+    a {
+      color: get-color(white);
+    }
+
+    a:hover, a:focus {
+      text-decoration: none;
+      outline: none;
+    }
+  }
+
+
+.home-page-callToAction {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: column;
+
+}
+
+.home-page-callToAction-header {
+  padding: 20px 0;
+
+  h1 {
+    text-align: center;
+    font-size: 54px;
+    letter-spacing: 4px;
+  }
+  h2 {
+    font-size: 32px;
+    font-weight: 200;
+    text-align: center;
+  }
+  .QOD {
+    color: get-color(teal4);
+    margin: 16px 0;
+    font-size: 24px;
+    font-weight: 100;
+    text-align: center;
+  }
+}
+
+.home-page-callToAction-body {
+  display: flex;
+  flex-flow: row;
+}
+
+.home-page-callToAction-body-call {
+  padding: 16px;
+  display: flex;
+  flex-flow: column;
+  //justify-content: space-between
+
+  &.leftCall {
+    flex: 6;
+    background-color: get-color(teal);
+  }
+
+  &.rightCall {
+    flex: 4;
+    background-color: get-color(teal, .2);
+  }
+
+  header {
+    display: flex;
+  }
+
+  p {
+
+  }
+}
+
+.home-page-callToAction-rightCall {
+  //flex: 4 auto;
+  //
+  //display: flex;
+  //flex-flow: column;
+  //justify-content: space-between;
+}
+
 
 
