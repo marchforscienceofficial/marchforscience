@@ -10,7 +10,7 @@ export default Ember.Service.extend({
   init(){
 
     this._super(...arguments);
-    this.set('accessToken', (document.cookie.match(/session=([^;]+)/) || [])[1]);
+    this.set('accessToken', (document.cookie.match(/^session=([^;]+)/) || document.cookie.match(/[\s]session=([^;]+)/) || [])[1]);
     this.set('id', (document.cookie.match(/uid=([^;]+)/) || [])[1]);
 
     $.ajaxSetup({
