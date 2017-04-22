@@ -419,7 +419,18 @@
 
   &.rightCall {
     flex: 4;
-    background-color: get-color(teal, .2);
+    background-color: rgba(255,255,255, 0.3);
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom:0;
+      left: 100%;
+      width: 100vw;
+      background-color: rgba(255,255,255, 0.3);
+      display: block;
+    }
   }
 
   header {
