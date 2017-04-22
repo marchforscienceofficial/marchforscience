@@ -1,4 +1,9 @@
 module.exports = {
+  "gcloud-datastore": {
+    "name": "gcloud-datastore",
+    "connector": "gcloud",
+    "projectId": "march-for-scienc-1486718000456",
+  },
   "mongodb": {
     "connector": "mongodb",
     "name": "mongodb",
