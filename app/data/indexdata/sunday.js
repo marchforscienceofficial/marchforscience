@@ -29,7 +29,7 @@ export default  {
   megaphone: {
     text: "Read and share \"I Marched For Science,\" which includes a statement on the importance of civic engagement.",
     hash: "#NoSidesInScience",
-    button: {text: "Read now", href: ""},
+    button: {text: "Read now", href: "https://www.marchforscience.com/blog/2017/4/23/i-marched-for-science"},
     twitterHash: '#KEEPMARCHING',
     twitterButton: {text: "Tell us how YOU marched for science.", href:"http://twitter.com/home?status=%23keepmarching%20%23marchforscience"},
     twitterSplain: "On April 22, 2017, over 500 Marches worldwide stood up for science. Today is all about celebrating the accomplishments of local communities, pushing the conversation forward,"
