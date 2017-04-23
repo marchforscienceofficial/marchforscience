@@ -44,7 +44,7 @@
       text-transform: uppercase;
 
       background-color: rgba(get-color(blue), .85);
-      padding: 20px;
+      padding: 34px;
       letter-spacing: 4px;
       position: relative;
       z-index: 1;
@@ -369,6 +369,9 @@
     height: 240px;
     margin: 24px 0 0 16px;
   }
+  @include breakpoint(baby-bear){
+    display: none;
+  }
 }
 
 .home-page-megaphone-triangle,
@@ -382,6 +385,10 @@
   position: relative;
   margin-left: -44px;
   margin-top: -20px;
+
+  @include breakpoint(baby-bear){
+    display: none;
+  }
 
   .home-page-megaphone-triangle-border {
     width: 0;
@@ -488,6 +495,10 @@
   .home-page-callToAction-body {
     display: flex;
     flex-flow: row;
+    @include breakpoint(baby-bear) {
+      flex-flow: row wrap;
+      padding: 0;
+    }
   }
 
   .home-page-callToAction-body-call {

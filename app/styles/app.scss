@@ -148,6 +148,22 @@ a {
   }
 }
 
+.app--nav__logo-link {
+  @include breakpoint(baby-bear){
+    display: none;
+  }
+}
+
+.app--nav__list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 75px;
+  width: 100vw;
+  overflow: scroll;
+}
+
 @import 'satellite';
 @import 'satellites';
 @import 'profile';
