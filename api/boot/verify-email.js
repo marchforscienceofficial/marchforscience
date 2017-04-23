@@ -10,6 +10,7 @@ module.exports = function(server) {
     if (!email || !validator.validate(email)) {
       return res.status(400).send({status: 'error', message: 'Invalid email'});
     }
+
     User.find({ where: { email: email } }, (err, users=[]) => {
 
       var user = users[0];

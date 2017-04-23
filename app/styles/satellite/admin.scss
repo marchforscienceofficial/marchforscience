@@ -83,6 +83,7 @@
       height: 32px;
       color: rgba(0,0,0,.55);
       z-index: 999;
+      pointer-events: none;
     }
     &:after {
       content: "\f030";
@@ -94,6 +95,7 @@
       transform: translateY(-50%) translateX(-50%);
       color: rgba(0,0,0,.55);
       z-index: 999;
+      pointer-events: none;
     }
   }
 

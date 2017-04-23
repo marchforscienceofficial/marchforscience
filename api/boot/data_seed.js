@@ -29,17 +29,17 @@ module.exports = function(server) {
     });
   }
 
-  if (Satellite) {
-    Satellite.count({}, {}, (err, count) => {
-      if (err) return cb(err);
-      if (count !== 0) return;
-      Satellite.destroyAll(function(err, info){
-        if (err) return cb(err);
-        Satellite.create(data, function(err, users) {
-          if (err) return cb(err);
-        });
-      });
-    });
-  }
+  // if (Satellite) {
+  //   Satellite.count({}, {}, (err, count) => {
+  //     if (err) return cb(err);
+  //     if (count !== 0) return;
+  //     // Satellite.destroyAll(function(err, info){
+  //       // if (err) return cb(err);
+  //       Satellite.create(data, function(err, users) {
+  //         if (err) return cb(err);
+  //       });
+  //     // });
+  //   });
+  // }
 
 };
