@@ -3,7 +3,7 @@ import Ember from 'ember';
 const { get, set } = Ember;
 
 // Keys we will send to the server
-const savedKeys = [ 'logo', 'banner', 'mission', 'storeLink', 'storeImage', 'donateLink', 'facebookUrl', 'twitterUrl', 'instagramUrl', 'websiteUrl', 'blogType', 'blogUrl' ];
+const savedKeys = [ 'logo', 'banner', 'mission', 'storeLink', 'storeImage', 'donateLink', 'facebook', 'twitter', 'instagram', 'website', 'blogType', 'blog' ];
 
 export default Ember.Route.extend({
 

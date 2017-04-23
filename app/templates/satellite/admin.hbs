@@ -89,15 +89,15 @@
           <option value="squarespace" selected={{eq 'squarespace' model.blogType}}>Squarespace</option>
           <option value="other" selected={{eq 'other' model.blogType}}>Other</option>
         </select>
-        {{float-input value=(mut model.blogUrl) label="Blog URL" class="blog-options-url"}}
+        {{float-input value=(mut model.blog) label="Blog URL" class="blog-options-url"}}
       </div>
 
       <div class="u-grid-12 u-grid-last">
         <h3>Social Media</h3>
-        {{float-input value=(mut model.facebookUrl) label="Facebook URL" icon="facebook-official" placeholder="https://www.facebook.com/marchforscience"}}
-        {{float-input value=(mut model.twitterUrl) label="Twitter URL" icon="twitter" placeholder="https://www.facebook.com/sciencemarchdc"}}
-        {{float-input value=(mut model.instagramUrl) label="Instagram URL" icon="instagram" placeholder="https://www.instagram.com/sciencemarchdc"}}
-        {{float-input value=(mut model.websiteUrl) label="Website URL" icon="website" placeholder="https://www.marchforscience.com"}}
+        {{float-input value=(mut model.facebook) label="Facebook URL" icon="facebook-official" placeholder="https://www.facebook.com/marchforscience"}}
+        {{float-input value=(mut model.twitter) label="Twitter URL" icon="twitter" placeholder="https://www.facebook.com/sciencemarchdc"}}
+        {{float-input value=(mut model.instagram) label="Instagram URL" icon="instagram" placeholder="https://www.instagram.com/sciencemarchdc"}}
+        {{float-input value=(mut model.website) label="Website URL" icon="website" placeholder="https://www.marchforscience.com"}}
       </div>
     </section>
 

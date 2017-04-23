@@ -22,17 +22,17 @@
   {{/if}}
 
   <ul class="satellite-profile__header-social-icons">
-    {{#if model.facebookUrl}}
-      <li><a href="{{model.facebookUrl}}" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+    {{#if model.facebook}}
+      <li><a href="{{model.facebook}}" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
     {{/if}}
-    {{#if model.twitterUrl}}
-      <li><a href="{{model.twitterUrl}}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+    {{#if model.twitter}}
+      <li><a href="{{model.twitter}}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
     {{/if}}
-    {{#if model.instagramUrl}}
-      <li><a href="{{model.instagramUrl}}" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+    {{#if model.instagram}}
+      <li><a href="{{model.instagram}}" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
     {{/if}}
-    {{#if model.websiteUrl}}
-      <li><a href="{{model.websiteUrl}}" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i></a></li>
+    {{#if model.website}}
+      <li><a href="{{model.website}}" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i></a></li>
     {{/if}}
   </ul>
 
@@ -51,7 +51,7 @@
      <input id="popup-country" name="country" type="hidden" value={{model.country}}>
      <input id="popup-best-contact-time" name="best-contact-time" value="" type="hidden">
      <input id="popup-_guid" name="_guid" type="hidden" value="">
-     <input name="redirect_url" type="hidden" value="https://www.marchforscience.com/thank-you">
+     <input name="redirect_url" type="hidden" value="{{currentUrl}}">
 
     </fieldset>
 
@@ -124,16 +124,16 @@
       </div> --}}
 
       <div class="u-grid-12">
-        {{#if twitterUrl}}
+        {{#if twitter}}
           <h3>Twitter</h3>
-          <a class="twitter-timeline" data-height="420" data-theme="light" href="{{twitterUrl}}">Tweets by TwitterDev</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          <a class="twitter-timeline" data-height="420" data-theme="light" href="{{twitter}}">Tweets by TwitterDev</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
         {{/if}}
       </div>
 
       <div class="u-grid-12 u-grid-last" style="max-width: 340px;">
-        {{#if facebookUrl}}
+        {{#if facebook}}
           <h3>Facebook</h3>
-          <iframe src="https://www.facebook.com/plugins/page.php?href={{facebookUrl}}&tabs=timeline&width=340&height=420&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=657594654312533" width="340" height="420" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+          <iframe src="https://www.facebook.com/plugins/page.php?href={{facebook}}&tabs=timeline&width=340&height=420&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=657594654312533" width="340" height="420" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
         {{/if}}
       </div>
     </section>

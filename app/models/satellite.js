@@ -20,6 +20,12 @@ export default Ember.Object.extend({
   latitude: '',
   longitude: '',
   mission: '',
+  facebook: '',
+  twitter: '',
+  instagram: '',
+  website: '',
+  blog: '',
+  blogType: '',
 
   admins: [],
   endorsements: [],
