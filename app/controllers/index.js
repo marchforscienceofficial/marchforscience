@@ -1,24 +1,25 @@
 import Ember from 'ember';
-const { set } = Ember;
+const { set, get } = Ember;
 
-const dayArray = ['sunday','monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+import weekData from '../data/indexdata/indexdata';
+
+const dayNames = ['sunday','monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
 const todaysDate = new Date();
 const today = todaysDate.getDay();
 
 export default Ember.Controller.extend({
   init() {
-    // Ember.set(this, 'dayOfTheWeek', thisDay);
     set(this, 'active', today);
-    Ember.set(this, 'dayOfTheWeek', dayArray[today]);
+    Ember.set(this, 'dayOfTheWeek', dayNames[today]);
 
   },
   actions: {
     clickTest(dayInt) {
       set(this, 'active', dayInt);
-      set(this, 'dayOfTheWeek', dayArray[dayInt])
+      set(this, 'dayOfTheWeek', dayNames[dayInt]);
+      set(this, 'dayData', weekData[get(this, 'dayOfTheWeek')])
     }
   },
-
+  dayData: weekData[dayNames[today]],
   active: 0,
-
 });
