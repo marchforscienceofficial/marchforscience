@@ -26,7 +26,7 @@
       <button href="" {{action 'clickTest' 1}} disabled>
         <span class="u-text-white u-text-light scienceCalendar-dayTag">monday</span>
         <span class="u-text-white scienceCalendar-scienceTag">science</span>
-        <span class="flex-1">discovers</span>
+        <span class="flex-1" style="font-size:10px">discovers</span>
       </button>
     </li>
     <li class="{{if (eq active 2) 'active'}}">
@@ -155,7 +155,7 @@
           <img src={{CTA.image}}/>
           <p class="u-text-bold">{{CTA.header}}
             <span class="u-text-light">{{CTA.group}}</span>
-          <p class="u-text-normal">{{{CTA.bodyWithHTMLLinks}}}</p>
+          <span class="u-text-normal moreCallToAction-bottomSpan">{{{CTA.bodyWithHTMLLinks}}}</span>
           </p>
         </li>
       {{/each}}
