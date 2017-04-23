@@ -47,20 +47,6 @@ export default  {
       + " and explain why it’s relevant and important to your community."
       + " View AGU's resources at <a href='http://www.defenders.org/ten-things-you-can-do-help' target='_blank'>www.defenders.org</a>.",
       image: 'images/moreCTA/icon-talk.svg',
-    },{
-      header: "Defend the role of science in a new political era - An open letter to President Trump and the 115th Congress",
-      group: "Union of Concerned Scientists",
-      bodyWithHTMLLinks: "Join Nobel Laureates, prominent scientists, "
-      + "and fellow experts on an open letter outlining expectations"
-      + " for the use of science in the Trump administration at "
-      + "<a href='http://www.ucsusa.org/center-science-and-democracy/tweet-your-senator-protect-science-based-safeguards?autologin=true#.WPKHQVMrIxF'  target='_blank'>www.ucsusa.org</a>.",
-      image: 'images/moreCTA/journal-01.svg',
-    }, {
-      header: "Join a science teach-in!",
-      group: "National Center for Science Education (NCSE)",
-      bodyWithHTMLLinks: "NCSE has developed Science Teach-In Toolkits to help scientists share knowledge and raise awareness about science and its value to society."
-      + " View the toolkit at <a href='http://sharingscience.agu.org/ways-to-reach-out/' target='_blank'>sharingscience.agu.org</a>.",
-      image: 'images/moreCTA/apple.svg',
-    },
-  ],
+    }
+  ]
 }
