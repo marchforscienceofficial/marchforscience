@@ -148,7 +148,7 @@ a {
   }
 }
 
-.app--nav__logo-link {
+.app--nav__listitem.hide-for-mobile, .app--nav__logo-link {
   @include breakpoint(baby-bear){
     display: none;
   }

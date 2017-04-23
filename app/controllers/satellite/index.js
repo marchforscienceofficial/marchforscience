@@ -1,6 +1,11 @@
 import Ember from 'ember';
+import country_data from 'npm:country-data';
+import ENV from '../../config/environment';
 
 const { get, set } = Ember;
+
+const DEFAULT_LOGO = '801f9cad956f164b261a155c66c74a08';
+const DEFAULT_BANNER = '0f2637cf6abf03124732a239f1873f31';
 
 const DEFAULT_DONATE_LINK = "https://sciencedebate.org/march";
 const DEFAULT_STORE_LINK = "http://marchforscienceshop.com/";
@@ -70,6 +75,28 @@ export default Ember.Controller.extend({
 
   instagram: Ember.computed('model.instagram', function(){
     return get(this.model, 'instagram') || DEFAULT_INSTAGRAM_URI;
+  }),
+
+  logo: Ember.computed('model.facebook', 'model.twitter', 'model.logo', function(){
+
+    var IMG = get(this.model, 'logo');
+
+    var twitter = get(this.model, 'twitter')
+    var facebook = get(this.model, 'facebook')
+
+    if ( twitter ) {
+      IMG = 'https://twitter.com/' + twitter.match(/twitter\.com\/([^\/]+)/)[1] + '/profile_image?size=original';
+    }
+
+    else if ( facebook ) {
+      IMG = 'https://graph.facebook.com/' + facebook.match(/facebook\.com\/([^\/]+)/)[1] + '/picture?type=square';
+    }
+
+    else {
+      IMG = `${ENV.S3_URL}/${DEFAULT_LOGO}`;
+    }
+
+    return IMG
   })
 
 });
