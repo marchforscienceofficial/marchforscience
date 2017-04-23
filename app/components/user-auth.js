@@ -32,7 +32,7 @@ export default Ember.Component.extend({
         });
       }, (err) => {
 
-        if (err.responseJSON.error.message === "login failed as the email has not been verified") {
+        if (err.responseJSON && err.responseJSON.error.message === "login failed as the email has not been verified") {
           this.set("verification", true);
           this.get('notifications').error('Your email has not been verified');
           return;

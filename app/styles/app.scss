@@ -62,7 +62,7 @@ hr {
   }
 
   a {
-    
+
   }
 
   &__list {
@@ -149,6 +149,8 @@ a {
 }
 
 .app--nav__listitem.hide-for-mobile, .app--nav__logo-link {
+  display: none;
+
   @include breakpoint(baby-bear){
     display: none;
   }
