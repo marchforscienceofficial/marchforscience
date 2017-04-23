@@ -100,7 +100,8 @@
 
   .scienceCalendar {
     margin: 0;
-    background-color: get-color(gray2);
+    border: 10px solid get-color(blue);
+    background-color: get-color(blue);
     display: flex;
     flex-flow: row nowrap;
     padding: 0;
@@ -115,8 +116,9 @@
       background-image: asset-url("images/button-active.svg");
       background-size: cover;
       background-repeat: no-repeat;
+      flex-shrink: 0;
 
-      &.active a {
+      &.active button {
         color: get-color(orange);
       }
 
@@ -132,11 +134,15 @@
         height: 100%;
       }
 
-      a {
-        flex-flow: column;
-        position: absolute;
+      button {
+        border: 0;
         width: 100%;
         height: 100%;
+        background-color: transparent;
+
+        padding: 0;
+        flex-flow: column;
+        position: absolute;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -144,8 +150,8 @@
         left: 0;
         color: get-color(gray2);
 
-        &:hover,
-        &:focus {
+        &:hover:enabled,
+        &:focus:enabled {
           color: get-color(orange);
           text-decoration: none;
         }
@@ -170,10 +176,10 @@
           font-weight: bold;
           letter-spacing: 2px;
 
-          .scienceCalendar-dayTag:focus,
-          .scienceCalendar-dayTag:hover,
-          .scienceCalendar-scienceTag:focus,
-          .scienceCalendar-scienceTag:hover {
+          .scienceCalendar-dayTag:focus:enabled,
+          .scienceCalendar-dayTag:hover:enabled,
+          .scienceCalendar-scienceTag:focus:enabled,
+          .scienceCalendar-scienceTag:hover:enabled {
             text-decoration: none;
             color: get-color(white)
           }
@@ -182,15 +188,15 @@
     }
 
     .active img,
-    li:hover img,
-    li:focus img {
+    li:hover button:enabled img,
+    li:focus button:enabled img {
       opacity: 0;
       transition: opacity .3s;
     }
 
     .active .scienceCalendar-dayTag,
-    li:hover .scienceCalendar-dayTag,
-    li:focus .scienceCalendar-dayTag {
+    li:hover button:enabled .scienceCalendar-dayTag,
+    li:focus button:enabled .scienceCalendar-dayTag {
       background-color: #30bdbb;
       //TODO: make this asset using background colors
       //background-color: get-color(teal);
