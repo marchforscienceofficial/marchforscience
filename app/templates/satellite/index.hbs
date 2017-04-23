@@ -10,7 +10,8 @@
       Edit
     {{/link-to}}
   {{else}}
-    <button class="satellite-profile__header--button u-button--large">Subscribe</button>
+  {{log modals}}
+    <button class="satellite-profile__header--button u-button--large" {{action "toggleSubscribeModal"}}>Register as a Member</button>
 
     {{#if session.user.isSuper}}
       {{#link-to 'satellite.admin' model.uriName  class="u-button__tertiary satellite-profile__header--button"}}
@@ -36,6 +37,33 @@
   </ul>
 
 </header>
+
+{{#simple-modal show=showSubscribeModal onDismiss=(action "toggleSubscribeModal")}}
+
+  <h3 class="u-text-orange u-text-center">Register as a Member</h3>
+  <h4 class="u-text-h5 u-text-center" style="margin-bottom: 16px;">{{model.displayName}}</h4>
+  <form name="signup" class="bsd-signup" action="https://secure.marchforscience.com/page/s/rsvpembed" method="post" id="popup-signup-form">
+
+    <fieldset style="display: none;">
+
+     <input id="popup-city" name="city" type="hidden" value={{model.city}}>
+     <input id="popup-state_cd" name="state_cd" type="hidden" value={{model.state}}>
+     <input id="popup-country" name="country" type="hidden" value={{model.country}}>
+     <input id="popup-best-contact-time" name="best-contact-time" value="" type="hidden">
+     <input id="popup-_guid" name="_guid" type="hidden" value="">
+     <input name="redirect_url" type="hidden" value="https://www.marchforscience.com/thank-you">
+
+    </fieldset>
+
+    {{float-input name="firstname" label="First Name" type="text" required="true" class="u-grid-12"}}
+    {{float-input name="lastname" label="Last Name" type="text" required="true" class="u-grid-12 u-grid-last"}}
+    {{float-input name="email" label="Email Address" type="email" required="true" class="u-grid-12"}}
+    {{float-input name="phone" label="Phone Number" type="text" class="u-grid-12 u-grid-last"}}
+
+    <input name="submit-btn" value="Register" type="submit" class="u-button--large u-grid-center">
+  </form>
+
+{{/simple-modal}}
 
 <main class="u-grid-container" style="padding-top: 42px;">
   {{#ivy-tabs selection=selection as |tabs|}}

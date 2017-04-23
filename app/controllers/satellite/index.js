@@ -9,6 +9,14 @@ const DEFAULT_MISSION_OBJ = [{"attributes":{"color":"#000000"},"insert":"It's ti
 
 export default Ember.Controller.extend({
 
+  actions: {
+    toggleSubscribeModal(){
+      this.toggleProperty('showSubscribeModal');
+    }
+  },
+
+  showSubscribeModal: false,
+
   session: Ember.inject.service('session'),
 
   isAdmin: Ember.computed('model.admins', 'session.id', function(){

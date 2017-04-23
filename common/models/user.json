@@ -31,7 +31,8 @@
       "type": "string"
     },
     "role": {
-      "type": "string"
+      "type": "string",
+      "index": true
     },
     "bio": {
       "type": "string"

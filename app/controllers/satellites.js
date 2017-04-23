@@ -32,6 +32,7 @@ export default Ember.Controller.extend({
   },
 
   transformSelection(selection){
+    debugger;
     return (selection) ? get(selection, 'displayName') : '';
   },
 

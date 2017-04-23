@@ -49,7 +49,7 @@
       z-index: 0;
     }
 
-    &:focus, &:hover {
+    &:focus, &:hover, &.tt-cursor {
       background-color: rgba(get-color(white), .85);
       color: black;
       transform: scale(1.02);

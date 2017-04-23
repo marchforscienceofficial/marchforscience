@@ -1,0 +1,46 @@
+.simple-modal {
+  @include elevation(12);
+  background-color: white;
+  border-radius: 5px;
+  padding: 18px;
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  transform: translateX(-50%) translateY(-50%);
+  display: block;
+  border: 0;
+  margin: 0;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: visiblilty .3s, opacity .3s;
+  transition-delay: visiblilty .3s, opacity 0;
+  max-width: calc(100vw - 24px);
+  margin: 0 12px;
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+    transition: visiblilty 0s, opacity .3s;
+    transition-delay: visiblilty 0, opacity 0;
+  }
+}
+
+.simple-modal__scrim {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 9998;
+  background-color: rgba(0,0,0,.55);
+  opacity: 0;
+  visibility: hidden;
+  transition: visiblilty .3s, opacity .3s;
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+    transition: visiblilty 0s, opacity .3s;
+  }
+}
