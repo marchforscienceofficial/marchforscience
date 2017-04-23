@@ -12,7 +12,7 @@ export default Ember.Object.extend({
 
   name: '',
   banner: `${ENV.S3_URL}/${DEFAULT_BANNER}`,
-  logo: `${ENV.S3_URL}/${DEFAULT_LOGO}`,
+  logo: '',
   city: '',
   state: '',
   zip: '',
@@ -50,6 +50,28 @@ export default Ember.Object.extend({
     var country = country_data.countries[this.get('country')];
     country = country ? (country = country.name) : ''
     return `${city}, ${state ? state + ', ': ''}${country}`
+  }),
+
+  parsedLogo: Ember.computed('facebook', 'twitter', 'logo', function(){
+
+    var IMG = `${ENV.S3_URL}/${DEFAULT_LOGO}`;
+    var logo = get(this, 'logo');
+    var twitter = get(this, 'twitter')
+    var facebook = get(this, 'facebook')
+
+    if (logo){
+      IMG = logo;
+    }
+
+    else if ( twitter ) {
+      IMG = 'https://twitter.com/' + twitter.match(/twitter\.com\/([^\/]+)/)[1] + '/profile_image?size=original';
+    }
+
+    else if ( facebook ) {
+      IMG = 'https://graph.facebook.com/' + facebook.match(/facebook\.com\/([^\/]+)/)[1] + '/picture?type=square';
+    }
+
+    return IMG
   })
 
 });
