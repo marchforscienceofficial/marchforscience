@@ -154,6 +154,11 @@ a {
   }
 }
 
+.app--nav__logo-link {
+  z-index: 9;
+  position: relative;
+}
+
 .app--nav__list {
   position: absolute;
   top: 0;

@@ -244,6 +244,11 @@
         font-family: inherit;
         font-size: 3.8em;
         font-weight: 600;
+
+        @include breakpoint(baby-bear) {
+          margin: 0;
+          font-size: 5rem;
+        }
       }
 
       .u-button {
