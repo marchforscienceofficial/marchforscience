@@ -502,29 +502,38 @@
   }
 
   .home-page-callToAction-body {
-    display: flex;
-    flex-flow: row;
+
     @include breakpoint(baby-bear) {
-      flex-flow: row wrap;
       padding: 0;
+
+      & .leftCall , & .rightCall {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
     }
+
   }
 
   .home-page-callToAction-body-call {
     padding: 16px;
-    display: flex;
-    flex-flow: column;
+    // display: flex;
+    // flex-flow: column;
     justify-content: space-between;
 
     &.leftCall {
-      flex: 6;
+      max-width: 60%;
+      float:left;
       background-color: get-color(teal);
+      box-sizing: border-box;
     }
 
     &.rightCall {
-      flex: 4;
+      max-width: 40%;
+      float:left;
       background-color: rgba(255, 255, 255, 0.7);
       position: relative;
+      box-sizing: border-box;
       &:after {
         content: "";
         position: absolute;

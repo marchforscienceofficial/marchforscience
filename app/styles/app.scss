@@ -134,6 +134,15 @@ textarea {
   box-sizing: border-box;
 }
 
+.app--footer {
+    background-color: get-color(blue);
+    padding: 32px 0;
+
+    #google_translate_element {
+      float: right;
+    }
+}
+
 a {
   color: get-color(blue5);
   font-weight: bold;
@@ -146,10 +155,6 @@ a {
   &:active{
     color: darken(get-color(blue5), .25);
   }
-}
-
-.app--nav__listitem.hide-for-mobile {
-  display: none;
 }
 
 .app--nav__listitem.hide-for-mobile, .app--nav__logo-link {
