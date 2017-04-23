@@ -116,6 +116,9 @@
       background-size: cover;
       background-repeat: no-repeat;
 
+      &.active a {
+        color: get-color(orange);
+      }
 
       &:first-child {
         margin-left: auto;
@@ -140,7 +143,6 @@
         top: 0;
         left: 0;
         color: get-color(gray2);
-
 
         &:hover,
         &:focus {
@@ -179,12 +181,14 @@
       }
     }
 
+    .active img,
     li:hover img,
     li:focus img {
       opacity: 0;
       transition: opacity .3s;
     }
 
+    .active .scienceCalendar-dayTag,
     li:hover .scienceCalendar-dayTag,
     li:focus .scienceCalendar-dayTag {
       background-color: #30bdbb;
@@ -444,7 +448,6 @@
   }
 }
 
-
 .home-page-callToAction {
   margin: 0;
   padding: 0;
@@ -455,11 +458,13 @@
     padding: 20px 0;
 
     h1 {
+      text-transform: uppercase;
       text-align: center;
       font-size: 54px;
       letter-spacing: 4px;
     }
     h2 {
+      text-transform: uppercase;
       font-size: 32px;
       font-weight: 200;
       text-align: center;

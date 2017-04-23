@@ -13,57 +13,57 @@
   </header>
 
   <ul class="scienceCalendar">
-    <li class="active">
+    <li class="{{if (eq active 0) 'active'}}">
       <img src="images/button-inactive.svg"/>
-      <a href="">
+      <a href="" {{action 'clickTest' 0}}>
         <span class="u-text-white u-text-light scienceCalendar-dayTag">sunday</span>
         <span class="u-text-white scienceCalendar-scienceTag">science</span>
         <span class="flex-1">engages</span>
       </a>
     </li>
-    <li>
+    <li class="{{if (eq active 1) 'active'}}">
       <img src="images/button-inactive.svg"/>
-      <a href="">
+      <a href="" {{action 'clickTest' 1}}>
         <span class="u-text-white u-text-light scienceCalendar-dayTag">monday</span>
         <span class="u-text-white scienceCalendar-scienceTag">science</span>
         <span class="flex-1">discovers</span>
       </a>
     </li>
-    <li>
+    <li class="{{if (eq active 2) 'active'}}">
       <img src="images/button-inactive.svg"/>
-      <a href="">
+      <a href="" {{action 'clickTest' 2}}>
         <span class="u-text-white u-text-light scienceCalendar-dayTag">tuesday</span>
         <span class="u-text-white scienceCalendar-scienceTag">science</span>
         <span class="flex-1">empowers</span>
       </a>
     </li>
-    <li>
+    <li class="{{if (eq active 3) 'active'}}">
       <img src="images/button-inactive.svg"/>
-      <a href="">
+      <a href="" {{action 'clickTest' 3}}>
         <span class="u-text-white u-text-light scienceCalendar-dayTag">wednesday</span>
         <span class="u-text-white scienceCalendar-scienceTag">science</span>
         <span class="flex-1">creates</span>
       </a>
     </li>
-    <li>
+    <li class="{{if (eq active 4) 'active'}}">
       <img src="images/button-inactive.svg"/>
-      <a href="">
+      <a href="" {{action 'clickTest' 4}}>
         <span class="u-text-white u-text-light scienceCalendar-dayTag">thursday</span>
         <span class="u-text-white scienceCalendar-scienceTag">science</span>
         <span class="flex-1">communicates</span>
       </a>
     </li>
-    <li>
+    <li class="{{if (eq active 5) 'active'}}">
       <img src="images/button-inactive.svg"/>
-      <a href="">
+      <a href="" {{action 'clickTest' 5}}>
         <span class="u-text-white u-text-light scienceCalendar-dayTag">friday</span>
         <span class="u-text-white scienceCalendar-scienceTag">science</span>
         <span class="flex-1">advocates</span>
       </a>
     </li>
-    <li>
+    <li class="{{if (eq active 6) 'active'}}">
       <img src="images/button-inactive.svg"/>
-      <a href="">
+      <a href="" {{action 'clickTest' 6}}>
         <span class="u-text-white u-text-light scienceCalendar-dayTag">saturday</span>
         <span class="u-text-white scienceCalendar-scienceTag">science</span>
         <span class="flex-1">connects</span>
@@ -73,8 +73,8 @@
 
   <div class="home-page-callToAction">
     <header class="home-page-callToAction-header">
-      <h1 class="u-grid-container">MONDAY</h1>
-      <h2 style="font-size: 32px; font-weight: 200;">SCIENCE ENGAGES</h2>
+      <h1 class="u-grid-container">{{dayOfTheWeek}}</h1>
+      <h2>SCIENCE ENGAGES</h2>
       <p class="QOD u-text-light">"A movement in motion stays in motion."</p>
     </header>
     <div class="" style="background-color: #00c9c4;overflow: hidden;">
