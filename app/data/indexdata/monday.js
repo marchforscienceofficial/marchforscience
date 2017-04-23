@@ -1,3 +1,4 @@
 export default  {
-  verbOfTheDay: 'discovers'
+  verbOfTheDay: 'discovers',
+  quoteOfTheDay: 'A movement in motion stays in motion.'
 }

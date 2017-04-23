@@ -23,11 +23,13 @@
     </li>
     <li class="{{if (eq active 1) 'active'}}">
       <img src="images/button-inactive.svg"/>
-      <a href="" {{action 'clickTest' 1}}>
+      <div>
+        <!--<a href="" {{action 'clickTest' 1}}>-->
         <span class="u-text-white u-text-light scienceCalendar-dayTag">monday</span>
         <span class="u-text-white scienceCalendar-scienceTag">science</span>
         <span class="flex-1">discovers</span>
-      </a>
+        <!--</a>-->
+      </div>
     </li>
     <li class="{{if (eq active 2) 'active'}}">
       <img src="images/button-inactive.svg"/>
@@ -75,30 +77,24 @@
     <header class="home-page-callToAction-header">
       <h1 class="u-grid-container">{{dayOfTheWeek}}</h1>
       <h2>SCIENCE {{dayData.verbOfTheDay}}</h2>
-      <p class="QOD u-text-light">"A movement in motion stays in motion."</p>
+      <p class="QOD u-text-light">"{{dayData.quoteOfTheDay}}"</p>
     </header>
     <div class="" style="background-color: #00c9c4;overflow: hidden;">
       <div class="home-page-callToAction-body u-grid-container">
-        <div class="home-page-callToAction-body-call leftCall">
-          <header>
-            <img src="images/icon-globe.svg"/>
-            <h3>Join the march for science network</h3>
-          </header>
-          <p>This is just the beginning. Many Satellites are signing on to become a permanent part of the March for Science network. You can create an account and register to get updates nationwide and in your local community. Keep an eye on your Satellite’s homepage; we’re rolling out exciting new features to keep you informed and connected in the coming weeks!</p>
-          <div class="home-page-callToAction-body-call-buttons">
-            <button class="u-button">{{#link-to 'satellites'}}browse satellites{{/link-to}}</button>
+        {{#each dayData.CTAs as |CTA| }}
+          <div class="home-page-callToAction-body-call {{CTA.className}}">
+            <header>
+              <img src={{CTA.image}}/>
+              <h3>{{CTA.heading}}</h3>
+            </header>
+            <p>{{CTA.body}}</p>
+            <div class="home-page-callToAction-body-call-buttons">
+              {{#each CTA.buttons as |button| }}
+                <a class="u-button" href={{button.href}}>{{button.text}}</a>
+              {{/each}}
+            </div>
           </div>
-        </div>
-        <div class="home-page-callToAction-body-call rightCall">
-          <header>
-            <img src="images/icon-bulb.svg"/>
-            <h3>Listen to the post-march podcast</h3>
-          </header>
-          <p class="callToAction-body">March for Science and the Taste of Science are co-hosting a podcast at the Carnegie Institute. Tune in to listen to organizers and community members share stories from the March and their vision for the future.</p>
-          <div class="home-page-callToAction-body-call-buttons">
-          <button class="u-button">listen now</button>
-          </div>
-        </div>
+        {{/each}}
       </div>
     </div>
   </div>
@@ -112,12 +108,10 @@
     <div class="home-page-megaphone-text">
       <h3>science<p>NOT</p>silence</h3>
       <p class="home-page-megaphone-text-body">
-        <p>Contact your local officials (council members, your mayor,
-          county executives) with a MFS postcard that why they should support
-          scientific institutions and science-based policies.</p>
+        <p>{{dayData.megaphone.text}}</p>
         <p class="home-page-megaphone-text-body-action u-text-bold">
-          #NoSidesInScience
-          <a class="u-button">contact now</a>
+          {{dayData.megaphone.hash}}
+          <a class="u-button" href={{dayData.megaphone.button.href}}>{{dayData.megaphone.button.text}}</a>
         </p>
       </p>
     </div>
@@ -130,14 +124,16 @@
       <span style="flex:2"></span>
     </div>
     <header>
-      <h1>#KEEPMARCHING</h1>
-      <button class="u-button">
-        <span class="socialMedia-actionWhat">Tell us how YOU marched for science.</span>
-      </button>
+      <h1>{{dayData.megaphone.twitterHash}}</h1>
+      <a class="u-button" href={{dayData.megaphone.twitterButton.href}}>
+        <span class="socialMedia-actionWhat">{{dayData.megaphone.twitterButton.text}}</span>
+      </a>
     </header>
 
-    <p class="socialMedia-longActionStory u-text-light u-text-gray5 u-grid-container">On April 22, 2017, over 500 Marches worldwide stood up for science. Today is all about celebrating the accomplishments of local communities, pushing the conversation forward, and reflecting on the power of this movement. Post pictures of where you marched or the sign you held.
-    <span class="u-text-bold">Share your favorite experiences, stories of the people you met, the things you learned, or what you’re inspired to do next.</span></p>
+    <p class="socialMedia-longActionStory u-text-light u-text-gray5 u-grid-container">
+      {{dayData.megaphone.twitterSplain}}
+      <span class="u-text-bold">{{dayData.megaphone.twitterTag}}</span>
+    </p>
     <ul class="socialMedia-links u-text-h1">
       <li>
         <a class="fa fa-twitter" href="https://twitter.com/"></a>
@@ -156,27 +152,15 @@
       <h1 class="u-grid-container u-text-h1 u-text-black">MORE WAYS TO GET INVOLVED</h1>
     </header>
     <ul class="u-grid-container">
-      <li>
-        <img src="images/icon-book.svg"/>
-        <p class="u-text-bold">Defend the role of science in a new political era - An open letter to President Trump and the 115th Congress
-           <span class="u-text-light">Union of Concerned Scientists</span>
-        <p class="u-text-normal">Join Nobel Laureates, prominent scientists, and fellow experts on an open letter outlining expectations for the use of science in the Trump administration here.</p>
-        </p>
-      </li>
-      <li>
-        <img src="images/icon-apple.svg"/>
-        <p class="u-text-bold">Join a science teach-in!
-          <span class="u-text-light">National Center for Science Education (NCSE)</span>
-          <p class="u-text-normal"> NCSE has developed Science Teach-In Toolkits to help scientists share knowledge and raise awareness about science and its value to society. View the toolkit here.</p>
-        </p>
-      </li>
-      <li>
-        <img src="images/icon-talk.svg"/>
-        <p class="u-text-bold">Learn how to give a talk in your local community
-          <span class="u-text-light">American Geophysical Union</span>
-          <p class="u-text-normal"> Reaching out to local groups is a great way to share your science and explain why it’s relevant and important to your community. View AGU's resources here.</p>
-        </p>
-      </li>
+      {{#each dayData.moreCTAs as |CTA|}}
+        <li>
+          <img src={{CTA.image}}/>
+          <p class="u-text-bold">{{CTA.header}}
+            <span class="u-text-light">{{CTA.group}}</span>
+          <p class="u-text-normal">{{{CTA.bodyWithHTMLLinks}}}</p>
+          </p>
+        </li>
+      {{/each}}
     </ul>
   </section>
 </div>

@@ -22,4 +22,5 @@ export default Ember.Controller.extend({
   },
   dayData: weekData[dayNames[today]],
   active: 0,
+  makeItSo: true
 });

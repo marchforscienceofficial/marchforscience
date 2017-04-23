@@ -1,5 +1,5 @@
 import monday from './monday';
-import tuesday from './tueday';
+import tuesday from './tuesday';
 import wednesday from './wednesday';
 import thursday from './thursday';
 import friday from './friday';
