@@ -6,7 +6,7 @@
   position: fixed;
   animation: scaleAndFadeIn 1s ease-out forwards;
   top: 33.333%;
-  left: 50%;
+  left: calc(50% - 30px);
 }
 
 .loading-atom__electron-container {
@@ -57,11 +57,11 @@
 
 @keyframes scaleAndFadeIn {
   from {
-    transform: scale(0.8) transformX(-50%) transformY(-50%);
+    transform: transformX(-50%) transformY(-50%) scale(0.8);
     opacity: 0;
   }
   to {
-    transform: scale(1) transformX(-50%) transformY(-50%);
+    transform: transformX(-50%) transformY(-50%) scale(1);
     opacity: 0.25;
   }
 }
