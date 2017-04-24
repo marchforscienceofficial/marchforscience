@@ -1,4 +1,6 @@
 <dialog class="simple-modal {{if show "visible"}}">
+  <button class="fa fa-close simple-modal__close" {{action "toggleHide"}}></button>
+
   {{yield}}
 </dialog>
 <div class="simple-modal__scrim {{if show "visible"}}" {{action "toggleHide"}}></div>

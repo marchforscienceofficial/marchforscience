@@ -26,6 +26,21 @@
   }
 }
 
+.simple-modal__close {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: none;
+  @include elevation(2);
+  background-color: get-color(white);
+  text-align: center;
+  line-height: 19px;
+  padding: 0;
+}
+
 .simple-modal__scrim {
   position: fixed;
   top: 0;

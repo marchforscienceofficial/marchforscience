@@ -18,6 +18,7 @@ body {
   font-size: 1.6rem;
   background-color: get-color(gray0);
   margin: 72px 0 0;
+  height: auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -86,6 +87,7 @@ hr {
       width: 100%;
       display: block;
       line-height: 64px;
+      cursor: pointer;
     }
     a.active {
       color: get-color(orange);
@@ -173,9 +175,13 @@ a {
   top: 0;
   left: 0;
   right: 0;
-  height: 75px;
+  height: 72px;
   width: 100vw;
   overflow: scroll;
+}
+
+.app--main {
+  min-height: calc(100vh);
 }
 
 @import 'satellite';
