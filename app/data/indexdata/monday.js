@@ -27,7 +27,7 @@ export default  {
     + ' Host a beginner’s hack-a-thon with <a href="https://scratch.mit.edu" target="_blank">MIT’s Scratch</a>.'
     + ' Or try one of the other incredible science-inspired board or video games in our list below!',
     buttons: [
-      {text: 'PICK A GAME NIGHT', href: ''},
+      {text: 'PICK A GAME NIGHT', href: "https://www.marchforscience.com/blog/science-game-night"},
     ],
     image: "images/icon-bulb.svg",
   }],
