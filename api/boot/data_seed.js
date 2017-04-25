@@ -22,7 +22,7 @@ module.exports = function(server) {
         phone: '1234567890',
         role: 'admin',
         emailVerified: true,
-        image: 'https://dev.marchforscience.s3.amazonaws.com/b094f6140a64b3e932c43458773ded61'
+        image: 'https://marchforscience.s3.amazonaws.com/b094f6140a64b3e932c43458773ded61'
       }, function(err, users) {
         if (err) return cb(err);
       });

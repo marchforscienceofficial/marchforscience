@@ -1,6 +1,9 @@
 import Ember from 'ember';
+import ENV from '../../config/environment';
 
 const { get, set } = Ember;
+
+const DEFAULT_LOGO = '801f9cad956f164b261a155c66c74a08';
 
 export default Ember.Controller.extend({
 
@@ -183,6 +186,28 @@ export default Ember.Controller.extend({
       }
     });
   },
+
+  logo: Ember.computed('model.facebook', 'model.twitter', 'model.logo', function(){
+
+    var IMG = get(this.model, 'logo');
+
+    var twitter = get(this.model, 'twitter')
+    var facebook = get(this.model, 'facebook')
+
+    if ( twitter ) {
+      IMG = 'https://twitter.com/' + twitter.match(/twitter\.com\/([^\/]+)/)[1] + '/profile_image?size=original';
+    }
+
+    else if ( facebook ) {
+      IMG = 'https://graph.facebook.com/' + facebook.match(/facebook\.com\/([^\/]+)/)[1] + '/picture?type=square';
+    }
+
+    else {
+      IMG = `${ENV.S3_URL}/${DEFAULT_LOGO}`;
+    }
+
+    return IMG
+  }),
 
   isAdmin: Ember.computed('model.admins', 'session.id', function(){
       var admins = get(this.model, 'admins');

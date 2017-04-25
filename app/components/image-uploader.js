@@ -20,8 +20,11 @@ export default Ember.Component.extend({
       const fileType = file.type;
       this.get('amazonS3').upload(fileName, fileType, file).then((url) => {
         this.set('url', url);
+        this.get('notifications').success('File uploaded successfully');
         var onUpload = this.get('onUpload');
         onUpload && onUpload(url);
+      }, () => {
+        this.get('notifications').error('Error uploading file');
       });
     });
   },

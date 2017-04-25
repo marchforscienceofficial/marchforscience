@@ -1,6 +1,8 @@
 var path = require("path");
 var validator = require("email-validator");
 
+const isDev = !(process.env.NODE_ENV === 'prod' || process.env.NODE_ENV === 'production');
+
 module.exports = function(server) {
 
   server.post('/api/reverify', (req, res, next) => {
@@ -17,6 +19,9 @@ module.exports = function(server) {
       if (err || !user) return res.send({status: 'error', message: 'Error finding user'});
 
       var options = {
+        protocol: isDev ? 'http' : 'https',
+        host: isDev ? 'localhost' : 'satellites.marchforscience.com',
+        port: isDev ? '4000' : '443',
         type: 'email',
         to: user.email,
         from: 'no-reply@marchforscience.com',

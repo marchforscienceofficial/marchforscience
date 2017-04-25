@@ -2,6 +2,11 @@
 var express = require('express');
 var path = require('path');
 
+// List of paths that we can't deliver /index for if not an ajax call
+const BLACKLIST = {
+  '/api/users/confirm': 1
+};
+
 module.exports = function(server) {
   var router = server.loopback.Router();
 
@@ -11,6 +16,7 @@ module.exports = function(server) {
   // If this is not an ajax request, and request is for an asset that accepts html,
   // then this must be a first time render - just send our base page down.
   server.use((req, res, next) => {
+    if ( BLACKLIST[req.path] ) return next();
     if( typeof req === 'object' && !req.xhr && req.accepts(['*/*', 'text/html']) === 'text/html' ){
       return res.sendFile(path.join(__dirname, '../../dist', 'index.html'), {}, function (err) {
         if (err) res.status((err) ? err.status : 500);

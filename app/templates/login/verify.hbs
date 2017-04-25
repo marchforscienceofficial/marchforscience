@@ -1,1 +1,15 @@
 {{outlet}}
+
+<section class="auth u-grid-container">
+
+  <div style="height: 100%;display: block;overflow: auto;">
+    <img class="auth--logo" src={{transparent-pixel}} alt="March for Science Logo"/>
+
+    <h2 class="u-text-blue">A verification link was sent to your email</h2>
+    <h4 class="u-text-orange">Please check your email and then log in again</h4>
+    {{float-input value=(mut session.email) type='email' label='Email' class='u-grid-8 u-grid-center'}}
+    <button onClick={{action 'reverify'}} class="u-button--large" style="margin-top: 18px;">Re-send verification email</button>
+
+  </div>
+
+</section>

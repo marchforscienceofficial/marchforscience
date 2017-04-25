@@ -75,22 +75,24 @@ export default Ember.Service.extend({
 
     if (!obj.email || !obj.password || !obj.firstName || !obj.lastName || !obj.phone){
       return new Promise((resolve, reject) => {
-        reject({
-          error: 'Impropper input to register method'
-        });
+        reject('Impropper input to register method');
       });
     }
 
 
-    if (this.get('isLoggedIn')) { return; }
+    if (this.get('isLoggedIn')) { new Promise((resolve, reject) => {
+      reject('Already logged in');
+    }); }
 
     return $.post('/api/users', obj)
 
     .then((response) => {
-      return this.login(obj.email, obj.password);
+      this.set('email', obj.email);
+      return response;
     }, (err) => {
       Ember.Logger.error(err);
-      throw new Error('Error registering in', err);
+      if (err && err.responseJSON && err.responseJSON.error) throw new Error(err.responseJSON.error.message);
+      throw new Error('Error registering new account');
     })
 
   },

@@ -5,12 +5,24 @@
   {{/link-to}}
   <ul class="app--nav__list">
     <li class="app--nav__listitem">{{#link-to 'index'}}Home{{/link-to}}</li>
-    {{!-- <li class="app--nav__listitem">{{#link-to 'satellites'}}Satellites{{/link-to}}</li> --}}
-    <li class="app--nav__listitem"><a href="https://www.marchforscience.com/satellite-marches">Satellites</a></li>
+    <li class="app--nav__listitem">
+      {{#if session.isLoggedOut}}
+        <a href="https://www.marchforscience.com/satellite-marches">Satellites</a>
+      {{else}}
+        {{#link-to 'satellites'}}Satellites{{/link-to}}
+      {{/if}}
+    </li>
     <li class="app--nav__listitem"><a href="https://www.marchforscience.com/about">About</a></li>
     <li class="app--nav__listitem"><a href="https://www.marchforscience.com/blog">Blog</a></li>
     <li class="app--nav__listitem"><a href="https://www.marchforscience.com/store">Store</a></li>
-    <li class="app--nav__listitem hide-for-mobile"><a href="https://www.marchforscience.com/donate" target="_blank" style="margin: 0 18px 0 12px">Donate</a></li>
+
+    <li class="app--nav__listitem hide-for-mobile">
+      {{#if session.isLoggedOut}}
+        <a href="https://www.marchforscience.com/donate" target="_blank" style="margin: 0 18px 0 12px">Donate</a>
+      {{else}}
+        {{#link-to 'profile' class="app__nav--profilelink"}}<img src={{transparent-pixel}} style="background-image: url({{session.user.image}});" alt="Profile Edit" class="auth__nav-image">{{/link-to}}
+      {{/if}}
+    </li>
 
   </ul>
 </nav>

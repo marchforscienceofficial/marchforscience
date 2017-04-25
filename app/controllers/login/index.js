@@ -1,0 +1,103 @@
+import Ember from 'ember';
+
+const { get, set } = Ember;
+
+export default Ember.Controller.extend({
+
+  session: Ember.inject.service('session'),
+  isLogin: true,
+  actions: {
+
+    reverify(event){
+      event.preventDefault();
+      let email = this.get('email');
+      return $.post('/api/reverify', {
+        email: email
+      }).then(() => {
+        this.get('notifications').success('Email sent.');
+      });
+    },
+
+    onLogin(event){
+      event.preventDefault();
+      let email = this.get('email');
+      let password = this.get('password');
+      this.get('session').login(email, password).then((err, res) => {
+        this.get('session').set('open', false);
+        this.setProperties({
+          email: '',
+          password: '',
+          firstName: '',
+          lastName: '',
+          phone: '',
+          zip: '',
+          isLogin: true
+        });
+      }, (err) => {
+
+        if (err.responseJSON && err.responseJSON.error.message === "login failed as the email has not been verified") {
+          this.set("verification", true);
+          this.get('notifications').error('Your email has not been verified');
+          return;
+        }
+
+        this.get('notifications').error('Invalid email or password');
+      });
+    },
+
+    onRegister(event){
+      event.preventDefault();
+      let email = this.get('email');
+      let password = this.get('password');
+      let verifyPassword = this.get('verifyPassword');
+      let firstName = this.get('firstName');
+      let lastName = this.get('lastName');
+      let phone = this.get('phone');
+      let zip = this.get('zip');
+
+      if (!email || !password || !firstName || !lastName || !phone) {
+        return this.get('notifications').error('Please fill out all fields');
+      }
+
+      if (password !== verifyPassword) {
+        return this.get('notifications').error("Passwords don't match");
+      }
+
+
+      if (!~email.indexOf('@') || !~email.indexOf('.')) {
+        return this.get('notifications').error("Invalid email address");
+      }
+
+      this.get('session').register({
+        email,
+        password,
+        firstName,
+        lastName,
+        phone,
+        zip
+      }).then((res) => {
+        this.set("verification", true);
+        this.get('notifications').success('Email sent.');
+      }, (err) => {
+        this.get('notifications').error(err.message);
+      });
+    },
+
+    onSubmit(event){
+      event.preventDefault();
+      this.actions[this.get('isLogin') ? 'onLogin' : 'onRegister'].call(this, event);
+    },
+
+    logout(){
+      return this.get('session').logout();
+    },
+
+    toggle(){
+      this.get('session').toggleProperty('open');
+    },
+
+    toggleAction(){
+      this.toggleProperty('isLogin');
+    }
+  }
+});

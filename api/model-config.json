@@ -52,7 +52,7 @@
     "dataSource": "gcloud-datastore",
     "public": true,
     "options": {
-      "emailVerificationRequired": false
+      "emailVerificationRequired": true
     }
   },
   "MarchRoles": {

@@ -12,7 +12,7 @@ export default Ember.Object.extend({
 
   name: '',
   banner: `${ENV.S3_URL}/${DEFAULT_BANNER}`,
-  logo: '',
+  logo: `${ENV.S3_URL}/${DEFAULT_LOGO}`,
   city: '',
   state: '',
   zip: '',

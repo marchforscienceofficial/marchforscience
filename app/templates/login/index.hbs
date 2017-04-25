@@ -1,1 +1,21 @@
-{{outlet}}
+{{yield}}
+
+<section class="auth {{if session.open 'open'}}">
+
+  <div style="height: 100%;display: block;overflow: auto;">
+    <img class="auth--logo" src={{transparent-pixel}} alt="March for Science Logo"/>
+
+      <h1 class="auth--title">{{if isLogin 'Sign In' 'Sign Up'}}</h1>
+      <button onClick={{action 'toggleAction'}} class="auth--toggle">{{if isLogin 'Click here to create a new account' 'Sign in to an existing account'}}</button>
+
+      <form onSubmit={{action 'onSubmit'}} class="auth--form">
+        {{float-input value=(mut firstName)  label='First Name' class=(concat 'auth--form__halfinput ' (if isLogin 'hidden'))}}
+        {{float-input value=(mut lastName)  label='Last Name' class=(concat 'auth--form__halfinput ' (if isLogin 'hidden'))}}
+        {{float-input value=(mut phone) type='tel' label='Telephone' class=(concat 'auth--form__fullinput ' (if isLogin 'hidden'))}}
+        {{float-input value=(mut email) type='email' label='Email' class='auth--form__fullinput'}}
+        {{float-input value=(mut password) type='password' label='Password' class='auth--form__fullinput'}}
+        {{float-input value=(mut verifyPassword) type='password' label='Verify Password' class=(concat 'auth--form__fullinput ' (if isLogin 'hidden'))}}
+        <input type="submit" class="u-button">
+      </form>
+  </div>
+</section>
