@@ -13,7 +13,7 @@ export default  {
     + "Once you’ve registered, take a moment to learn about the ways that science-backed policy can help the environment."
     + " When you’re ready, you can sign our pledge to commit to staying informed and casting votes that prioritize science-based environmental action.",
     buttons: [
-      {text: "SIGN THE PLEDGE", href: "http://www.environmentalvoter.org"}
+      {text: "SIGN THE PLEDGE", href: "https://act.myngp.com/forms/5905328088092313600"}
     ],
     image: "images/icon-globe.svg",
   }, {
