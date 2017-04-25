@@ -21,6 +21,9 @@ Router.map(function() {
   this.route('profile');
   this.route('verified');
   this.route('vision');
+  this.route('login', function() {
+    this.route('verify');
+  });
 });
 
 export default Router;

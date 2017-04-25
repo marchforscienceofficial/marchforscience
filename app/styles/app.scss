@@ -18,6 +18,7 @@ body {
   font-size: 1.6rem;
   background-color: get-color(gray0);
   margin: 72px 0 0;
+  height: auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -62,15 +63,7 @@ hr {
   }
 
   a {
-    flex-grow: 1;
-  }
 
-  &__list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: flex-end;
   }
 
   &__listitem {
@@ -86,6 +79,7 @@ hr {
       width: 100%;
       display: block;
       line-height: 64px;
+      cursor: pointer;
     }
     a.active {
       color: get-color(orange);
@@ -96,6 +90,7 @@ hr {
       padding: 0 8px;
       text-align: center;
       margin-right: -12px;
+      height: 72px;
     }
   }
 
@@ -134,6 +129,15 @@ textarea {
   box-sizing: border-box;
 }
 
+.app--footer {
+    background-color: get-color(blue);
+    padding: 32px 0;
+
+    #google_translate_element {
+      float: right;
+    }
+}
+
 a {
   color: get-color(blue5);
   font-weight: bold;
@@ -164,9 +168,23 @@ a {
   top: 0;
   left: 0;
   right: 0;
-  height: 75px;
   width: 100vw;
-  overflow: scroll;
+
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+.app-nav__list {
+
+}
+
+.app--main {
+  min-height: calc(100vh);
 }
 
 @import 'satellite';

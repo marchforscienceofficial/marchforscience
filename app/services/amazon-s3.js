@@ -2,12 +2,21 @@ import Ember from 'ember';
 import md5 from 'npm:blueimp-md5';
 
 function compress(img, quality, mime_type){
-   var cvs = document.createElement('canvas');
-   cvs.width = img.naturalWidth;
-   cvs.height = img.naturalHeight;
-   var ctx = cvs.getContext("2d").drawImage(img, 0, 0);
-   var newImageData = cvs.toDataURL(mime_type, quality/100);
-   return newImageData;
+
+   img.style.opacity = 0;
+   img.style.position = 'absolute';
+   document.body.appendChild(img);
+   return new Promise((resolve, reject) => {
+     window.requestAnimationFrame(() => {
+      var cvs = document.createElement('canvas');
+      cvs.width = img.naturalWidth;
+      cvs.height = img.naturalHeight;
+      var ctx = cvs.getContext("2d").drawImage(img, 0, 0);
+      var newImageData = cvs.toDataURL(mime_type, quality/100);
+      document.body.removeChild(img);
+      resolve(newImageData);
+     });
+   });
 }
 
 //ADD sendAsBinary compatibilty to older browsers
@@ -43,21 +52,24 @@ export default Ember.Service.extend({
       reader.onload = function (e) {
         original.setAttribute('src', e.target.result);
 
-        var compressedImage = compress(original, 70, type);
-        var md5name = md5(compressedImage);
+        var compressedImage = compress(original, 70, type).then((compressedImage) => {
 
-        return $.ajax('/api/s3-token', {
-          method: 'POST',
-          data: { file: md5name, type: type }
-        })
-        .then( (resp) => {
-          const xhr = new XMLHttpRequest();
-          xhr.open("PUT", resp.signedRequest);
-          xhr.setRequestHeader('x-amz-acl', 'public-read');
-          xhr.setRequestHeader('Content-Type', type);
-          xhr.onload = () => { resolve(resp.url) }
-          xhr.onerror = (e) => { reject(e) }
-          xhr.send(dataURItoBlob(compressedImage));
+          var md5name = md5(compressedImage);
+
+          return $.ajax('/api/s3-token', {
+            method: 'POST',
+            data: { file: md5name, type: type }
+          })
+          .then( (resp) => {
+            const xhr = new XMLHttpRequest();
+            xhr.open("PUT", resp.signedRequest);
+            xhr.setRequestHeader('x-amz-acl', 'public-read');
+            xhr.setRequestHeader('Content-Type', type);
+            xhr.onload = () => { resolve(resp.url) }
+            xhr.onerror = (e) => { reject(e) }
+            xhr.send(dataURItoBlob(compressedImage));
+          });
+
         });
 
       }

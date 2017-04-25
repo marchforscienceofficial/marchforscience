@@ -11,12 +11,14 @@
     box-shadow: none;
     border: none;
     width: calc(100% + 20px);
-    position: relative;
+    position: relative !important;
     left: -10px !important;
     padding-bottom: 10px;
-    height: calc(100vh - 371px);
     overflow: visible;
     margin-bottom: 32px;
+    height: auto;
+    max-height: none;
+    overflow: hidden;
   }
 
   .tt-suggestion {

@@ -18,7 +18,7 @@ module.exports = function(server) {
         firstName: 'Super',
         lastName: 'User',
         email: 'superuser@marchforscience.com',
-        password: 'password',
+        password: process.env.SUPERUSER_PASSWORD,
         phone: '1234567890',
         role: 'admin',
         emailVerified: true,

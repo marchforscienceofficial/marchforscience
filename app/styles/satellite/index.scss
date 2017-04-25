@@ -28,7 +28,7 @@
   }
 
   .satellite-profile__header--background {
-    filter: sepia(100) brightness(0.25) saturate(2) hue-rotate(-200deg);
+    filter: sepia(100%) brightness(0.25) saturate(2) hue-rotate(-200deg);
     background-size: cover;
     background-position: center;
     position: absolute;

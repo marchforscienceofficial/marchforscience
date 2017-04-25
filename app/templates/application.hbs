@@ -9,16 +9,27 @@
     <li class="app--nav__listitem"><a href="https://www.marchforscience.com/about">About</a></li>
     <li class="app--nav__listitem"><a href="https://www.marchforscience.com/blog">Blog</a></li>
     <li class="app--nav__listitem"><a href="https://www.marchforscience.com/store">Store</a></li>
-    <li class="app--nav__listitem hide-for-mobile">{{#user-auth}}{{/user-auth}}</li>
+    <li class="app--nav__listitem hide-for-mobile"><a href="https://www.marchforscience.com/donate" target="_blank" style="margin: 0 18px 0 12px">Donate</a></li>
 
   </ul>
 </nav>
 
 {{notification-container}}
 
-<main>
+<main class="app--main">
   {{outlet}}
 </main>
 
-<footer>
+<footer class="app--footer">
+
+  <section class="u-grid-container">
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  </section>
+
 </footer>
