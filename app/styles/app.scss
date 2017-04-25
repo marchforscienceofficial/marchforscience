@@ -66,14 +66,6 @@ hr {
 
   }
 
-  &__list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: flex-end;
-  }
-
   &__listitem {
     display: flex;
     align-items: center;
@@ -176,9 +168,19 @@ a {
   top: 0;
   left: 0;
   right: 0;
-  height: 75px;
   width: 100vw;
-  overflow: scroll;
+
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+.app-nav__list {
+
 }
 
 .app--main {
