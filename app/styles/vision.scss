@@ -4,13 +4,14 @@
   margin-bottom: 32px;
   position: relative;
   overflow: hidden;
+  border-bottom: 8px solid get-color(blue);
 
   &:before {
     content: "";
     filter: sepia(100%) brightness(0.65) saturate(.6) hue-rotate(-200deg);
-    background-image: asset-url('images/bg.jpg');
+    background-image: asset-url('images/march_for_science_banner.jpg');
     background-size: cover;
-    background-position: center center;
+    background-position: left center;
     position: absolute;
     top: 0;
     left: 0;
