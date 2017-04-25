@@ -24,7 +24,7 @@ export default  {
     + " Because of the importance of creativity for the critical mind, we've begun adding \"Art\" to the equation, and started promoting STEAM."
     + " We’ve compiled a list of exciting groups that produce STEAM projects so that you can learn about their mission, get involved, and simply enjoy.",
     buttons: [
-      {text: "explore now", href: "http://marchforscience.com/blog/2017/4/24/exploring-steam-programs"}
+      {text: "explore now", href: "http://marchforscience.com/blog/exploring-steam-programs"}
 
     ],
     image: "images/icon-bulb.svg",
