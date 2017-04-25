@@ -44,7 +44,7 @@
       </button>
     </li>
     <li class="{{if (eq active 3) 'active'}}">
-      <button href="" {{action 'clickTest' 3}} disabled>
+      <button href="" {{action 'clickTest' 3}}>
         <img src="images/button-inactive.svg"/>
         <div class="scienceCalendar-buttonText">
           <span class="u-text-white u-text-light scienceCalendar-dayTag">wednesday</span>
@@ -120,7 +120,7 @@
     <div class="home-page-megaphone-text">
       <h3>science<p>NOT</p>silence</h3>
       <p class="home-page-megaphone-text-body">
-        <p>{{dayData.megaphone.text}}</p>
+        <p>{{{dayData.megaphone.text}}}</p>
         <p class="home-page-megaphone-text-body-action u-text-bold">
           {{dayData.megaphone.hash}}
           <a class="u-button" href={{dayData.megaphone.button.href}} target="_blank">{{dayData.megaphone.button.text}}</a>

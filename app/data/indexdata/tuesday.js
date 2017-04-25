@@ -34,10 +34,10 @@ export default  {
   //**     Megaphone & Twitter           **//
   //***************************************/
   megaphone: {
-    text: "Contact your local officials (council members,"
-    + " your mayor, county executives) with a digital postcard explaining why they should support scientific institutions and science-based policies.",
+    text: "Contact the President of the General Assembly of the United Nations with a postcard that states why you marched "
+    + "for science and why he should support scientific institutions and science-based policies.",
     hash: "#NoSidesInScience",
-    button: {text: "contact now", href: "http://p2a.co/20umEex"},
+    button: {text: "contact now", href: "http://p2a.co/3BfL3J9"},
     twitterHash: '#EVERYDAYSCIENCE',
     twitterButton: {text: "How did you use science today?", href:"http://twitter.com/home?status=%23everydayscience%20%23marchforscience"},
     twitterSplain: "When something is with us all the time, we can sometimes forget it's there. Science is all around us: the ways we eat, get to work, communicate, and importantly,"
