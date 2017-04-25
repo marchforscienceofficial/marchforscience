@@ -13,6 +13,7 @@ export default  {
     + "Once you’ve registered, take a moment to learn about the ways that science-backed policy can help the environment."
     + " When you’re ready, you can sign our pledge to commit to staying informed and casting votes that prioritize science-based environmental action.",
     buttons: [
+      {text: "register now", href: "http://marchforscience.turbovote.org "},
       {text: "SIGN THE PLEDGE", href: "https://act.myngp.com/forms/5905328088092313600"}
     ],
     image: "images/icon-globe.svg",
@@ -34,9 +35,9 @@ export default  {
   //***************************************/
   megaphone: {
     text: "Contact your local officials (council members,"
-    + " your mayor, county executives) with an MFS postcard explaining why they should support scientific institutions and science-based policies.",
+    + " your mayor, county executives) with a digital postcard explaining why they should support scientific institutions and science-based policies.",
     hash: "#NoSidesInScience",
-    button: {text: "print now", href: "https://sharingscience.agu.org/files/2017/03/MarchForScience_Poscard_FINALnocrops.pdf"},
+    button: {text: "contact now", href: "http://p2a.co/20umEex"},
     twitterHash: '#EVERYDAYSCIENCE',
     twitterButton: {text: "How did you use science today?", href:"http://twitter.com/home?status=%23everydayscience%20%23marchforscience"},
     twitterSplain: "When something is with us all the time, we can sometimes forget it's there. Science is all around us: the ways we eat, get to work, communicate, and importantly,"
@@ -58,7 +59,8 @@ export default  {
     header: "Send a “Science is Essential” postcard to your legislator",
     group: "American Geophysical Union",
     bodyWithHTMLLinks: "You can <a href='https://sharingscience.agu.org/files/2017/03/MarchForScience_Poscard_FINALnocrops.pdf' target='_blank'>print this postcard</a> "
-    + "or make your own. Fill it out and send it to your legislators to let them know how important science is to you!",
+    + "or make your own. Fill it out and send it to your legislators to let them know how important science is to you! "
+    + "Check out other wasy to be involved at <a href='http://sharingscience.agu.org/ways-to-reach-out/' target='_blank'>www.agu.org</a>",
     image: 'images/moreCTA/rocket.svg',
   }, {
     header: "Join APA's action network",
