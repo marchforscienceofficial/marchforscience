@@ -39,7 +39,7 @@ export default  {
     + " Based outside of the United States?"
     + " <a href='http://www.marchforscience.com/blog/2017/4/24/i-marched-for-science-contacting-global-leaders' target='_blank'>Click here for instructions!</a>",
     hash: "#NoSidesInScience",
-    button: {text: "contact now", href: "http://p2a.co/20umEex"},
+    button: {text: "contact the US president now", href: "http://p2a.co/20umEex"},
     twitterHash: '#STEAM #CITSCI',
     twitterButton: {text: "Share ways science lives outside the lab.", href:"http://twitter.com/home?status=%23steam%20%23citsci%20%23marchforscience"},
     twitterSplain: "Today is all about dismantling the perceived barriers surrounding science and what it means to be a \"scientist\"."
@@ -67,7 +67,7 @@ export default  {
 
     image: 'images/moreCTA/icon-talk.svg',
   }, {
-    header: "Join \"Sense About Science\" in recognizing lesser know scientists every Wednesday!",
+    header: "Join \"Sense About Science\" in recognizing lesser known scientists every Wednesday!",
     group: "Sense About Science USA",
     bodyWithHTMLLinks: "Starting on Wednesday, <a href='http://senseaboutscience.org/' target='_blank'>Sense About Science USA</a> will highlight a #SuperScientist. "
     + "This person may be breaking into a certain field of science (like Abigail Harrison of Mars Generation)"
@@ -82,14 +82,14 @@ export default  {
       + " Check out these <a href='http://science.travelingstanzas.com' target='_blank'>\"Emerge\" poems</a> or create your own and share at "
       + "<a href='http://twitter.com/home?status=%23poetsforscience' target='_blank'>#PoetsForScience</a>.",
       image: 'images/moreCTA/battery-01.svg',
-    },
-    {
-      header: "Start Talking about science today",
+    }, {
+      header: "Webinar on Plants with Superpowers",
       group: "Biology Fortified",
-      bodyWithHTMLLinks: "<a href='https://www.biofortified.org' target='_blank'>Biology Fortified</a> will host a"
-      + " <a href='https://www.biofortified.org/scicomm-webinar/' target='_blank'>live, public webinar at 3:30 PM EDT on April 26</a> as an introduction to science communication, "
-      + "particularly aimed at young scientists and science enthusiasts. Learn about psychology, ethics, effective strategies, and how to network to help your communication efforts achieve the greatest impact."
-      + " There will be an opportunity to ask questions during and after the webinar, and it will be available for later viewing.",
-      image: 'images/moreCTA/magnet-01.svg',
+      bodyWithHTMLLinks: "<a href='https://www.biofortified.org' target='_blank'>Biology Fortified</a> will host a live"
+      + " <a href='https://www.biofortified.org/plants-superpowers/' target='_blank'>public webinar at 3:30 EDT April 26 on GMOs</a>."
+      + " In this webinar, Biology Fortified will show how biotechnology can be used to give plants superpowers."
+      + " We will discuss plant breeding methods, current and future GMO traits, GMO safety, and regulation of biotechnology in the United States."
+      + " There will be an opportunity to ask questions during and a er the webinar, and the video will be available for later viewing.",
+      image: 'images/moreCTA/flowerbattery.svg',
     }],
 }
