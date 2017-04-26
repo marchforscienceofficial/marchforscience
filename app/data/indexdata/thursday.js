@@ -37,8 +37,8 @@ export default  {
   //**     Megaphone & Twitter           **//
   //***************************************/
   megaphone: {
-    text: "Contact your federal officials (Congressperson, Senators) with a digital postcard that states "
-    + "why you marched for science and why they should support scientific institutions and science-based policies."
+    text: "Contact your federal officials (Congresspersons, Senators) with a digital postcard that states why you marched for science"
+    + " and why they should support scientific institutions and science-based policies. "
     + " <a href='http://www.marchforscience.com/blog/2017/4/24/i-marched-for-science-contacting-global-leaders' target='_blank'>"
     + "Click here if you are based outside the US!</a>",
     hash: "#NoSidesInScience",
@@ -82,13 +82,14 @@ export default  {
     image: 'images/moreCTA/peeps.svg',
   },
     {
-      header: "Webinar on Plants with Superpowers",
+      header: "Start Talking about science today",
       group: "Biology Fortified",
-      bodyWithHTMLLinks: "<a href='https://www.biofortified.org' target='_blank'>Biology Fortified</a> will host a live<a href='https://www.biofortified.org/plants-superpowers/' target='_blank'> public webinar at 3:00 EDT April 27 on GMOs</a>."
-      + " In this webinar, Biology Fortified will show how biotechnology can be used to give plants superpowers."
-      + " We will discuss plant breeding methods, current and future GMO traits, GMO safety, and regulation of biotechnology in the United States."
-      + " There will be an opportunity to ask questions during and a er the webinar, and the video will be available for later viewing.",
-      image: 'images/moreCTA/flowerbattery.svg',
+      bodyWithHTMLLinks: "<a href='https://www.biofortified.org' target='_blank'>Biology Fortified</a> will host a live,"
+      + " <a href='https://www.biofortified.org/scicomm-webinar/' target='_blank'>public webinar at 5:00 PM EDT on April 27</a> as an introduction to science communication, "
+      + "particularly aimed at young scientists and science enthusiasts. Learn about psychology, ethics, effective strategies,"
+      + " and how to network to help your communication efforts achieve the greatest impact."
+      + " There will be an opportunity to ask questions during and after the webinar, and it will be available for later viewing.",
+      image: 'images/moreCTA/magnet-01.svg',
     }]
 }
 
