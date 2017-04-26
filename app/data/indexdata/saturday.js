@@ -72,7 +72,7 @@ export default  {
     bodyWithHTMLLinks: "UCS will be hosting a webinar on May 18 for early career scientists on how to identify resources"
     + " and connect with mentors involved in public engagement and science advocacy. For more information on that and other seminars aimed at"
     + " training scientists to talk to the media, communicate science, write op-eds and influence decision-makers"
-    + " check out <a href='http://www.ucsusa.org/action/science_network/science-network-workshop-series.html#.WQBNFlPhCL-'>www.ucsusa.org</a>",
+    + " check out <a href='http://www.ucsusa.org/action/science_network/science-network-workshop-series.html#.WQBNFlPhCL-' target='_blank'>www.ucsusa.org</a>",
     image: 'images/moreCTA/utensils-01.svg',
   }]
 }
