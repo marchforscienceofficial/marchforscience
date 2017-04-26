@@ -14,7 +14,7 @@ export default  {
     + " When you’re ready, you can sign our pledge to commit to staying informed and casting votes that prioritize science-based environmental action.",
     buttons: [
       {text: "register now", href: "http://marchforscience.turbovote.org "},
-      {text: "SIGN THE PLEDGE", href: "https://act.myngp.com/forms/5905328088092313600"}
+      {text: "SIGN THE PLEDGE", href: "https://act.myngp.com/forms/5905328088092313600", trackingCode: "left-cta-1"}
     ],
     image: "images/icon-globe.svg",
   }, {
@@ -25,7 +25,7 @@ export default  {
     + " - an organization that identifies and supports the most promising projects to battle climate change. "
     + "You can join their community and pick the exact project that you want to support from their impressive portfolio of global carbon reducing options.",
     buttons: [
-      {text: 'SUPPORT THE CAUSE', href: 'https://www.cooleffect.org/'},
+      {text: 'SUPPORT THE CAUSE', href: 'https://www.cooleffect.org/', trackingCode: "right-cta-1"},
     ],
     image: "images/icon-bulb.svg",
   }],
@@ -55,6 +55,7 @@ export default  {
     + " to ask your representatives to support US science during this critical time at <a href='https://save-science.org' target='_blank'>save-science.org</a>."
     + " We have a pre-filled message with professional language but encourage you to add your own personal reasons for supporting science if you wish.",
     image: 'images/moreCTA/journal-01.svg',
+    trackingCode: "more-1"
   }, {
     header: "Send a “Science is Essential” postcard to your legislator",
     group: "American Geophysical Union",
@@ -62,18 +63,22 @@ export default  {
     + "or make your own. Fill it out and send it to your legislators to let them know how important science is to you! "
     + "Check out other wasy to be involved at <a href='http://sharingscience.agu.org/ways-to-reach-out/' target='_blank'>www.agu.org</a>",
     image: 'images/moreCTA/rocket.svg',
+    trackingCode: "more-2"
   }, {
     header: "Join APA's action network",
     group: "American Psychological Association",
     bodyWithHTMLLinks: "Use your voice to weigh in opposition to the skinny budget proposal which includes large cuts to science, "
     + "education, and programs for the underserved at <a href='http://www.apa.org/about/gr/advocacy/network.aspx' target='_blank'>www.apa.org</a>.",
     image: 'images/moreCTA/satellite-01.svg',
+    trackingCode: "more-3"
   },
     {
       header: "Ask Congress to pass a 2017 budget that funds science",
       group: "Biophysical Society",
       bodyWithHTMLLinks: "Lend your voice to the cause by visiting <a href=' http://www.biophysics.org/Policy/AdvocacyAction/tabid/443/Default.aspx' target='_blank'>www.biophysics.org</a>.",
       image: 'images/moreCTA/medical-01.svg',
+      trackingCode: "more-4"
+
     },
     {
       header: "Endocrinologists - Write your member of Congress about the importance of NIH funding",
@@ -82,5 +87,6 @@ export default  {
       + "NIH funding for endocrine research and a host of other endocrine-related issues. "
       + "Get involved at <a href='http://www.endocrine.org/advocacy' target='_blank'>www.endocrine.org/advocacy</a>. For other activities, check out <a href='https://www.endocrine.org/marchforscience'>www.endocrine.org/marchforscience</a>.",
       image: 'images/moreCTA/heart-01.svg',
+      trackingCode: "more-5"
     }],
 }

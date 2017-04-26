@@ -14,7 +14,7 @@ export default  {
     + ' and resources. Keep an eye on your <a href="https://satellites.marchforscience.com/satellites">Satellites</a> homepage;'
     + ' we’re rolling out exciting new features in the coming weeks.\n\nOnce you’ve signed up, recruit a few friends to do the same!',
     buttons: [
-      {text: "Browse satellites", href: "https://satellites.marchforscience.com/satellites"}
+      {text: "Browse satellites", href: "https://satellites.marchforscience.com/satellites", trackingCode: "left-cta-1"}
     ],
     image: "images/icon-globe.svg",
   }, {
@@ -25,7 +25,7 @@ export default  {
     + ' community building, and accessible education. We’ll work with Satellites and partners to create new programs and scale existing programs aimed at'
     + ' improving the relationship between science and society.',
     buttons: [
-      {text: 'Learn more', href: 'vision'},
+      {text: 'Learn more', href: 'vision', trackingCode: "right-cta-1"},
     ],
     image: "images/icon-bulb.svg",
   }],
@@ -54,6 +54,7 @@ export default  {
       + " and explain why it’s relevant and important to your community."
       + " View AGU's resources at <a href='http://www.defenders.org/ten-things-you-can-do-help' target='_blank'>www.defenders.org</a>.",
       image: 'images/moreCTA/icon-talk.svg',
+      trackingCode: "more-1"
     }
   ]
 }

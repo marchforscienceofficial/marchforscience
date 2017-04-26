@@ -17,7 +17,7 @@ export default  {
     + " <a href='https://marchforscience.com/blog/2017/4/24/introducing-the-people-for-science-project' target='_blank'>"
     + "Create an account and help change the way we talk about science</a>.",
     buttons: [
-      {text: "sign up", href: "https://marchforscience.com/blog/2017/4/24/introducing-the-people-for-science-project"},
+      {text: "sign up", href: "https://marchforscience.com/blog/2017/4/24/introducing-the-people-for-science-project", trackingCode: "left-cta-1"},
     ],
     image: "images/icon-globe.svg",
   }, {
@@ -27,7 +27,7 @@ export default  {
     + " It’s half how you talk and half how you listen. Practice your communication strategy by pitching a science-inspired story to Story Collider."
     + " Then refine your radar for detecting low quality content by exploring the tips from Norton Press.",
     buttons: [
-      {text: "tell your story", href: "https://goo.gl/forms/bb6Z0f57KvlzNMgu2"},
+      {text: "tell your story", href: "https://goo.gl/forms/bb6Z0f57KvlzNMgu2", trackingCode: "right-cta-1"},
       // {text: "explore the tips - need link", href: ""}
     ],
     image: "images/icon-bulb.svg",
@@ -62,6 +62,7 @@ export default  {
     + " you help to guarantee that science informs policy decisions and maintains its critical and integral role in public discourse."
     + " Share your story at <a href='https://sharingscience.agu.org/story' target='_blank'>sharingscience.agu.org</a>.",
     image: 'images/moreCTA/telescope-01.svg',
+    trackingCode: "more-1"
   }, {
     header: "Share why you support Whistle-Blowers",
     group: "Government Accountability Project",
@@ -72,6 +73,7 @@ export default  {
     + " Help build the movement by @ing five friends and ask them to share their own reasons. Make the campaign go viral! We'll retweet you."
     + " Then visit <a href='http://www.whistleblower.org'>http://www.wistleblower.org</a> to get a free Whistle-blowing Wallet Card. Print one and give one to a friend!",
     image: 'images/moreCTA/data.svg',
+    trackingCode: "more-2"
   }, {
     header: "Thank a government scientist!",
     group: "Union of Concerned Scientists",
@@ -80,6 +82,7 @@ export default  {
     + " to send a Tweet or Facebook message to #ThankAGovScientist"
     + " to the agencies of your choice or a federal scientist you know personally. Thank a scientist today!",
     image: 'images/moreCTA/peeps.svg',
+    trackingCode: "more-3"
   },
     {
       header: "Start Talking about science today",
@@ -90,6 +93,7 @@ export default  {
       + " and how to network to help your communication efforts achieve the greatest impact."
       + " There will be an opportunity to ask questions during and after the webinar, and it will be available for later viewing.",
       image: 'images/moreCTA/magnet-01.svg',
+      trackingCode: "more-4"
     }]
 }
 

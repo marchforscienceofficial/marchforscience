@@ -102,7 +102,7 @@
             <p>{{{CTA.body}}}</p>
             <div class="home-page-callToAction-body-call-buttons">
               {{#each CTA.buttons as |button| }}
-                <a class="u-button" href={{button.href}} target="_blank">{{button.text}}</a>
+                <a class="u-button" href={{button.href}} target="_blank" {{action 'clickTrack' button.trackingCode preventDefault=false}}>{{button.text}}</a>
               {{/each}}
             </div>
           </div>
@@ -123,7 +123,7 @@
         <p>{{{dayData.megaphone.text}}}</p>
         <p class="home-page-megaphone-text-body-action u-text-bold">
           {{dayData.megaphone.hash}}
-          <a class="u-button" href={{dayData.megaphone.button.href}} target="_blank">{{dayData.megaphone.button.text}}</a>
+          <a class="u-button" href={{dayData.megaphone.button.href}} target="_blank" {{action 'clickTrack' 'megaphone' preventDefault=false}}>{{dayData.megaphone.button.text}}</a>
         </p>
       </p>
     </div>
@@ -137,7 +137,7 @@
     </div>
     <header>
       <h1>{{dayData.megaphone.twitterHash}}</h1>
-      <a class="u-button" href={{dayData.megaphone.twitterButton.href}} target="_blank">
+      <a class="u-button" href={{dayData.megaphone.twitterButton.href}} target="_blank" {{action 'clickTrack' 'twitter-cta' preventDefault=false}}>
         <span class="socialMedia-actionWhat">{{dayData.megaphone.twitterButton.text}}</span>
       </a>
     </header>
@@ -148,13 +148,13 @@
     </p>
     <ul class="socialMedia-links u-text-h1">
       <li>
-        <a class="fa fa-twitter" href="https://www.twitter.com/scienceMarchDC" target="_blank"></a>
+        <a class="fa fa-twitter" href="https://www.twitter.com/scienceMarchDC" target="_blank" {{action 'clickTrack' 'social-media-twitter' preventDefault=false}}></a>
       </li>
       <li>
-        <a class="fa fa-facebook-f" href="https://www.facebook.com/marchforscience" target="_blank"></a>
+        <a class="fa fa-facebook-f" href="https://www.facebook.com/marchforscience" target="_blank" {{action 'clickTrack' 'social-media-facebook' preventDefault=false}}></a>
       </li>
       <li>
-        <a class="fa fa-instagram" href="https://www.instagram.com/sciencemarchdc" target="_blank"></a>
+        <a class="fa fa-instagram" href="https://www.instagram.com/sciencemarchdc" target="_blank" {{action 'clickTrack' 'social-media-instagram' preventDefault=false}}></a>
       </li>
     </ul>
   </section>
@@ -165,7 +165,7 @@
     </header>
     <ul class="u-grid-container">
       {{#each dayData.moreCTAs as |CTA|}}
-        <li>
+        <li {{action 'clickTrack' CTA.trackingCode preventDefault=false}}>
           <img src={{CTA.image}}/>
           <p class="u-text-bold">{{CTA.header}}
             <span class="u-text-light">{{CTA.group}}</span>

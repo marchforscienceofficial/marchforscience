@@ -14,7 +14,7 @@ export default  {
     + " To change everything, we need everyone. Join the Peoples Climate Movement this April 29th in Washington,"
     + " D.C. and across the country to stand up for our communities and climate.” - The People’s Climate Movement. Find the March in your city and hit the streets.",
     buttons: [
-      {text: "LEARN MORE", href: "https://peoplesclimate.org/"},
+      {text: "LEARN MORE", href: "https://peoplesclimate.org/", trackingCode: "left-cta-1"},
     ],
     image: "images/icon-globe.svg",
   }, {
@@ -25,7 +25,7 @@ export default  {
     + " Celebrate the start of a movement by supporting the local people and groups that are already working to make a difference."
     + " Don’t forget to sign up for your Satellite and read more about what’s next.",
     buttons: [
-      {text: "WHAT’S NEXT - COMING SOON!", href: ""},
+      {text: "WHAT’S NEXT - COMING SOON!", href: "", trackingCode: "right-cta-1"},
       // {text: "explore the tips - need link", href: ""}
     ],
     image: "images/icon-bulb.svg",
@@ -58,6 +58,7 @@ export default  {
     + " That's why the New York Academy of Sciences believes in the power of mentorship."
     + " Learn more at <a href='http://www.nyas.org/STEMmentor' target='_blank'>www.nyas.org</a>.",
     image: 'images/moreCTA/books-01.svg',
+    trackingCode: "more-1"
   }, {
     header: "Learn how to engage with scientific societies to support action",
     group: "Future of Research",
@@ -66,6 +67,7 @@ export default  {
     + " and to encourage members to discuss policy with their societies."
     + " Check out the facebook group <a href='https://www.facebook.com/ScientistsSpeakingUp' target='_blank'>Scientists Speaking Out</a> for details.",
     image: 'images/moreCTA/molecule-01.svg',
+    trackingCode: "more-2"
   }, {
     header: "Participate in communication and advocacy training",
     group: "Union of Concerned Scientists",
@@ -74,6 +76,7 @@ export default  {
     + " training scientists to talk to the media, communicate science, write op-eds and influence decision-makers"
     + " check out <a href='http://www.ucsusa.org/action/science_network/science-network-workshop-series.html#.WQBNFlPhCL-' target='_blank'>www.ucsusa.org</a>",
     image: 'images/moreCTA/utensils-01.svg',
+    trackingCode: "more-3"
   }]
 }
 

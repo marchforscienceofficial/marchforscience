@@ -18,6 +18,11 @@ export default Ember.Controller.extend({
       set(this, 'active', dayInt);
       set(this, 'dayOfTheWeek', dayNames[dayInt]);
       set(this, 'dayData', weekData[get(this, 'dayOfTheWeek')])
+    },
+    clickTrack(label, value){
+      if (!ga) console.error('Google Analytics not loaded');
+      console.log('Tracking:', 'send', 'event', this.get('dayOfTheWeek'), 'click', label, value);
+      ga('send', 'event', this.get('dayOfTheWeek'), 'click', label);
     }
   },
   dayData: weekData[dayNames[today]],

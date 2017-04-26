@@ -15,7 +15,7 @@ export default  {
     + " The success of these societies is everyone’s success, so spend your time today supporting the work necessary to center the future of science on inclusion,"
     + " diversity, equity, and accessibility.",
     buttons: [
-      {text: "SUPPORT NOW", href: "http://www.marchforscience.com/blog/2017/4/24/supporting-professional-advocacy-organizations"},
+      {text: "SUPPORT NOW", href: "http://www.marchforscience.com/blog/2017/4/24/supporting-professional-advocacy-organizations", trackingCode: "left-cta-1"},
     ],
     image: "images/icon-globe.svg",
   }, {
@@ -25,7 +25,7 @@ export default  {
     + " We’re capturing these stories and working with <a href='http://thepeoplesscience.org/' target='_blank'>The People’s Science</a> to distribute them widely."
     + " Learn about our new project “People for Science” and the associated “I Am A Scientist” campaign to break stereotypes about and by scientists in classrooms",
     buttons: [
-      {text: "learn more", href: "http://marchforscience.com/blog/2017/4/24/introducing-the-people-for-science-project"},
+      {text: "learn more", href: "http://marchforscience.com/blog/2017/4/24/introducing-the-people-for-science-project", trackingCode: "right-cta-1"},
     ],
     image: "images/icon-bulb.svg",
   }],
@@ -57,6 +57,7 @@ export default  {
     bodyWithHTMLLinks: "Put the health and safety of women ahead of corporate profits or political ideology."
     + " <a href='https://www.nwhn.org/citizens-petition-to-the-commissioner-of-the-fda/'>Sign NWHN's petition here.</a>",
     image: 'images/moreCTA/dropper.svg',
+    trackingCode: "more-1"
   }, {
     header: "Sign a petition to advance principles of scientific stewardship",
     group: "The Coalition to Promote Research",
@@ -66,11 +67,13 @@ export default  {
     + " and adherence to and promotion of the highest standards of scientific integrity and transparency in developing and making scientific data available to the public."
     + " <a href='http://www.cossa.org/coalitions/cpr-2/' target='_blank'>Sign the petition at www.cossa.org</a>!",
     image: 'images/moreCTA/plug-01.svg',
+    trackingCode: "more-2"
   }, {
     header: "Help inform Congress about the importance of nuclear power",
     group: "Generation Atomic",
     bodyWithHTMLLinks: "<a href='http://www.generationatomic.org' target='_blank'>Download the Atomic Action App</a> to connect and inform congress of the crucial necessity of nuclear power.",
     image: 'images/moreCTA/atom-01.svg',
+    trackingCode: "more-3"
   }]
 }
 

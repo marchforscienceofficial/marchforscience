@@ -14,7 +14,7 @@ export default  {
     + "Check out the list of opportunities at <a href='http://scistarter.com' target='_blank'>SciStarter</a> below"
     + " - and explore your local communities for ways to join (or start!) citizen science organizations.",
     buttons: [
-      {text: "PARTICIPATE NOW", href: "https://scistarter.com/just-add-citizen-science "},
+      {text: "PARTICIPATE NOW", href: "https://scistarter.com/just-add-citizen-science", trackingCode: "left-cta-1"},
     ],
     image: "images/icon-globe.svg",
   }, {
@@ -24,7 +24,7 @@ export default  {
     + " Because of the importance of creativity for the critical mind, we've begun adding \"Art\" to the equation, and started promoting STEAM."
     + " We’ve compiled a list of exciting groups that produce STEAM projects so that you can learn about their mission, get involved, and simply enjoy.",
     buttons: [
-      {text: "explore now", href: "http://marchforscience.com/blog/exploring-steam-programs"}
+      {text: "explore now", href: "http://marchforscience.com/blog/exploring-steam-programs", trackingCode: "right-cta-1"}
 
     ],
     image: "images/icon-bulb.svg",
@@ -55,6 +55,7 @@ export default  {
     group: "Steam 16",
     bodyWithHTMLLinks: "<a href='https://www.steam16.com' target='_blank'>Steam 16 students</a> created videos, helping them express what they learned a about S.T.E.A.M. subjects.",
     image: 'images/moreCTA/saturn-01.svg',
+    trackingCode: "more-1"
   }, {
     header: "Ask me Anything Forum",
     group: "Public Library of Science",
@@ -66,6 +67,7 @@ export default  {
     + "including both past and upcoming AMAs, visit <a href='https://www.reddit.com/r/science/wiki/scienceamaseries' target='_blank'>www.reddit.com</a>.",
 
     image: 'images/moreCTA/icon-talk.svg',
+    trackingCode: "more-2"
   }, {
     header: "Join \"Sense About Science\" in recognizing lesser known scientists every Wednesday!",
     group: "Sense About Science USA",
@@ -74,6 +76,7 @@ export default  {
     + " or already have made his/her mark on science (like Rosalind Franklin)."
     + " Follow the campaign on twitter using the hashtag #SuperScientist.",
     image: 'images/moreCTA/atom-01.svg',
+    trackingCode: "more-3"
   },
     {
       header: "Create and share poems from scientific texts",
@@ -82,6 +85,7 @@ export default  {
       + " Check out these <a href='http://science.travelingstanzas.com' target='_blank'>\"Emerge\" poems</a> or create your own and share at "
       + "<a href='http://twitter.com/home?status=%23poetsforscience' target='_blank'>#PoetsForScience</a>.",
       image: 'images/moreCTA/battery-01.svg',
+      trackingCode: "more-4"
     }, {
       header: "Webinar on Plants with Superpowers",
       group: "Biology Fortified",
@@ -91,5 +95,6 @@ export default  {
       + " We will discuss plant breeding methods, current and future GMO traits, GMO safety, and regulation of biotechnology in the United States."
       + " There will be an opportunity to ask questions during and a er the webinar, and the video will be available for later viewing.",
       image: 'images/moreCTA/flowerbattery.svg',
+      trackingCode: "more-5"
     }],
 }

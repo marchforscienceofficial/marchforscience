@@ -16,7 +16,7 @@ export default  {
     + ' local science museums,  <a href="http://www.getoutthescience.org/" target="_blank">Get out the Science</a>)'
     + ' and reach out to your <a href="https://satellites.marchforscience.com/satellites">Local Satellite</a> to get started today.',
     buttons: [
-      {text: "teach-in toolkit", href: "https://www.ncseglobal.org/ncse-science-teach-in-toolkit"}
+      {text: "teach-in toolkit", href: "https://www.ncseglobal.org/ncse-science-teach-in-toolkit", trackingCode: "left-cta-1"}
     ],
     image: "images/icon-globe.svg",
   }, {
@@ -27,7 +27,7 @@ export default  {
     + ' Host a beginner’s hack-a-thon with <a href="https://scratch.mit.edu" target="_blank">MIT’s Scratch</a>.'
     + ' Or try one of the other incredible science-inspired board or video games in our list below!',
     buttons: [
-      {text: 'PICK A GAME NIGHT', href: "https://www.marchforscience.com/blog/science-game-night"},
+      {text: 'PICK A GAME NIGHT', href: "https://www.marchforscience.com/blog/science-game-night", trackingCode: "right-cta-1"},
     ],
     image: "images/icon-bulb.svg",
   }],
@@ -57,6 +57,7 @@ export default  {
     + "Check out AGU's resources and examples of the types of opportunities that you may want to pursue at"
     + " <a href=' http://sharingscience.agu.org/ways-to-reach-out' target='_blank'>www.sharingscience.agu.org</a>.",
     image: 'images/moreCTA/protractor-01.svg',
+    trackingCode: "more-1"
   },{
     header: "Webinar: Taking Action to Support Evidence-Based Vaccine Policies",
     group: "Secular Coalition for America",
@@ -66,6 +67,7 @@ export default  {
     + "<a href='https://secularcoalition.clickmeeting.com/taking-action-to-support-evidence-based-vaccine-policies-on-the-national-local-level/register?_ga=1.139125236.618533041.1487956031'  target='_blank'>"
     + "www.secularcoalition.clickmeeting.com</a>.",
     image: 'images/moreCTA/shots-01.svg',
+    trackingCode: "more-2"
   }, {
     header: "Teach friends and students about science while playing a board game!",
     group: "Genetics Society of America",
@@ -74,5 +76,6 @@ export default  {
     + " or expansion packs to introduce additional genetic-themed concepts. "
     + "Learn more at <a href='http://genestogenomes.org/playing-a-game-with-basic-research/' target='_blank'>genestogenomes.org</a>.",
     image: 'images/moreCTA/petridish.svg',
+    trackingCode: "more-3"
   }],
 }
