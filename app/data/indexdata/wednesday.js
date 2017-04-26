@@ -39,7 +39,7 @@ export default  {
     + " Based outside of the United States?"
     + " <a href='http://www.marchforscience.com/blog/2017/4/24/i-marched-for-science-contacting-global-leaders' target='_blank'>Click here for instructions!</a>",
     hash: "#NoSidesInScience",
-    button: {text: "contact now", href: "http://p2a.co/20umEex"},
+    button: {text: "contact the US president now", href: "http://p2a.co/20umEex"},
     twitterHash: '#STEAM #CITSCI',
     twitterButton: {text: "Share ways science lives outside the lab.", href:"http://twitter.com/home?status=%23steam%20%23citsci%20%23marchforscience"},
     twitterSplain: "Today is all about dismantling the perceived barriers surrounding science and what it means to be a \"scientist\"."

@@ -42,7 +42,7 @@ export default  {
     + " <a href='http://www.marchforscience.com/blog/2017/4/24/i-marched-for-science-contacting-global-leaders' target='_blank'>"
     + "Click here if you are based outside the US!</a>",
     hash: "#NoSidesInScience",
-    button: {text: "contact now", href: "http://p2a.co/wTZtgK9"},
+    button: {text: "contact federal officials now", href: "http://p2a.co/wTZtgK9"},
     twitterHash: '#SCICOMM #SHAREYOURSCIENCE',
     twitterButton: {text: "Share your science stories.", href:"http://twitter.com/home?status=%23scicomm%20%23shareyourscience%20%23marchforscience"},
     twitterSplain: "Today the conversation is all about the way we talk about science. From TV Shows to books to talks to creative media,"
