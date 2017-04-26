@@ -1,6 +1,6 @@
 export default  {
   verbOfTheDay: 'advocates',
-  quoteOfTheDay: "“Science is a work in progress.",
+  quoteOfTheDay: "Science is a work in progress.",
 
   //**************************/
   //**   Call To Action   **//
