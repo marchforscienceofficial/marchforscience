@@ -6,8 +6,10 @@ const { get } = Ember;
 export default Ember.Route.extend({
 
   satellites: Ember.inject.service('satellites'),
+  session: Ember.inject.service('session'),
 
   beforeModel(){
+    if ( this.get('session.isLoggedOut') ) window.location = "https://www.marchforscience.com/satellite-marches";
     return this.get('satellites').setup();
   },
 

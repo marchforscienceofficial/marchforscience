@@ -71,7 +71,7 @@ export default  {
   }, {
     header: "Join \"Sense About Science\" in recognizing lesser known scientists every Wednesday!",
     group: "Sense About Science USA",
-    bodyWithHTMLLinks: "Starting on Wednesday, <a href='http://senseaboutscience.org/' target='_blank'>Sense About Science USA</a> will highlight a #SuperScientist. "
+    bodyWithHTMLLinks: "Starting on Wednesday, <a href='http://senseaboutscienceusa.org/' target='_blank'>Sense About Science USA</a> will highlight a #SuperScientist. "
     + "This person may be breaking into a certain field of science (like Abigail Harrison of Mars Generation)"
     + " or already have made his/her mark on science (like Rosalind Franklin)."
     + " Follow the campaign on twitter using the hashtag #SuperScientist.",

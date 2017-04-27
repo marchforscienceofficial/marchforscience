@@ -7,7 +7,7 @@
     "test": "ember test",
     "ember": "ember server --proxy http://localhost:4000",
     "build": "ember build",
-    "deploy": "ember build && gcloud app deploy --no-stop-previous-version"
+    "deploy": "ember build -prod && gcloud app deploy --no-stop-previous-version"
   },
   "dependencies": {
     "aws-sdk": "^2.41.0",
@@ -36,7 +36,7 @@
     "strong-error-handler": "^1.0.1"
   },
   "devDependencies": {
-    "broccoli-asset-rev": "^2.4.5",
+    "broccoli-asset-rev": "^2.5.0",
     "ember-ajax": "^2.4.1",
     "ember-aupac-typeahead": "^2.2.0",
     "ember-browserify": "^1.1.13",
