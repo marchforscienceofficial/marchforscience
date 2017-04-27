@@ -7,7 +7,7 @@ const { get, set } = Ember;
 const DEFAULT_LOGO = '801f9cad956f164b261a155c66c74a08';
 const DEFAULT_BANNER = '0f2637cf6abf03124732a239f1873f31';
 
-const DEFAULT_DONATE_LINK = "https://sciencedebate.org/march";
+const DEFAULT_DONATE_LINK = "https://www.marchforscience.com/donate";
 const DEFAULT_STORE_LINK = "http://marchforscienceshop.com/";
 const DEFAULT_STORE_IMAGE = "http://dev.marchforscience.s3.amazonaws.com/ba8dd5ae8a8cd0f997e34057c004e19c";
 const DEFAULT_TWITTER_URI = "https://www.twitter.com/scienceMarchDC";
