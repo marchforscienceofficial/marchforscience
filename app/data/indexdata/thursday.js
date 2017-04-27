@@ -28,7 +28,7 @@ export default  {
     + " Then, check out a #SuperScientist sharing their story courtesy of Sense about Science USA and learn more about science communication, transparency, and the use of evidence.",
     buttons: [
       {text: "tell your story", href: "https://goo.gl/forms/bb6Z0f57KvlzNMgu2", trackingCode: "right-cta-1"},
-      {text: "discover a story", href: "http://www.senseaboutscienceusa.org/march-for-science/"}
+      {text: "discover a story", href: "http://www.senseaboutscienceusa.org/march-for-science/", trackingCode: "right-cta-2"}
     ],
     image: "images/icon-bulb.svg",
   }],

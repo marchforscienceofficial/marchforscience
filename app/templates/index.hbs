@@ -12,78 +12,80 @@
     </div>
   </header>
 
-  <ul class="scienceCalendar">
-    <li class="{{if (eq active 0) 'active'}}">
-    <button href="" {{action 'clickTest' 0}}>
-        <img src="images/button-inactive.svg"/>
-        <div class="scienceCalendar-buttonText">
-          <span class="u-text-white u-text-light scienceCalendar-dayTag">sunday</span>
-          <span class="u-text-white scienceCalendar-scienceTag">science</span>
-          <span class="flex-1 scienceCalendar-verbTag">engages</span>
-        </div>
-      </button>
-    </li>
-    <li class="{{if (eq active 1) 'active'}}">
-      <button href="" {{action 'clickTest' 1}}>
-        <img src="images/button-inactive.svg"/>
-        <div class="scienceCalendar-buttonText">
-            <span class="u-text-white u-text-light scienceCalendar-dayTag">monday</span>
+  <nav class="scienceCalendar">
+    <ul class="u-grid-container">
+      <li class="{{if (eq active 0) 'active'}}">
+      <button href="" {{action 'clickTest' 0}}>
+          <img src="images/button-inactive.svg"/>
+          <div class="scienceCalendar-buttonText">
+            <span class="u-text-white u-text-light scienceCalendar-dayTag">sunday</span>
             <span class="u-text-white scienceCalendar-scienceTag">science</span>
-            <span class="flex-1 scienceCalendar-verbTag">discovers</span>
+            <span class="flex-1 scienceCalendar-verbTag">engages</span>
           </div>
-      </button>
-    </li>
-    <li class="{{if (eq active 2) 'active'}}">
-      <button href="" {{action 'clickTest' 2}}>
-        <img src="images/button-inactive.svg"/>
-        <div class="scienceCalendar-buttonText">
-          <span class="u-text-white u-text-light scienceCalendar-dayTag">tuesday</span>
-          <span class="u-text-white scienceCalendar-scienceTag">science</span>
-          <span class="flex-1 scienceCalendar-verbTag">empowers</span>
-        </div>
-      </button>
-    </li>
-    <li class="{{if (eq active 3) 'active'}}">
-      <button href="" {{action 'clickTest' 3}}>
-        <img src="images/button-inactive.svg"/>
-        <div class="scienceCalendar-buttonText">
-          <span class="u-text-white u-text-light scienceCalendar-dayTag">wednesday</span>
-          <span class="u-text-white scienceCalendar-scienceTag">science</span>
-          <span class="flex-1 scienceCalendar-verbTag">creates</span>
-        </div>
-      </button>
-    </li>
-    <li class="{{if (eq active 4) 'active'}}">
-      <button href="" {{action 'clickTest' 4}}>
-        <img src="images/button-inactive.svg"/>
-        <div class="scienceCalendar-buttonText">
-          <span class="u-text-white u-text-light scienceCalendar-dayTag">thursday</span>
-          <span class="u-text-white scienceCalendar-scienceTag">science</span>
-          <span class="flex-1 scienceCalendar-verbTag">communicates</span>
-        </div>
-      </button>
-    </li>
-    <li class="{{if (eq active 5) 'active'}}">
-      <button href="" {{action 'clickTest' 5}}>
-        <img src="images/button-inactive.svg"/>
-        <div class="scienceCalendar-buttonText">
-          <span class="u-text-white u-text-light scienceCalendar-dayTag">friday</span>
-          <span class="u-text-white scienceCalendar-scienceTag">science</span>
-          <span class="flex-1 scienceCalendar-verbTag">advocates</span>
-        </div>
-      </button>
-    </li>
-    <li class="{{if (eq active 6) 'active'}}">
-      <button href="" {{action 'clickTest' 6}}>
-        <img src="images/button-inactive.svg"/>
-        <div class="scienceCalendar-buttonText">
-          <span class="u-text-white u-text-light scienceCalendar-dayTag">saturday</span>
-          <span class="u-text-white scienceCalendar-scienceTag">science</span>
-          <span class="flex-1 scienceCalendar-verbTag">connects</span>
-        </div>
-      </button>
-    </li>
-  </ul>
+        </button>
+      </li>
+      <li class="{{if (eq active 1) 'active'}}">
+        <button href="" {{action 'clickTest' 1}}>
+          <img src="images/button-inactive.svg"/>
+          <div class="scienceCalendar-buttonText">
+              <span class="u-text-white u-text-light scienceCalendar-dayTag">monday</span>
+              <span class="u-text-white scienceCalendar-scienceTag">science</span>
+              <span class="flex-1 scienceCalendar-verbTag">discovers</span>
+            </div>
+        </button>
+      </li>
+      <li class="{{if (eq active 2) 'active'}}">
+        <button href="" {{action 'clickTest' 2}}>
+          <img src="images/button-inactive.svg"/>
+          <div class="scienceCalendar-buttonText">
+            <span class="u-text-white u-text-light scienceCalendar-dayTag">tuesday</span>
+            <span class="u-text-white scienceCalendar-scienceTag">science</span>
+            <span class="flex-1 scienceCalendar-verbTag">empowers</span>
+          </div>
+        </button>
+      </li>
+      <li class="{{if (eq active 3) 'active'}}">
+        <button href="" {{action 'clickTest' 3}}>
+          <img src="images/button-inactive.svg"/>
+          <div class="scienceCalendar-buttonText">
+            <span class="u-text-white u-text-light scienceCalendar-dayTag">wednesday</span>
+            <span class="u-text-white scienceCalendar-scienceTag">science</span>
+            <span class="flex-1 scienceCalendar-verbTag">creates</span>
+          </div>
+        </button>
+      </li>
+      <li class="{{if (eq active 4) 'active'}}">
+        <button href="" {{action 'clickTest' 4}}>
+          <img src="images/button-inactive.svg"/>
+          <div class="scienceCalendar-buttonText">
+            <span class="u-text-white u-text-light scienceCalendar-dayTag">thursday</span>
+            <span class="u-text-white scienceCalendar-scienceTag">science</span>
+            <span class="flex-1 scienceCalendar-verbTag">communicates</span>
+          </div>
+        </button>
+      </li>
+      <li class="{{if (eq active 5) 'active'}}">
+        <button href="" {{action 'clickTest' 5}}>
+          <img src="images/button-inactive.svg"/>
+          <div class="scienceCalendar-buttonText">
+            <span class="u-text-white u-text-light scienceCalendar-dayTag">friday</span>
+            <span class="u-text-white scienceCalendar-scienceTag">science</span>
+            <span class="flex-1 scienceCalendar-verbTag">advocates</span>
+          </div>
+        </button>
+      </li>
+      <li class="{{if (eq active 6) 'active'}}">
+        <button href="" {{action 'clickTest' 6}}>
+          <img src="images/button-inactive.svg"/>
+          <div class="scienceCalendar-buttonText">
+            <span class="u-text-white u-text-light scienceCalendar-dayTag">saturday</span>
+            <span class="u-text-white scienceCalendar-scienceTag">science</span>
+            <span class="flex-1 scienceCalendar-verbTag">connects</span>
+          </div>
+        </button>
+      </li>
+    </ul>
+  </nav>
 
   <div class="home-page-callToAction">
     <header class="home-page-callToAction-header">
@@ -120,7 +122,7 @@
     <div class="home-page-megaphone-text">
       <h3>science<p>NOT</p>silence</h3>
       <p class="home-page-megaphone-text-body">
-        <p>{{{dayData.megaphone.text}}}</p>
+        <p style="margin-top: 0;">{{{dayData.megaphone.text}}}</p>
         <p class="home-page-megaphone-text-body-action u-text-bold">
           {{dayData.megaphone.hash}}
           <a class="u-button" href={{dayData.megaphone.button.href}} target="_blank" {{action 'clickTrack' 'megaphone' preventDefault=false}}>{{dayData.megaphone.button.text}}</a>
