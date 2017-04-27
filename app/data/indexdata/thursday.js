@@ -14,10 +14,10 @@ export default  {
     + "<a href='http://thepeoplesscience.org' target='_blank'>The People’s Science</a> is launching a new platform today called “The Field” - and wants your help!"
     + " Researchers can post short, engaging summaries of their papers and centralize their outreach efforts."
     + " Anyone can follow labs and scientists to keep track of new findings and discuss posts."
-    + " <a href='https://marchforscience.com/blog/2017/4/24/introducing-the-people-for-science-project' target='_blank'>"
+    + " <a href='http://www.thefieldproject.com' target='_blank'>"
     + "Create an account and help change the way we talk about science</a>.",
     buttons: [
-      {text: "sign up", href: "https://marchforscience.com/blog/2017/4/24/introducing-the-people-for-science-project", trackingCode: "left-cta-1"},
+      {text: "sign up", href: "http://www.thefieldproject.com ", trackingCode: "left-cta-1"},
     ],
     image: "images/icon-globe.svg",
   }, {
@@ -25,10 +25,10 @@ export default  {
     heading: 'HONE YOUR SKILLS',
     body: "Effective communication is critical to improving the relationship between science and society."
     + " It’s half how you talk and half how you listen. Practice your communication strategy by pitching a science-inspired story to Story Collider."
-    + " Then refine your radar for detecting low quality content by exploring the tips from Norton Press.",
+    + " Then, check out a #SuperScientist sharing their story courtesy of Sense about Science USA and learn more about science communication, transparency, and the use of evidence.",
     buttons: [
       {text: "tell your story", href: "https://goo.gl/forms/bb6Z0f57KvlzNMgu2", trackingCode: "right-cta-1"},
-      // {text: "explore the tips - need link", href: ""}
+      {text: "discover a story", href: "http://www.senseaboutscienceusa.org/march-for-science/"}
     ],
     image: "images/icon-bulb.svg",
   }],
