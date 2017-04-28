@@ -40,8 +40,8 @@ export default  {
     + "Click here if you are based outside the US!</a>",
     hash: "#NoSidesInScience",
     button: {text: "contact your governor now", href: "http://p2a.co/rpirndL"},
-    twitterHash: '#FUTUREOFSCIENCE #MARGINSCI',
-    twitterButton: {text: "What do you want the future to be?", href:"http://twitter.com/home?status=%23futureofscience%20%23marginsci%20%23marchforscience"},
+    twitterHash: '#FUTUREOFSCIENCE',
+    twitterButton: {text: "What do you want the future to be?", href:"http://twitter.com/home?status=%23futureofscience%20%23marchforscience"},
     twitterSplain: "How is science likely to change in the coming years? How do you hope it might change?"
     + " Share ideas on future of science and strategies for ensuring that those who stand to be most negatively affected by lack of evidence-based policy"
     + " are supported and heard in the next wave of science.",
