@@ -562,8 +562,11 @@
 
   .home-page-callToAction-body {
 
+    display: flex !important;
+
     @include breakpoint(baby-bear) {
       padding: 0;
+      display: block !important;
 
       & .leftCall , & .rightCall {
         width: 100% !important;

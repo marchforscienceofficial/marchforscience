@@ -8,13 +8,10 @@ export default  {
   CTAs: [{
     //TODO: groups should be in bold
     className: 'leftCall',
-    heading: 'MARCH FOR CLIMATE, JOBS & JUSTICE',
-    body: "“Everything we have struggled to move forward in the United States is in peril."
-    + " Our loved ones feel under siege, and those in power in Washington are advancing a dark and dangerous vision of America that we know is untrue."
-    + " To change everything, we need everyone. Join the Peoples Climate Movement this April 29th in Washington,"
-    + " D.C. and across the country to stand up for our communities and climate.” - The People’s Climate Movement. Find the March in your city and hit the streets.",
+    heading: 'Science Advocates Support the Consensus on Climate Change',
+    body: "Many people who marched for science last week especially value the role science plays in protecting our communities from climate change, and are alarmed by potential cuts to climate programs and political decision-making that rejects climate science. Find out why some of our partners are marching for action on climate change this weekend - many as part of a science-specific contingent for researchers, educators and public health professionals. Also, take today to learn more about the role of science in predicting and measuring the <a href='http://www.ucsusa.org/our-work/global-warming/science-and-impacts/global-warming-impacts#.WQNablMrJE4' target='_blank'>impacts of climate change</a>, how climate is affecting the <a href='http://www.ucsusa.org/publications/catalyst/fa15-where-climate-change-hits-first-and-worst#.WQNcxFMrJE5' target='_blank'>most vulnerable communities</a>, and the importance of continued investment in climate programs.",
     buttons: [
-      {text: "LEARN MORE", href: "https://peoplesclimate.org/", trackingCode: "left-cta-1"},
+      {text: "LEARN MORE", href: "https://www.marchforscience.com/blog/2017/1/1/marching-for-climate-science-words-from-partners", trackingCode: "left-cta-1"},
     ],
     image: "images/icon-globe.svg",
   }, {
