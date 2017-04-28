@@ -24,6 +24,7 @@ Router.map(function() {
   this.route('login', function() {
     this.route('verify');
   });
+  this.route('after-woa');
 });
 
 export default Router;

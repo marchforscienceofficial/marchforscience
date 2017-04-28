@@ -3,6 +3,7 @@
   "dependencies": {
     "corejs-typeahead": "~1.1.1",
     "blob": "*",
-    "font-awesome": "~4.7.0"
+    "font-awesome": "~4.7.0",
+    "slick-carousel": "^1.6.0"
   }
 }
