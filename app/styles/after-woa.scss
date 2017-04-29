@@ -95,23 +95,22 @@
     h3 {
       font-family: 'Montserrat', sans-serif;
       background-color: get-color(teal5);
-      color: black;
       text-align: center;
       text-transform: uppercase;
       padding: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: 'Montserrat', sans-serif;
-      background-color: #00c9c4;
       color: white;
-      text-align: center;
-      text-transform: uppercase;
-      padding: 8px;
       font-size: 40px;
-      display: flex;
       -webkit-box-align: center;
+      flex-flow: wrap;
+
+      @include breakpoint(baby-bear) {
+        font-size: 32px;
+      }
     }
+
     p {
       text-align: center;
       font-size: 20px;
@@ -153,16 +152,23 @@
       display: flex;
       justify-content: center;
       padding: 0;
+
+      @include breakpoint(baby-bear) {
+        flex-flow: column;
+        align-items: center;
+      }
     }
 
     li {
       list-style: none;
       margin: 16px;
+      width: 200px;
 
       background-color: get-color(white, .5);
 
       padding: 20px;
       text-align: center;
+
     }
 
     h4 {
@@ -171,7 +177,7 @@
     }
 
     span {
-      font-size: 4px;
+      font-size: 28px;
     }
 
   }
@@ -189,6 +195,10 @@
       display: flex;
       justify-content: center;
       padding: 0;
+
+      @include breakpoint(baby-bear) {
+        flex-flow: column;
+      }
     }
 
     h4 {
@@ -217,7 +227,10 @@
       display: flex;
       flex-flow: column;
 
+
     }
+
+
 
     div {
       font-size: 20px;
