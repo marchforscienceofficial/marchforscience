@@ -22,7 +22,7 @@ export default  {
     + " Celebrate the start of a movement by supporting the local people and groups that are already working to make a difference."
     + " Don’t forget to sign up for your Satellite and read more about what’s next.",
     buttons: [
-      {text: "WHAT’S NEXT - COMING SOON!", href: "", trackingCode: "right-cta-1"},
+      {text: "WHAT’S NEXT - COMING SOON!", href: "after-woa", trackingCode: "right-cta-1"},
       // {text: "explore the tips - need link", href: ""}
     ],
     image: "images/icon-bulb.svg",

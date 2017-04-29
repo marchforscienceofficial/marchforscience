@@ -1,14 +1,116 @@
 
 
 .after-woa {
+  .jumbotron {
+    height: 480px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+      content: "";
+      filter: sepia(100%) brightness(0.65) saturate(.6) hue-rotate(-200deg);
+      background-image: asset-url('images/march_for_science_banner.jpg');
+      background-size: cover;
+      background-position: left center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: get-color(blue);
+    }
+
+    .textContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-transform: uppercase;
+
+      background-color: rgba(get-color(blue), .85);
+      padding: 34px;
+      letter-spacing: 4px;
+      position: relative;
+      z-index: 1;
+
+      &:before {
+        content: "";
+        position: absolute;
+        width: 50vw;
+        height: 3px;
+        background-color: white;
+        display: inline-block;
+        top: 50%;
+        transform: translateX(calc(-50vw - 32px)) translateY(-2px);
+        left: 0;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 50vw;
+        height: 3px;
+        background-color: white;
+        display: inline-block;
+        top: 50%;
+        transform: translateX(32px) translateY(-2px);
+        left: 100%;
+      }
+
+      h1 {
+        //font-family: 'Source Sans Pro', Arial, sans-serif;
+        letter-spacing: 8px;
+        margin: 8px 0;
+        font-weight: 800;
+      }
+
+      h2 {
+        margin-bottom: 0;
+        //font-family: 'Source Sans Pro', Arial, sans-serif;
+        letter-spacing: 1px;
+        font-weight: 800;
+      }
+
+      .jumbotron-textContainer-date {
+        font-weight: 100;
+      }
+
+      .jumbotron-textContainer-tag {
+        letter-spacing: 2.5px;
+        font-size: 8px;
+        margin-top: 20px;
+      }
+
+      .weekOfActionLink a {
+        color: white;
+        margin-top: 20px;
+      }
+    }
+  }
+
   .callToAction {
     h3 {
       font-family: 'Montserrat', sans-serif;
-      background-color: get-color(teal, .4);
+      background-color: get-color(teal5);
       color: black;
       text-align: center;
       text-transform: uppercase;
       padding: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #00c9c4;
+      color: white;
+      text-align: center;
+      text-transform: uppercase;
+      padding: 8px;
+      font-size: 40px;
+      display: flex;
+      -webkit-box-align: center;
     }
     p {
       text-align: center;
@@ -17,16 +119,34 @@
 
       color: get-color(blue);
     }
+
+    button {
+      height: 100%;
+      margin: 12px;
+      background-color: get-color(white, .2);
+      border: 2px white solid;
+      padding: 8px 12px;
+      display: flex;
+      border-radius: 10px;
+       a {
+         color: white;
+         font-size: 16px;
+         font-weight: bold;
+         text-decoration: none;
+         transition: color .3s;
+       }
+
+    }
   }
 
   .byTheNumbers {
-    background-color: get-color(teal, .4);
+    background-color: get-color(teal5);
     padding: 40px;
     text-transform: uppercase;
 
     h3 {
-      font-weight: 100;
       text-align: center;
+      font-weight: bold;
     }
 
     ul {
@@ -51,18 +171,17 @@
     }
 
     span {
-      font-size: 20px;
+      font-size: 4px;
     }
 
   }
 
   .whatYouCanDo {
-    img {
-      height: 150px;
-      width: 150px;
-      border-radius: 100%;
 
-      border: 10px solid white;
+    img {
+      height: 100px;
+      width: 100px;
+      padding: 10px;
       box-shadow: 0 0 3pt 0 grey;
     }
 
@@ -74,25 +193,29 @@
 
     h4 {
       margin-top: 16px;
-      color: get-color(orange);
-    }
-
-    li:first-child h4 {
       color: get-color(blue);
     }
 
-    li:last-child h4 {
-      color: get-color(teal);
-    }
+    //li:first-child h4 {
+    //  color: get-color(blue);
+    //}
+    //
+    //li:last-child h4 {
+    //  color: get-color(teal5);
+    //}
 
     li {
       list-style: none;
       margin: 16px;
 
-      background-color: get-color(white, .5);
+      background-color: get-color(gray2);
 
       padding: 20px;
       text-align: center;
+
+      align-items: center;
+      display: flex;
+      flex-flow: column;
 
     }
 
@@ -100,6 +223,15 @@
       font-size: 20px;
     }
 
+    .whatYouCanDo-imageContainer {
+      height: 120px;
+      width: 120px;
+      border: 10px solid white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+    }
 
   }
 
