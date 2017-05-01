@@ -24,7 +24,7 @@ Router.map(function() {
   this.route('login', function() {
     this.route('verify');
   });
-  this.route('after-woa');
+  this.route('week-of-action');
 });
 
 export default Router;

@@ -1,2 +1,19 @@
 <img class="satellites__typeahead-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" style="background-image: url({{model.parsedLogo}})">
 {{model.displayName}}
+<ul>
+  {{#if model.website}}
+    <li><a href="{{model.website}}" target="_blank" class="fa fa-globe"><span class="sr-only">website</span></a></li>
+  {{/if}}
+  {{#if model.facebook}}
+    <li><a href="{{model.facebook}}" target="_blank" class="fa fa-facebook-f"><span class="sr-only">facebook</span></a></li>
+  {{/if}}
+  {{#if model.twitter}}
+    <li><a href="{{model.twitter}}" target="_blank" class="fa fa-twitter"><span class="sr-only">twitter</span></a></li>
+  {{/if}}
+  {{#if model.instagram}}
+    <li><a href="{{model.instagram}}" target="_blank" class="fa fa-instagram"><span class="sr-only">instagram</span></a></li>
+  {{/if}}
+  {{#if model.email}}
+    <li><a href="mailto:{{model.email}}" target="_blank" class="fa fa-envelope-o"><span class="sr-only">email</span></a></li>
+  {{/if}}
+</ul>

@@ -6,6 +6,8 @@ const targetSVG = "M9,0C4.029,0,0,4.029,0,9s4.029,9,9,9s9-4.029,9-9S13.971,0,9,0
 
 export default Ember.Component.extend({
 
+      tagName: 'world-map',
+
       didRender(){
 
         var images = [];

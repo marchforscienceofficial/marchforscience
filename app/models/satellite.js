@@ -26,6 +26,7 @@ export default Ember.Object.extend({
   website: '',
   blog: '',
   blogType: '',
+  email: '',
 
   admins: [],
   endorsements: [],

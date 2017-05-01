@@ -1,180 +1,194 @@
-<div class="home-page">
+<div class="after-woa">
 
-  <header class="jumbotron">
-    <div class="textContainer u-text-center">
-      <span class="jumbotron-textContainer-date">On April 22, 2017</span>
-      <h1 class="u-text-orange u-text-bold u-text-center">We marched.</h1>
-      <h2>Now, we act.</h2>
-      <span class="jumbotron-textContainer-tag">
-        <span class="u-text-bold">Week of action ∙</span>
-        <span class="u-text-light">April 22-29, 2017</span>
-      </span>
-    </div>
-  </header>
+  <section class="signup-modal {{if showSubscribePopover 'visible'}}">
+    <h3 class="u-text-orange u-text-center">Sign up for updates</h3>
+    <h4 class="u-text-h5 u-text-center" style="margin-bottom: 16px;">{{model.displayName}}</h4>
+    <button class="signup-modal__dismiss" {{action "toggleSubscribePopover"}}>Close</button>
+    <form name="signup" class="bsd-signup" action="https://secure.marchforscience.com/page/s/rsvpembed" method="post" id="popup-signup-form">
 
-  <nav class="scienceCalendar">
-    <ul class="u-grid-container">
-      <li class="{{if (eq active 0) 'active'}}">
-      <button href="" {{action 'clickTest' 0}}>
-          <img src="images/button-inactive.svg"/>
-          <div class="scienceCalendar-buttonText">
-            <span class="u-text-white u-text-light scienceCalendar-dayTag">sunday</span>
-            <span class="u-text-white scienceCalendar-scienceTag">science</span>
-            <span class="flex-1 scienceCalendar-verbTag">engages</span>
-          </div>
-        </button>
-      </li>
-      <li class="{{if (eq active 1) 'active'}}">
-        <button href="" {{action 'clickTest' 1}}>
-          <img src="images/button-inactive.svg"/>
-          <div class="scienceCalendar-buttonText">
-              <span class="u-text-white u-text-light scienceCalendar-dayTag">monday</span>
-              <span class="u-text-white scienceCalendar-scienceTag">science</span>
-              <span class="flex-1 scienceCalendar-verbTag">discovers</span>
-            </div>
-        </button>
-      </li>
-      <li class="{{if (eq active 2) 'active'}}">
-        <button href="" {{action 'clickTest' 2}}>
-          <img src="images/button-inactive.svg"/>
-          <div class="scienceCalendar-buttonText">
-            <span class="u-text-white u-text-light scienceCalendar-dayTag">tuesday</span>
-            <span class="u-text-white scienceCalendar-scienceTag">science</span>
-            <span class="flex-1 scienceCalendar-verbTag">empowers</span>
-          </div>
-        </button>
-      </li>
-      <li class="{{if (eq active 3) 'active'}}">
-        <button href="" {{action 'clickTest' 3}}>
-          <img src="images/button-inactive.svg"/>
-          <div class="scienceCalendar-buttonText">
-            <span class="u-text-white u-text-light scienceCalendar-dayTag">wednesday</span>
-            <span class="u-text-white scienceCalendar-scienceTag">science</span>
-            <span class="flex-1 scienceCalendar-verbTag">creates</span>
-          </div>
-        </button>
-      </li>
-      <li class="{{if (eq active 4) 'active'}}">
-        <button href="" {{action 'clickTest' 4}}>
-          <img src="images/button-inactive.svg"/>
-          <div class="scienceCalendar-buttonText">
-            <span class="u-text-white u-text-light scienceCalendar-dayTag">thursday</span>
-            <span class="u-text-white scienceCalendar-scienceTag">science</span>
-            <span class="flex-1 scienceCalendar-verbTag">communicates</span>
-          </div>
-        </button>
-      </li>
-      <li class="{{if (eq active 5) 'active'}}">
-        <button href="" {{action 'clickTest' 5}}>
-          <img src="images/button-inactive.svg"/>
-          <div class="scienceCalendar-buttonText">
-            <span class="u-text-white u-text-light scienceCalendar-dayTag">friday</span>
-            <span class="u-text-white scienceCalendar-scienceTag">science</span>
-            <span class="flex-1 scienceCalendar-verbTag">advocates</span>
-          </div>
-        </button>
-      </li>
-      <li class="{{if (eq active 6) 'active'}}">
-        <button href="" {{action 'clickTest' 6}}>
-          <img src="images/button-inactive.svg"/>
-          <div class="scienceCalendar-buttonText">
-            <span class="u-text-white u-text-light scienceCalendar-dayTag">saturday</span>
-            <span class="u-text-white scienceCalendar-scienceTag">science</span>
-            <span class="flex-1 scienceCalendar-verbTag">connects</span>
-          </div>
-        </button>
-      </li>
-    </ul>
-  </nav>
+      <fieldset style="display: none;">
 
-  <div class="home-page-callToAction">
-    <header class="home-page-callToAction-header">
-      <h1 class="u-grid-container">{{dayOfTheWeek}}</h1>
-      <h2>SCIENCE {{dayData.verbOfTheDay}}</h2>
-      <p class="QOD u-text-light">"{{dayData.quoteOfTheDay}}"</p>
-    </header>
-    <div class="" style="background-color: #00c9c4;overflow: hidden;">
-      <div class="home-page-callToAction-body u-grid-container">
-        {{#each dayData.CTAs as |CTA| }}
-          <div class="home-page-callToAction-body-call {{CTA.className}}">
-            <header>
-              <img src={{CTA.image}}/>
-              <h3>{{CTA.heading}}</h3>
-            </header>
-            <p>{{{CTA.body}}}</p>
-            <div class="home-page-callToAction-body-call-buttons">
-              {{#each CTA.buttons as |button| }}
-                <a class="u-button" href={{button.href}} target="_blank" {{action 'clickTrack' button.trackingCode preventDefault=false}}>{{button.text}}</a>
-              {{/each}}
-            </div>
-          </div>
-        {{/each}}
+       {{!-- <input id="popup-city" name="city" type="hidden" value={{model.city}}>
+       <input id="popup-state_cd" name="state_cd" type="hidden" value={{model.state}}>
+       <input id="popup-country" name="country" type="hidden" value={{model.country}}> --}}
+       <input id="popup-best-contact-time" name="best-contact-time" value="" type="hidden">
+       <input id="popup-_guid" name="_guid" type="hidden" value="">
+       {{!-- <input name="redirect_url" type="hidden" value="{{currentUrl}}"> --}}
+
+      </fieldset>
+
+      {{float-input name="firstname" label="First Name" type="text" required="true" class="u-grid-12"}}
+      {{float-input name="lastname" label="Last Name" type="text" required="true" class="u-grid-12 u-grid-last"}}
+      {{float-input name="email" label="Email Address" type="email" required="true" class="u-grid-12"}}
+      {{float-input name="phone" label="Phone Number (optional)" type="text" class="u-grid-12 u-grid-last"}}
+
+      <input name="submit-btn" value="Register" type="submit" class="u-button--large u-grid-center">
+    </form>
+  </section>
+
+
+  {{#simple-modal show=showSubscribeModal onDismiss=(action "toggleSubscribeModal")}}
+
+    <h3 class="u-text-orange u-text-center">Sign up for updates</h3>
+    <h4 class="u-text-h5 u-text-center" style="margin-bottom: 16px;">{{model.displayName}}</h4>
+    <form name="signup" class="bsd-signup" action="https://secure.marchforscience.com/page/s/rsvpembed" method="post" id="popup-signup-form">
+
+      <fieldset style="display: none;">
+
+       {{!-- <input id="popup-city" name="city" type="hidden" value={{model.city}}>
+       <input id="popup-state_cd" name="state_cd" type="hidden" value={{model.state}}>
+       <input id="popup-country" name="country" type="hidden" value={{model.country}}> --}}
+       <input id="popup-best-contact-time" name="best-contact-time" value="" type="hidden">
+       <input id="popup-_guid" name="_guid" type="hidden" value="">
+       {{!-- <input name="redirect_url" type="hidden" value="{{currentUrl}}"> --}}
+
+      </fieldset>
+
+      {{float-input name="firstname" label="First Name" type="text" required="true" class="u-grid-12"}}
+      {{float-input name="lastname" label="Last Name" type="text" required="true" class="u-grid-12 u-grid-last"}}
+      {{float-input name="email" label="Email Address" type="email" required="true" class="u-grid-12"}}
+      {{float-input name="phone" label="Phone Number (optional)" type="text" class="u-grid-12 u-grid-last"}}
+
+      <input name="submit-btn" value="Register" type="submit" class="u-button--large u-grid-center">
+    </form>
+
+  {{/simple-modal}}
+
+  {{#slick-slider autoplay=true arrows=false}}
+    <header class="jumbotron">
+      <div class="textContainer u-text-center">
+        <span class="jumbotron-textContainer-date">On April 22, 2017</span>
+          <h1 class="u-text-orange u-text-bold u-text-center">We marched.</h1>
+          <h2>Now, we act.</h2>
+          <span class="jumbotron-textContainer-tag">
+          <span class="u-text-bold weekOfActionLink">
+            {{#link-to 'week-of-action'}}check out the week of action{{/link-to}}
+          </span>
+        </span>
       </div>
-    </div>
-  </div>
-
-  <section class="home-page-megaphone u-grid-container">
-    <img src="images/megaphone.svg"/>
-    <div class="home-page-megaphone-triangle">
-      <div class="home-page-megaphone-triangle-border grey"></div>
-      <div class="home-page-megaphone-triangle-border white"></div>
-    </div>
-    <div class="home-page-megaphone-text">
-      <h3>science<p>NOT</p>silence</h3>
-      <p class="home-page-megaphone-text-body">
-        <p style="margin-top: 0;">{{{dayData.megaphone.text}}}</p>
-        <p class="home-page-megaphone-text-body-action u-text-bold">
-          {{dayData.megaphone.hash}}
-          <a class="u-button" href={{dayData.megaphone.button.href}} target="_blank" {{action 'clickTrack' 'megaphone' preventDefault=false}}>{{dayData.megaphone.button.text}}</a>
-        </p>
-      </p>
-    </div>
-  </section>
-
-  <section class="socialMedia">
-    <div class="socialMedia-squiggleContainer">
-      <span style="flex:8"></span>
-      <img src="images/squiggle.svg"/>
-      <span style="flex:2"></span>
-    </div>
-    <header>
-      <h1>{{dayData.megaphone.twitterHash}}</h1>
-      <a class="u-button" href={{dayData.megaphone.twitterButton.href}} target="_blank" {{action 'clickTrack' 'twitter-cta' preventDefault=false}}>
-        <span class="socialMedia-actionWhat">{{dayData.megaphone.twitterButton.text}}</span>
-      </a>
+      <div class="u-grid-container u-text-center cta-container" style="margin: 18px auto">
+        <button class="u-button--large" {{action "toggleSubscribeModal"}}>Join the Movement</button>
+        <a class="u-button--large u-button--blue " href="https://www.marchforscience.com/donate" target="_blank" style="margin: 0 12px 12px;" {{action "clickTrack" "header-donate-cta" preventDefault=false}}>Donate</a>
+      </div>
     </header>
+    <!--<div class="box">-->
+      <!--<div class="sliderBox">-->
+        <!--<img src="/assets/images/march_for_science_banner.jpg">-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--&lt;!&ndash;<div class="box">&ndash;&gt;-->
+      <!--&lt;!&ndash;<div class="sliderBox">&ndash;&gt;-->
+        <!--&lt;!&ndash;<img src="/assets/images/march_for_science_banner.jpg">&ndash;&gt;-->
+      <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="box">&ndash;&gt;-->
+      <!--&lt;!&ndash;<div class="sliderBox">&ndash;&gt;-->
+        <!--&lt;!&ndash;<img src="/assets/images/march_for_science_banner.jpg">&ndash;&gt;-->
+      <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="box">&ndash;&gt;-->
+      <!--&lt;!&ndash;<div class="sliderBox">&ndash;&gt;-->
+        <!--&lt;!&ndash;<img src="/assets/images/march_for_science_banner.jpg">&ndash;&gt;-->
+      <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+  {{/slick-slider}}
 
-    <p class="socialMedia-longActionStory u-text-light u-text-gray5 u-grid-container">
-      {{dayData.megaphone.twitterSplain}}
-      <span class="u-text-bold">{{dayData.megaphone.twitterTag}}</span>
-    </p>
-    <ul class="socialMedia-links u-text-h1">
-      <li>
-        <a class="fa fa-twitter" href="https://www.twitter.com/scienceMarchDC" target="_blank" {{action 'clickTrack' 'social-media-twitter' preventDefault=false}}></a>
-      </li>
-      <li>
-        <a class="fa fa-facebook-f" href="https://www.facebook.com/marchforscience" target="_blank" {{action 'clickTrack' 'social-media-facebook' preventDefault=false}}></a>
-      </li>
-      <li>
-        <a class="fa fa-instagram" href="https://www.instagram.com/sciencemarchdc" target="_blank" {{action 'clickTrack' 'social-media-instagram' preventDefault=false}}></a>
-      </li>
-    </ul>
-  </section>
+  <section class="callToAction">
 
-  <section class="moreCallToAction">
-    <header class="home-page-genericHeader u-text-center">
-      <h1 class="u-grid-container u-text-h1 u-text-black">MORE WAYS TO GET INVOLVED</h1>
-    </header>
-    <ul class="u-grid-container">
-      {{#each dayData.moreCTAs as |CTA|}}
-        <li {{action 'clickTrack' CTA.trackingCode preventDefault=false}}>
-          <img src={{CTA.image}}/>
-          <p class="u-text-bold">{{CTA.header}}
-            <span class="u-text-light">{{CTA.group}}</span>
-          <span class="u-text-normal moreCallToAction-bottomSpan">{{{CTA.bodyWithHTMLLinks}}}</span>
-          </p>
+    <h3>#MarchforScience</h3>
+
+    <section class="socialMedia">
+      <ul class="socialMedia-links u-text-h1">
+        <li>
+          <a class="fa fa-twitter" href="https://www.twitter.com/scienceMarchDC" target="_blank" {{action 'clickTrack' 'social-media-twitter' preventDefault=false}}></a>
         </li>
-      {{/each}}
+        <li>
+          <a class="fa fa-facebook-f" href="https://www.facebook.com/marchforscience" target="_blank" {{action 'clickTrack' 'social-media-facebook' preventDefault=false}}></a>
+        </li>
+        <li>
+          <a class="fa fa-instagram" href="https://www.instagram.com/sciencemarchdc" target="_blank" {{action 'clickTrack' 'social-media-instagram' preventDefault=false}}></a>
+        </li>
+      </ul>
+    </section>
+
+
+    <section class="homepage__celebration">
+      <p class="u-grid-container homepage__celebration--text">On April 22, 2017, in more than 600 cities around the world,
+        <b>we marched as an unprecedented coalition of organizations and individuals.</b>
+        We marched because science is critical to our health, economies, food security, and safety.
+        We marched to defend the role of science in policy and society.</p>
+
+      {{world-map satellites=satellites.list}}
+    </section>
+
+  </section>
+
+  <section class="byTheNumbers">
+    <h3 class="u-grid-container">by the numbers</h3>
+    <ul class="u-grid-container">
+      <li>
+        <h4>300+</h4>
+        <span>partners</span>
+      </li>
+      <li>
+        <h4>600+</h4>
+        <span>marches</span>
+      </li>
+      <li>
+        <h4>300+</h4>
+        <span>new voters</span>
+      </li>
     </ul>
   </section>
+
+  {{!-- <h2 class="vision__block-header vision__block-header--orange">What comes next?</h2> --}}
+  <section class="callToAction">
+    <p class="u-grid-container">We are science advocates and scientists who share an important goal:</p>
+
+    <h1 style="font-size: 5.2rem; font-weight: bold;line-height: 4.8rem;text-align: center;">
+      <span style="color: rgba(0,0,0,.55);letter-spacing: 1px;">CHAMPION</span>
+      <span style="color: rgba(0,0,0,.35);letter-spacing: 1px;">SCIENCE</span><br>
+      <span style="color: rgba(0,0,0,.55);font-weight: 200;">FOR THE COMMON GOOD</span>
+    </h1>
+
+    <p>Together we are building a powerful, international, interdisciplinary movement to:</p>
+  </section>
+
+  <section class="whatYouCanDo">
+    <ul class="u-grid-container">
+      <li>
+        <div class="whatYouCanDo-imageContainer blue">
+          <img src={{transparent-pixel}} style="background-image: url('images/moreCTA/utensils-01-inverse.svg');"/>
+        </div>
+        <h4>Strengthen the role of science in policymaking</h4>
+      </li>
+      <li>
+        <div class="whatYouCanDo-imageContainer orange">
+          <img src={{transparent-pixel}} style="background-image: url('images/moreCTA/peeps-inverse.svg');"/>
+        </div>
+        <h4>Improve science outreach and communication</h4>
+      </li>
+      <li>
+        <div class="whatYouCanDo-imageContainer teal">
+          <img src={{transparent-pixel}} style="background-image: url('images/moreCTA/owl-inverse.svg');"/>
+        </div>
+        <h4>Advance science education and scientific literacy</h4>
+      </li>
+      <li>
+        <div class="whatYouCanDo-imageContainer green">
+          <img src={{transparent-pixel}} style="background-image: url('images/moreCTA/atom-01-inverse.svg');"/>
+        </div>
+        <h4>Foster a diverse and inclusive scientific community</h4>
+      </li>
+    </ul>
+  </section>
+
+  <section class="callToAction u-grid-container">
+    <p>In the coming weeks, we’ll continue to work with marchers, partner organizations,
+      and satellite march organizers around the world as we plan the future of the March for Science movement.
+    </p>
+    <p style="padding-top: 0;"><b>The march is over, and the movement has begun. Science keeps marching forward, and so do we.</b></p>
+
+  </section>
+
 </div>

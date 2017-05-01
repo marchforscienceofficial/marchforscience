@@ -5,6 +5,16 @@
     margin-top: 32px;
   }
 
+  world-map {
+    width:100vw;
+    height: calc(100vh - 84px);
+    position: fixed;
+    z-index:-1;
+    pointer-events: none;
+    top:84px;
+    left: 0;
+  }
+
   .tt-menu {
     @include clearfix();
     background-color: transparent;
@@ -25,13 +35,13 @@
     @include elevation(2);
     box-sizing: border-box;
     width: calc(100% - 20px);
-    line-height: 45px;
+    line-height: 28px;
     padding: 8px;
     margin: 16px 0 0 0;
     border-radius: 3px;
     transition: background-color .3s, transform .3s;
     background-color: rgba(get-color(white), .75);
-    height: calc(45px + 16px);
+    // height: calc(45px + 16px);
     position: relative;
     left: 10px;
     cursor: pointer;
@@ -66,14 +76,40 @@
   .satellites__typeahead-image {
     background-size: contain;
     width: 45px;
-    height: 45px;
+    height: auto;
     border-radius: 5px;
     background-position: center;
     background-repeat: no-repeat;
     float: left;
     margin-right: 16px;
+    margin-top: 4px;
     position: relative;
     z-index: 1;
+  }
+
+  .tt-suggestion ul {
+    list-style: none;
+    padding: 0 0 0 57px;
+    margin: 0;
+
+    li {
+      float: left;
+      padding: 0 16px 0 0;
+      font-size: 1.8rem;
+      margin: 0;
+    }
+
+    a {
+      color: black;
+      opacity: .55;
+      transition: opacity .3s;
+      transform: translate3d(0,0,0);
+
+      &:hover {
+        text-decoration: none;
+        opacity: 1;
+      }
+    }
   }
 
 }

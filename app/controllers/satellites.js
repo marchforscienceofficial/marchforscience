@@ -41,7 +41,10 @@ export default Ember.Controller.extend({
 
   actions: {
     selectSatelliteTypeahead(data){
-      if (data) this.transitionToRoute('satellite', get(data, 'uriName'));
+      // if (data) this.transitionToRoute('satellite', get(data, 'uriName'));
+      if ( !data ) return;
+      var url = get(data, 'website') || get(data, 'facebook') || get(data, 'twitter') || get(data, 'instagram') || ( get(data, 'email') && 'mailto:'+get(data, 'email') );
+      url && window.open(url, "_blank");
       return false;
     }
   }
