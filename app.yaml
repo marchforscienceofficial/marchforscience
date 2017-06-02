@@ -17,7 +17,7 @@ env: flex
 env_variables:
   NODE_ENV: 'production'
 automatic_scaling:
-  min_num_instances: 5
+  min_num_instances: 2
   max_num_instances: 20
   cool_down_period_sec: 60
 default_expiration: "1h"
