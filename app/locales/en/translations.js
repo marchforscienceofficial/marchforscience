@@ -12,6 +12,6 @@ export default {
   satellites: {
     typeahead_search: 'Search by city, state or country...',
     search_primary_cta: "{{count}} satellites and counting",
-    search_secondary_cta: "Discover your local chapter"
+    search_secondary_cta: "Discover your local satellite"
   }
 };
